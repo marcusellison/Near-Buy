@@ -13,6 +13,8 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
 
     @IBOutlet weak var productImageView: UIImageView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,9 +54,12 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     }
     
     @IBAction func uploadPhoto(sender: AnyObject) {
+        
+        
         if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)) {
             var picker = UIImagePickerController()
             picker.delegate = self
+            println(self)
             picker.allowsEditing = true
             picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
             
@@ -69,10 +74,10 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         }
         
         func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: NSDictionary!) {
+            
             NSLog("Received image from camera")
             
             let mediaType = info[UIImagePickerControllerMediaType] as! String
-            println(mediaType)
             var originalImage:UIImage?, editedImage:UIImage?, imageToSave:UIImage?
             let compResult:CFComparisonResult = CFStringCompare(mediaType as NSString!, kUTTypeImage, CFStringCompareFlags.CompareCaseInsensitive)
             if ( compResult == CFComparisonResult.CompareEqualTo ) {
