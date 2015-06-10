@@ -88,6 +88,8 @@ class RestfulAPI: NSObject {
         /* Query for all products */
         var query = PFQuery(className:"Product")
         
+        // query.
+        
         return [["url":"dictionary"]]
     }
     
