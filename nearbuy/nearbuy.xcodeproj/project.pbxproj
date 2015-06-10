@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D3B2C8B1B280F4C00BA59C8 /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */; };
+		3D3B2C8D1B28112400BA59C8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */; };
 		3DD616F21B277B83001FEB6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD616F11B277B83001FEB6F /* AppDelegate.swift */; };
 		3DD616F41B277B83001FEB6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD616F31B277B83001FEB6F /* ViewController.swift */; };
 		3DD616F71B277B83001FEB6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD616F51B277B83001FEB6F /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
+		3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3DD616EC1B277B83001FEB6F /* nearbuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nearbuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD616F01B277B83001FEB6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DD616F11B277B83001FEB6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				D2E128791B27DAFC00221321 /* ItemCollectionViewCell.swift */,
+				3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */,
 				3DF79DC71B280C4B00395B0A /* RestfulAPI.swift */,
 			);
 			name = Views;
@@ -314,6 +317,7 @@
 				D2E1287C1B27DB2700221321 /* ChatViewController.swift in Sources */,
 				3DD616F21B277B83001FEB6F /* AppDelegate.swift in Sources */,
 				D2E128801B27DB5A00221321 /* TakePhotoViewController.swift in Sources */,
+				3D3B2C8D1B28112400BA59C8 /* TestViewController.swift in Sources */,
 				D2E1287E1B27DB3400221321 /* BrowseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
