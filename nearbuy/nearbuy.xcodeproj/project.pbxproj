@@ -116,19 +116,6 @@
 		3DD616E31B277B83001FEB6F = {
 			isa = PBXGroup;
 			children = (
-				3DF79DCD1B280C8C00395B0A /* libsqlite3.dylib */,
-				3DF79DCB1B280C7F00395B0A /* libz.dylib */,
-				3DF79DC91B280C7100395B0A /* SystemConfiguration.framework */,
-				3DF79DC51B280BF400395B0A /* StoreKit.framework */,
-				3DF79DC31B280BDF00395B0A /* Security.framework */,
-				3DF79DC11B280BD300395B0A /* QuartzCore.framework */,
-				3DF79DBF1B280BCD00395B0A /* MobileCoreServices.framework */,
-				3DF79DBD1B280BBB00395B0A /* CoreLocation.framework */,
-				3DF79DBB1B280BB600395B0A /* CoreGraphics.framework */,
-				3DF79DB91B280BAC00395B0A /* CFNetwork.framework */,
-				3DF79DB71B280BA700395B0A /* AudioToolbox.framework */,
-				3DF79DB51B280B6800395B0A /* Parse.framework */,
-				3DF79DB31B280B5C00395B0A /* Bolts.framework */,
 				3DD616EE1B277B83001FEB6F /* nearbuy */,
 				3DD617041B277B83001FEB6F /* nearbuyTests */,
 				3DD616ED1B277B83001FEB6F /* Products */,
@@ -155,6 +142,7 @@
 				3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */,
 				3DD616F81B277B83001FEB6F /* Images.xcassets */,
 				3DD616FA1B277B83001FEB6F /* LaunchScreen.xib */,
+				D273BB3E1B28135700511C10 /* Framework */,
 				3DD616EF1B277B83001FEB6F /* Supporting Files */,
 			);
 			path = nearbuy;
@@ -183,6 +171,27 @@
 				3DD617061B277B83001FEB6F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D273BB3E1B28135700511C10 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				3DF79DCD1B280C8C00395B0A /* libsqlite3.dylib */,
+				3DF79DCB1B280C7F00395B0A /* libz.dylib */,
+				3DF79DC91B280C7100395B0A /* SystemConfiguration.framework */,
+				3DF79DC51B280BF400395B0A /* StoreKit.framework */,
+				3DF79DC31B280BDF00395B0A /* Security.framework */,
+				3DF79DC11B280BD300395B0A /* QuartzCore.framework */,
+				3DF79DBF1B280BCD00395B0A /* MobileCoreServices.framework */,
+				3DF79DBD1B280BBB00395B0A /* CoreLocation.framework */,
+				3DF79DBB1B280BB600395B0A /* CoreGraphics.framework */,
+				3DF79DB91B280BAC00395B0A /* CFNetwork.framework */,
+				3DF79DB71B280BA700395B0A /* AudioToolbox.framework */,
+				3DF79DB51B280B6800395B0A /* Parse.framework */,
+				3DF79DB31B280B5C00395B0A /* Bolts.framework */,
+			);
+			name = Framework;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D2E128771B27DA9B00221321 /* View Controllers */ = {
