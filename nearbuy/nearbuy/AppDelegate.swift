@@ -19,17 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Parse.enableLocalDatastore()
+       
+        /* Initialize Parse */
         
-        // Initialize Parse.
-        Parse.setApplicationId("MXh7k8fs6DYgHe3289YMuEiVXfVT3tfgc39DMqXm",
-            clientKey: "0co1OmbuCeuovw5r2YdbiJ7wh9AkczJaMdoLGOF0")
+        var api : RestfulAPI = RestfulAPI();
+        api.initParse()
         
-        let testObject = PFObject(className: "testImage")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            println("Image Saved")
-        }
         return true
     }
 
