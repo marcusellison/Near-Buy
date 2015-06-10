@@ -9,6 +9,9 @@
 import UIKit
 
 class TakePhotosDetailViewController: UIViewController {
+    @IBOutlet weak var productNameField: UITextField!
+    @IBOutlet weak var productDescriptionField: UITextField!
+    @IBOutlet weak var productPriceField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +34,11 @@ class TakePhotosDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func onSell(sender: AnyObject) {
+        
+        println("sell me!")
+        
+        
+    }
 
 }

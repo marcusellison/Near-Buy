@@ -54,17 +54,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-Cz-Fe8">
                                 <rect key="frame" x="16" y="54" width="568" height="330"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="ty5-c5-drm"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SHh-pq-bhC" appends="YES" id="V6A-x8-9kQ"/>
+                                </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PP9-sz-oW8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PP9-sz-oW8">
                                 <rect key="frame" x="507" y="525" width="32" height="30"/>
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="takePhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="bwJ-zs-MAq"/>
+                                    <segue destination="AQa-1U-RhL" kind="presentation" id="jig-en-HDe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,6 +80,7 @@
                             <constraint firstItem="OD9-6L-UfE" firstAttribute="top" secondItem="ahv-IW-Rsq" secondAttribute="bottom" constant="38" id="6Zh-ZT-mlQ"/>
                             <constraint firstItem="dc5-Cz-Fe8" firstAttribute="top" secondItem="oge-yS-Ave" secondAttribute="bottom" constant="34" id="980-tG-yek"/>
                             <constraint firstItem="Nus-Rs-RUf" firstAttribute="top" secondItem="P7H-CP-PPq" secondAttribute="bottom" constant="45" id="DKd-kY-2lE"/>
+                            <constraint firstAttribute="trailing" secondItem="PP9-sz-oW8" secondAttribute="trailing" constant="61" id="Gba-KW-3hs"/>
                             <constraint firstItem="05w-H1-w0K" firstAttribute="leading" secondItem="GGT-3v-7r6" secondAttribute="leading" constant="16" id="JkO-VQ-3Zy"/>
                             <constraint firstAttribute="trailing" secondItem="dc5-Cz-Fe8" secondAttribute="trailing" constant="16" id="OTI-gB-FPq"/>
                             <constraint firstItem="Nus-Rs-RUf" firstAttribute="top" secondItem="OD9-6L-UfE" secondAttribute="bottom" constant="45" id="ZKs-O0-bqr"/>
@@ -82,6 +88,7 @@
                             <constraint firstItem="05w-H1-w0K" firstAttribute="top" secondItem="dc5-Cz-Fe8" secondAttribute="bottom" constant="8" id="eTg-K4-m1y"/>
                             <constraint firstItem="P7H-CP-PPq" firstAttribute="leading" secondItem="GGT-3v-7r6" secondAttribute="leading" constant="16" id="ozP-UW-d61"/>
                             <constraint firstItem="dc5-Cz-Fe8" firstAttribute="top" secondItem="oge-yS-Ave" secondAttribute="bottom" constant="34" id="pCI-2Y-WmO"/>
+                            <constraint firstItem="PP9-sz-oW8" firstAttribute="top" secondItem="dc5-Cz-Fe8" secondAttribute="bottom" constant="141" id="vX1-rx-oSp"/>
                             <constraint firstItem="dc5-Cz-Fe8" firstAttribute="leading" secondItem="GGT-3v-7r6" secondAttribute="leading" constant="16" id="w4o-23-98X"/>
                         </constraints>
                         <variation key="default">
@@ -92,11 +99,16 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="capturedProductImageView" destination="05w-H1-w0K" id="Yjz-W5-sIo"/>
                         <outlet property="previewView" destination="dc5-Cz-Fe8" id="xkS-xF-CDZ"/>
-                        <outlet property="productImageView" destination="05w-H1-w0K" id="7dY-ou-G05"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F24-Nb-gpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="SHh-pq-bhC">
+                    <connections>
+                        <action selector="onPreviewLongPress:" destination="aRu-j7-hhv" id="eaX-dj-c6A"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="312" y="1151"/>
         </scene>
@@ -117,21 +129,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose a category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-Ek-CNe">
-                                <rect key="frame" x="16" y="234" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBJ-12-Ovs">
-                                <rect key="frame" x="16" y="272" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe it ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-T7-b1g">
-                                <rect key="frame" x="16" y="120" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe it ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-T7-b1g">
+                                <rect key="frame" x="16" y="70" width="568" height="156"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="WU1-2t-TcU"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="tbX-Lw-v8E"/>
+                                    <constraint firstAttribute="height" constant="156" id="coX-X7-9HZ"/>
                                     <constraint firstAttribute="height" constant="30" id="uiJ-fv-cSb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -143,19 +145,41 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jIl-dI-g4g">
+                                <rect key="frame" x="16" y="234" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq7-XS-5V6">
+                                <rect key="frame" x="281" y="285" width="38" height="30"/>
+                                <state key="normal" title="Sell it">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSell:" destination="AQa-1U-RhL" eventType="touchUpInside" id="Tce-jW-I8b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gOD-DO-681" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="1Eb-Wp-ZKG"/>
-                            <constraint firstItem="CiO-T7-b1g" firstAttribute="top" secondItem="gOD-DO-681" secondAttribute="bottom" constant="8" id="AK8-vo-s4H"/>
-                            <constraint firstAttribute="trailing" secondItem="ZmC-Ek-CNe" secondAttribute="trailing" constant="16" id="Y42-zO-FC0"/>
-                            <constraint firstItem="gOD-DO-681" firstAttribute="top" secondItem="NJl-rO-0vi" secondAttribute="bottom" constant="8" id="gH5-69-af8"/>
-                            <constraint firstAttribute="trailing" secondItem="CiO-T7-b1g" secondAttribute="trailing" constant="16" id="iR2-VJ-0F8"/>
-                            <constraint firstItem="CiO-T7-b1g" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="lxL-4T-Zd9"/>
-                            <constraint firstAttribute="trailing" secondItem="gOD-DO-681" secondAttribute="trailing" constant="16" id="mqs-n0-pBu"/>
-                            <constraint firstItem="ZmC-Ek-CNe" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="yGl-06-sfY"/>
+                            <constraint firstItem="CiO-T7-b1g" firstAttribute="top" secondItem="gOD-DO-681" secondAttribute="bottom" constant="12" id="C2L-n8-6Ra"/>
+                            <constraint firstAttribute="trailing" secondItem="CiO-T7-b1g" secondAttribute="trailing" constant="16" id="ZaD-WZ-DVI"/>
+                            <constraint firstItem="gOD-DO-681" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="Znl-Ye-BeQ"/>
+                            <constraint firstItem="CiO-T7-b1g" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="hTd-wJ-5hM"/>
+                            <constraint firstItem="eq7-XS-5V6" firstAttribute="top" secondItem="jIl-dI-g4g" secondAttribute="bottom" constant="21" id="ifN-xu-Jpp"/>
+                            <constraint firstAttribute="trailing" secondItem="gOD-DO-681" secondAttribute="trailing" constant="16" id="lPa-iv-gdq"/>
+                            <constraint firstItem="gOD-DO-681" firstAttribute="top" secondItem="NJl-rO-0vi" secondAttribute="bottom" constant="8" id="lTG-8s-wS5"/>
+                            <constraint firstAttribute="trailing" secondItem="jIl-dI-g4g" secondAttribute="trailing" constant="16" id="qqp-d4-Cg5"/>
+                            <constraint firstAttribute="centerX" secondItem="eq7-XS-5V6" secondAttribute="centerX" id="tLR-TJ-eIQ"/>
+                            <constraint firstItem="jIl-dI-g4g" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="xiY-1f-Xms"/>
+                            <constraint firstItem="jIl-dI-g4g" firstAttribute="top" secondItem="CiO-T7-b1g" secondAttribute="bottom" constant="8" id="z3f-yp-HjF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="productDescriptionField" destination="CiO-T7-b1g" id="aya-iO-nD8"/>
+                        <outlet property="productNameField" destination="gOD-DO-681" id="DXJ-eg-D2j"/>
+                        <outlet property="productPriceField" destination="jIl-dI-g4g" id="OT9-q5-AKy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXw-DF-eEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

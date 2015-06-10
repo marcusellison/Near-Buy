@@ -9,16 +9,20 @@
 import UIKit
 import AVFoundation
 
-class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class TakePhotoViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
     
-    @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var capturedProductImageView: UIImageView!
     
     private let captureSession = AVCaptureSession()
     private let sessionQueue = dispatch_queue_create("com.marcusellison.nearbuy.sessionqueue", nil)
     
     private let previewLayer: AVCaptureVideoPreviewLayer
+    
+    private let stillCameraOutput = AVCaptureStillImageOutput()
+    
+    private let outputQueue = dispatch_queue_create("com.marcusellison.nearbuy.outputqueue", nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +38,21 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         super.init(coder: aDecoder)
         
         dispatch_async(sessionQueue, { () -> Void in
+            
             let inputDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
             var error: NSError?
             let input = AVCaptureDeviceInput(device: inputDevice, error: &error)
-            // error checking
             
             if self.captureSession.canAddInput(input) {
                 self.captureSession.addInput(input)
             } // else more error handling
+            
+            
+            if self.captureSession.canAddOutput(self.stillCameraOutput) {
+                self.captureSession.addOutput(self.stillCameraOutput)
+            }
+            
+            
             
             self.captureSession.startRunning()
             
@@ -59,7 +70,12 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        //adjust bounds
         previewLayer.frame = previewView.bounds
+        
+        // adjust aspect ration of preview
+        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        
     }
     
 
@@ -72,14 +88,64 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    // saving the image
     @IBAction func takePhoto(sender: AnyObject) {
+        
+        dispatch_async(outputQueue, { () -> Void in
+            let connection = self.stillCameraOutput.connectionWithMediaType(AVMediaTypeVideo)
+            
+            // update the video orientation to the device one
+            connection.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue)!
+            
+            self.stillCameraOutput.captureStillImageAsynchronouslyFromConnection(connection) {
+                (imageDataSampleBuffer, error) -> Void in
+                
+                if error == nil {
+                    
+                    // if the session preset .Photo is used, or if explicitly set in the device's outputSettings
+                    // we get the data already compressed as JPEG
+                    
+                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
+                    
+                    // the sample buffer also contains the metadata, in case we want to modify it
+                    let metadata:NSDictionary = CMCopyDictionaryOfAttachments(nil, imageDataSampleBuffer, CMAttachmentMode(kCMAttachmentMode_ShouldPropagate)).takeUnretainedValue()
+                    
+                    if let image = UIImage(data: imageData) {
+                        // save the image or do something interesting with it
+                        println("saving the image")
+                        println(image)
+                    }
+                }
+                else {
+                    NSLog("error while capturing still image: \(error)")
+                }
+            }
+        })
 
+        
+    }
+    
+    // not being used right now.
+    private class func getTemporaryFileURL() -> NSURL {
+        let guid = NSUUID().UUIDString
+        let outputFile = "video_\(guid).mp4"
+        let outputDirectory = NSTemporaryDirectory()
+        let outputPath = outputDirectory.stringByAppendingPathComponent(outputFile)
+        let outputURL = NSURL.fileURLWithPath(outputPath)
+        
+//         Take out in production
+//        assert(!NSFileManager.defaultManager().fileExistsAtPath(outputPath), "Could not setup an output file. File exists.")
+        
+        return outputURL!
     }
     
     @IBAction func uploadPhoto(sender: AnyObject) {
         
 
     }
+    
     
 
 }
