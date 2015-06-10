@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 // let's decide on this later
 let themeColor = UIColor(red: 0.5, green: 0.41, blue: 0.22, alpha: 1.0)
 
@@ -17,9 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+       
+        /* Initialize Parse */
         
+        var api : RestfulAPI = RestfulAPI();
+        api.initParse()
         
-//        window?.tintColor = themeColor
         return true
     }
 
