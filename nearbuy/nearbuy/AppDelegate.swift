@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 // let's decide on this later
 let themeColor = UIColor(red: 0.5, green: 0.41, blue: 0.22, alpha: 1.0)
 
@@ -17,9 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Parse.enableLocalDatastore()
         
+        // Initialize Parse.
+        Parse.setApplicationId("MXh7k8fs6DYgHe3289YMuEiVXfVT3tfgc39DMqXm",
+            clientKey: "0co1OmbuCeuovw5r2YdbiJ7wh9AkczJaMdoLGOF0")
         
-//        window?.tintColor = themeColor
+        let testObject = PFObject(className: "testImage")
+        testObject["foo"] = "bar"
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            println("Image Saved")
+        }
         return true
     }
 
