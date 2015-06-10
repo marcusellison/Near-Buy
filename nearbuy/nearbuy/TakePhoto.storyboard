@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aRu-j7-hhv">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Take Photo View Controller-->
+        <scene sceneID="AIB-lJ-u2I">
+            <objects>
+                <viewController storyboardIdentifier="takePhoto" id="aRu-j7-hhv" customClass="TakePhotoViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oge-yS-Ave"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nus-Rs-RUf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GGT-3v-7r6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload or Take Pictures of the item you are selling." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahv-IW-Rsq">
+                                <rect key="frame" x="196" y="424" width="208" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="obF-Aq-4fY"/>
+                                    <constraint firstAttribute="height" constant="63" id="tsL-e1-JFO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7H-CP-PPq">
+                                <rect key="frame" x="16" y="525" width="95" height="30"/>
+                                <state key="normal" title="Upload Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="qkg-04-PQI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-6L-UfE">
+                                <rect key="frame" x="262" y="525" width="77" height="30"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="VHi-IV-O6C"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="05w-H1-w0K">
+                                <rect key="frame" x="16" y="288" width="131" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ahv-IW-Rsq" secondAttribute="centerX" id="2wZ-rE-Phb"/>
+                            <constraint firstItem="OD9-6L-UfE" firstAttribute="top" secondItem="ahv-IW-Rsq" secondAttribute="bottom" constant="38" id="6Zh-ZT-mlQ"/>
+                            <constraint firstItem="Nus-Rs-RUf" firstAttribute="top" secondItem="P7H-CP-PPq" secondAttribute="bottom" constant="45" id="DKd-kY-2lE"/>
+                            <constraint firstItem="Nus-Rs-RUf" firstAttribute="top" secondItem="OD9-6L-UfE" secondAttribute="bottom" constant="45" id="ZKs-O0-bqr"/>
+                            <constraint firstAttribute="centerX" secondItem="OD9-6L-UfE" secondAttribute="centerX" id="Zrx-PW-jVk"/>
+                            <constraint firstItem="P7H-CP-PPq" firstAttribute="leading" secondItem="GGT-3v-7r6" secondAttribute="leading" constant="16" id="ozP-UW-d61"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="productImageView" destination="05w-H1-w0K" id="7dY-ou-G05"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F24-Nb-gpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="312" y="1151"/>
+        </scene>
+        <!--Take Photos Detail View Controller-->
+        <scene sceneID="cih-ES-0u3">
+            <objects>
+                <viewController id="AQa-1U-RhL" customClass="TakePhotosDetailViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NJl-rO-0vi"/>
+                        <viewControllerLayoutGuide type="bottom" id="tFh-3q-LaZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pw6-Bp-gOa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you selling?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOD-DO-681">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose a category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZmC-Ek-CNe">
+                                <rect key="frame" x="16" y="234" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBJ-12-Ovs">
+                                <rect key="frame" x="16" y="272" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe it ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-T7-b1g">
+                                <rect key="frame" x="16" y="120" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="WU1-2t-TcU"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="tbX-Lw-v8E"/>
+                                    <constraint firstAttribute="height" constant="30" id="uiJ-fv-cSb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WU1-2t-TcU"/>
+                                        <exclude reference="uiJ-fv-cSb"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gOD-DO-681" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="1Eb-Wp-ZKG"/>
+                            <constraint firstItem="CiO-T7-b1g" firstAttribute="top" secondItem="gOD-DO-681" secondAttribute="bottom" constant="8" id="AK8-vo-s4H"/>
+                            <constraint firstAttribute="trailing" secondItem="ZmC-Ek-CNe" secondAttribute="trailing" constant="16" id="Y42-zO-FC0"/>
+                            <constraint firstItem="gOD-DO-681" firstAttribute="top" secondItem="NJl-rO-0vi" secondAttribute="bottom" constant="8" id="gH5-69-af8"/>
+                            <constraint firstAttribute="trailing" secondItem="CiO-T7-b1g" secondAttribute="trailing" constant="16" id="iR2-VJ-0F8"/>
+                            <constraint firstItem="CiO-T7-b1g" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="lxL-4T-Zd9"/>
+                            <constraint firstAttribute="trailing" secondItem="gOD-DO-681" secondAttribute="trailing" constant="16" id="mqs-n0-pBu"/>
+                            <constraint firstItem="ZmC-Ek-CNe" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="yGl-06-sfY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tXw-DF-eEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971" y="1151"/>
+        </scene>
+    </scenes>
+</document>
