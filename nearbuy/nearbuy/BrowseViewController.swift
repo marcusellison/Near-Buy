@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BrowseViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
+class BrowseViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -30,13 +30,29 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 30
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("tapped \(indexPath)")
+        segueToItemDetailViewController()
     }
 
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width/2.1, height: collectionView.frame.size.width/2.1)
+    }
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        let sectionInsets =  UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        return sectionInsets
+    }
+    
+    func segueToItemDetailViewController() {
+//        var storyboard = UIStoryboard(name: "ItemDetailStoryboard", bundle: nil)
+//        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailStoryboard")
+        println("is this owrking")
+    }
+    
     /*
     // MARK: - Navigation
 
