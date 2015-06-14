@@ -8,7 +8,7 @@
         <!--Item Detail View Controller-->
         <scene sceneID="8Hn-Qz-2ah">
             <objects>
-                <viewController id="6wW-8C-kIc" customClass="ItemDetailViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemDetailViewController" id="6wW-8C-kIc" customClass="ItemDetailViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c73-Hi-pqY"/>
                         <viewControllerLayoutGuide type="bottom" id="k4C-E7-frb"/>
@@ -122,24 +122,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vc5-7W-haT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="543" y="274"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gor-Q2-rTh">
-            <objects>
-                <navigationController storyboardIdentifier="ItemDetailStoryboard" automaticallyAdjustsScrollViewInsets="NO" id="1lH-Pf-wVb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FXt-rb-k4O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6wW-8C-kIc" kind="relationship" relationship="rootViewController" id="2ME-vO-e0z"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AdM-NY-cDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="148" y="274"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
