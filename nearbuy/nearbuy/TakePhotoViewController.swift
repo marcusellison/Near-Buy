@@ -14,6 +14,11 @@ class TakePhotoViewController: UIViewController {
     @IBOutlet weak var previewView: UIView!
     
     @IBOutlet weak var capturedProductImageView: UIImageView!
+    @IBOutlet weak var instructionLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    @IBOutlet weak var capturePhotoView: UIView!
+    
     
     private let captureSession = AVCaptureSession()
     private let sessionQueue = dispatch_queue_create("com.marcusellison.nearbuy.sessionqueue", nil)
@@ -22,12 +27,19 @@ class TakePhotoViewController: UIViewController {
     
     private let stillCameraOutput = AVCaptureStillImageOutput()
     
+    private var capturedPhotos: [UIImage] = []
+    private var capturedPhotoX: CGFloat = 0
+    
     private let outputQueue = dispatch_queue_create("com.marcusellison.nearbuy.outputqueue", nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         previewView.layer.addSublayer(previewLayer)
+        
+        nextButton.hidden = true
+        
+        capturePhotoView.hidden = true
         
     }
     
@@ -93,6 +105,15 @@ class TakePhotoViewController: UIViewController {
     // saving the image
     @IBAction func takePhoto(sender: AnyObject) {
         
+        if capturedPhotos.count > 0 {
+            // Here we want to hide
+            instructionLabel.hidden = true
+            
+            nextButton.hidden = false
+            
+            capturePhotoView.hidden = false
+        }
+        
         dispatch_async(outputQueue, { () -> Void in
             let connection = self.stillCameraOutput.connectionWithMediaType(AVMediaTypeVideo)
             
@@ -116,6 +137,22 @@ class TakePhotoViewController: UIViewController {
                         // save the image or do something interesting with it
                         println("saving the image")
                         println(image)
+                        
+                        
+                        
+                        if self.capturedPhotos.count < 3 {
+                            self.capturedPhotos.append(image)
+                            
+                            for image in self.capturedPhotos {
+                                var imageView = UIImageView(frame: CGRectMake(self.capturedPhotoX, 0, 100, 100));
+                                    imageView.image = image;
+                                    self.capturePhotoView.addSubview(imageView);
+                            }
+                            
+                            self.capturedPhotoX += 120
+                        }
+                        
+                       // self.capturedProductImageView.image = image
                     }
                 }
                 else {

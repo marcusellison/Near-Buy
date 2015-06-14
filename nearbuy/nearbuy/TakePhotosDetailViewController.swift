@@ -38,6 +38,12 @@ class TakePhotosDetailViewController: UIViewController {
         
         println("sell me!")
         
+        println("Product name field: \(productNameField.text)")
+        println("Product name field: \(productDescriptionField.text)")
+        println("Product name field: \(productPriceField.text)")
+        
+        // load data into model.
+        
         
     }
 
