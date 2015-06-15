@@ -105,7 +105,8 @@ class RestfulAPI: NSObject {
         return true
     }
     
-    func queryProducts(params: NSDictionary){
+    func queryProducts(params: NSDictionary) -> [PFObject]? {
+        var products: [PFObject]?
         
         /* Query for all products where username is not the seller */
         var query = PFQuery(className:"Product")
@@ -117,7 +118,6 @@ class RestfulAPI: NSObject {
                 if error == nil {
                     if let productObjects = productObjects as? [PFObject] {
                         let products = productObjects
-                        self.setProducts(products)
                     }
                 } else {
                     println(error?.description)
@@ -126,13 +126,10 @@ class RestfulAPI: NSObject {
         } else {
             
         }
+        return products;
         
     }
     
-    func setProducts(objects: [PFObject]) -> [PFObject] {
-        /* Set these on the Products Object */
-        return objects
-    }
     
     
 }
