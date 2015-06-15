@@ -13,7 +13,7 @@ import Parse
 let applicationID = "MXh7k8fs6DYgHe3289YMuEiVXfVT3tfgc39DMqXm"
 let clientKey = "0co1OmbuCeuovw5r2YdbiJ7wh9AkczJaMdoLGOF0"
 
-class RestfulAPI: NSObject {
+class API: NSObject {
     
     /* Init Parse */
     
@@ -21,6 +21,8 @@ class RestfulAPI: NSObject {
         Parse.enableLocalDatastore()
         Parse.setApplicationId(applicationID, clientKey: clientKey)
     }
+    
+    
     
     /* 
         Auth 
@@ -72,13 +74,14 @@ class RestfulAPI: NSObject {
         product["price"] = productInfo["price"]
         product["shared"] = productInfo["shared"]
         product["category"] = productInfo["category"]
-        let image: UIImage? = productInfo["image"] as? UIImage
+        let image: UIImage = productInfo["image"] as! UIImage
         
         let imageData = UIImagePNGRepresentation(image)
         
+        
         /* Save actual file */
-    
-        let file = PFFile(name:productInfo["name"] as? String, data:imageData)
+        var filename = productInfo["name"] as! String
+        let file = PFFile(name:filename, data:imageData)
         
         product["image"] = file
         
@@ -90,6 +93,7 @@ class RestfulAPI: NSObject {
                 println(error!.description)
             }
         }
+        
         
         return product
     }
@@ -105,7 +109,7 @@ class RestfulAPI: NSObject {
         return true
     }
     
-    func queryProducts(params: NSDictionary) -> [PFObject]? {
+    func queryProducts(params: NSDictionary){
         var products: [PFObject]?
         
         /* Query for all products where username is not the seller */
@@ -117,7 +121,11 @@ class RestfulAPI: NSObject {
                 (productObjects: [AnyObject]?, error: NSError?) -> Void in
                 if error == nil {
                     if let productObjects = productObjects as? [PFObject] {
-                        let products = productObjects
+                        /* Save this on the Parse Local Object */
+                        products = productObjects
+                        
+                        /* Do whatever you want here - use a notification to update the object that it's received */
+                        
                     }
                 } else {
                     println(error?.description)
@@ -126,10 +134,6 @@ class RestfulAPI: NSObject {
         } else {
             
         }
-        return products;
-        
     }
-    
-    
     
 }

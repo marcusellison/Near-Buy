@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         /* Initialize Parse */
         
-        var api : RestfulAPI = RestfulAPI();
+        var api : API = API();
         api.initParse()
         
         return true
