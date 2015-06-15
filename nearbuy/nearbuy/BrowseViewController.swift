@@ -48,9 +48,17 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     }
     
     func segueToItemDetailViewController() {
-//        var storyboard = UIStoryboard(name: "ItemDetailStoryboard", bundle: nil)
-//        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailStoryboard")
-        println("is this owrking")
+        println("got to the segue")        
+        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
+        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+//        var navController = UINavigationController(rootViewController: controller)
+//        navController.pushViewController(controller, animated: true)
+//        let button = UIBarButtonItem(
+//        navController.navigationItem.leftBarButtonItem = button
+        println("is this working")
+//        self.presentViewController(navController, animated: true, completion: nil)
+        self.navigationController!.pushViewController(controller, animated: true)
+        
     }
     
     /*
