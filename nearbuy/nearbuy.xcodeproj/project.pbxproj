@@ -35,6 +35,8 @@
 		A347FD7E1B282134002548F8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347FD7D1B282134002548F8 /* Product.swift */; };
 		A3E959F51B2E82BC0080AC64 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E959F41B2E82BC0080AC64 /* Auth.storyboard */; };
 		A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F61B2E83A80080AC64 /* AuthViewController.swift */; };
+		A3E959F91B2E97840080AC64 /* Shyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F81B2E97840080AC64 /* Shyp.swift */; };
+		A3E959FB1B2E978D0080AC64 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959FA1B2E978D0080AC64 /* Stripe.swift */; };
 		D25368F61B2E38D500DAA78A /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */; };
 		D25368F81B2E38E400DAA78A /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */; };
 		D2E1287A1B27DAFC00221321 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E128791B27DAFC00221321 /* ItemCollectionViewCell.swift */; };
@@ -86,6 +88,8 @@
 		A347FD7D1B282134002548F8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		A3E959F41B2E82BC0080AC64 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		A3E959F61B2E83A80080AC64 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		A3E959F81B2E97840080AC64 /* Shyp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shyp.swift; sourceTree = "<group>"; };
+		A3E959FA1B2E978D0080AC64 /* Stripe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D2E128791B27DAFC00221321 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				3DF79DC71B280C4B00395B0A /* RestfulAPI.swift */,
+				A3E959F81B2E97840080AC64 /* Shyp.swift */,
+				A3E959FA1B2E978D0080AC64 /* Stripe.swift */,
 				A347FD7D1B282134002548F8 /* Product.swift */,
 				A347FD7B1B28212A002548F8 /* User.swift */,
 			);
@@ -348,6 +354,7 @@
 			files = (
 				D2E1287A1B27DAFC00221321 /* ItemCollectionViewCell.swift in Sources */,
 				3DF79DB21B28080A00395B0A /* TakePhotosDetailViewController.swift in Sources */,
+				A3E959F91B2E97840080AC64 /* Shyp.swift in Sources */,
 				D25368F81B2E38E400DAA78A /* ItemDetailTableViewCell.swift in Sources */,
 				D25368F61B2E38D500DAA78A /* ItemDetailViewController.swift in Sources */,
 				3DF79DC81B280C4B00395B0A /* RestfulAPI.swift in Sources */,
@@ -359,6 +366,7 @@
 				A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */,
 				3D3B2C8D1B28112400BA59C8 /* TestViewController.swift in Sources */,
 				A347FD7C1B28212A002548F8 /* User.swift in Sources */,
+				A3E959FB1B2E978D0080AC64 /* Stripe.swift in Sources */,
 				D2E1287E1B27DB3400221321 /* BrowseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
