@@ -33,6 +33,8 @@
 		3DF79DCE1B280C8C00395B0A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF79DCD1B280C8C00395B0A /* libsqlite3.dylib */; };
 		A347FD7C1B28212A002548F8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347FD7B1B28212A002548F8 /* User.swift */; };
 		A347FD7E1B282134002548F8 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347FD7D1B282134002548F8 /* Product.swift */; };
+		A3E959F51B2E82BC0080AC64 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E959F41B2E82BC0080AC64 /* Auth.storyboard */; };
+		A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F61B2E83A80080AC64 /* AuthViewController.swift */; };
 		D25368F61B2E38D500DAA78A /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */; };
 		D25368F81B2E38E400DAA78A /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */; };
 		D2E1287A1B27DAFC00221321 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E128791B27DAFC00221321 /* ItemCollectionViewCell.swift */; };
@@ -82,6 +84,8 @@
 		3DF79DCD1B280C8C00395B0A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		A347FD7B1B28212A002548F8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A347FD7D1B282134002548F8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		A3E959F41B2E82BC0080AC64 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		A3E959F61B2E83A80080AC64 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D2E128791B27DAFC00221321 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 				3DF79DAF1B27F11000395B0A /* TakePhoto.storyboard */,
 				3DD616F51B277B83001FEB6F /* Main.storyboard */,
 				3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */,
+				A3E959F41B2E82BC0080AC64 /* Auth.storyboard */,
 				3DD616F81B277B83001FEB6F /* Images.xcassets */,
 				3DD616FA1B277B83001FEB6F /* LaunchScreen.xib */,
 				D273BB3E1B28135700511C10 /* Framework */,
@@ -219,6 +224,7 @@
 				D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */,
 				3DD616F31B277B83001FEB6F /* ViewController.swift */,
 				D2E1287B1B27DB2700221321 /* ChatViewController.swift */,
+				A3E959F61B2E83A80080AC64 /* AuthViewController.swift */,
 				3DF79DB11B28080A00395B0A /* TakePhotosDetailViewController.swift */,
 				D2E1287D1B27DB3400221321 /* BrowseViewController.swift */,
 				D2E1287F1B27DB5A00221321 /* TakePhotoViewController.swift */,
@@ -317,6 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E959F51B2E82BC0080AC64 /* Auth.storyboard in Resources */,
 				3D3B2C8B1B280F4C00BA59C8 /* ItemDetail.storyboard in Resources */,
 				3DD616F71B277B83001FEB6F /* Main.storyboard in Resources */,
 				3DD616FC1B277B83001FEB6F /* LaunchScreen.xib in Resources */,
@@ -349,6 +356,7 @@
 				A347FD7E1B282134002548F8 /* Product.swift in Sources */,
 				3DD616F21B277B83001FEB6F /* AppDelegate.swift in Sources */,
 				D2E128801B27DB5A00221321 /* TakePhotoViewController.swift in Sources */,
+				A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */,
 				3D3B2C8D1B28112400BA59C8 /* TestViewController.swift in Sources */,
 				A347FD7C1B28212A002548F8 /* User.swift in Sources */,
 				D2E1287E1B27DB3400221321 /* BrowseViewController.swift in Sources */,
