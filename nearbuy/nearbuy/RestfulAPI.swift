@@ -22,7 +22,9 @@ class RestfulAPI: NSObject {
         Parse.setApplicationId(applicationID, clientKey: clientKey)
     }
     
-    /* Auth */
+    /* 
+        Auth 
+    */
     
     func registerUser(username: String, password: String){
         var user = PFUser()
@@ -57,7 +59,9 @@ class RestfulAPI: NSObject {
         var currentUser = PFUser.currentUser()  // This will now be nil
     }
     
-    /* Sell */
+    /* 
+        Sell 
+    */
     
     func addProduct(productInfo: NSDictionary) -> PFObject {
         var product = PFObject(className: "Product")
@@ -90,7 +94,9 @@ class RestfulAPI: NSObject {
         return product
     }
     
-    /* Buy */
+    /* 
+        Buy 
+    */
     
     func buyProduct(object: PFObject) -> Bool {
         /* Should I save this locally?  Delete it?  For now I'll delete but this could change */

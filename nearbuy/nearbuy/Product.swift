@@ -7,9 +7,36 @@
 //
 
 import UIKit
+import Parse
 
 class Product: NSObject {
-   /* Here's where you'll query all products */
+    
+    var products: [PFObject]?
+    
+    /* Here's where you'll query all products */
+    
+    
+    /* 
+        Search
+    
+    */
+    
+    func search(searchString: String, params: NSDictionary) -> [PFObject]? {
+        var matchedProducts: [PFObject]?
+        if let products = products {
+            for product in products {
+                if let productName = product.productName {
+                    if productName.rangeOfString(searchString, options: .CaseInsensitiveSearch) != nil {
+                        matchedProducts.append(product);
+                    }
+                }
+            }
+        }
+        
+        return matchedProducts
+    
+    }
+    
 
     
 }
