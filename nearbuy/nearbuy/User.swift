@@ -11,5 +11,7 @@ import UIKit
 class User: NSObject {
     /* Represents Authenticated User */
     
+    /* needs address, bank account info, cc info, list of products he's sold? */
+    
    
 }

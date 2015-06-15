@@ -25,11 +25,11 @@ class Product: NSObject {
         var matchedProducts: [PFObject]?
         if let products = products {
             for product in products {
-                if let productName = product.productName {
+                /*if let productName = product.productName {
                     if productName.rangeOfString(searchString, options: .CaseInsensitiveSearch) != nil {
                         matchedProducts.append(product);
                     }
-                }
+                } */
             }
         }
         
