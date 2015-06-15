@@ -9,5 +9,7 @@
 import UIKit
 
 class User: NSObject {
+    /* Represents Authenticated User */
+    
    
 }

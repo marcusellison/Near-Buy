@@ -9,5 +9,7 @@
 import UIKit
 
 class Product: NSObject {
-   
+   /* Here's where you'll query all products */
+
+    
 }
