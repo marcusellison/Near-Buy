@@ -12,8 +12,6 @@ import AVFoundation
 class TakePhotoViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
-    
-    @IBOutlet weak var capturedProductImageView: UIImageView!
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     
@@ -105,14 +103,9 @@ class TakePhotoViewController: UIViewController {
     // saving the image
     @IBAction func takePhoto(sender: AnyObject) {
         
-        if capturedPhotos.count > 0 {
-            // Here we want to hide
-            instructionLabel.hidden = true
-            
-            nextButton.hidden = false
-            
-            capturePhotoView.hidden = false
-        }
+        instructionLabel.hidden = true
+        nextButton.hidden = false
+        capturePhotoView.hidden = false
         
         dispatch_async(outputQueue, { () -> Void in
             let connection = self.stillCameraOutput.connectionWithMediaType(AVMediaTypeVideo)
@@ -151,8 +144,6 @@ class TakePhotoViewController: UIViewController {
                             
                             self.capturedPhotoX += 120
                         }
-                        
-                       // self.capturedProductImageView.image = image
                     }
                 }
                 else {
