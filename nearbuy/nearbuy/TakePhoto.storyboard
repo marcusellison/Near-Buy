@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload or Take Pictures of the item you are selling." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahv-IW-Rsq">
-                                <rect key="frame" x="56" y="392" width="208" height="63"/>
+                                <rect key="frame" x="56" y="421" width="208" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="208" id="obF-Aq-4fY"/>
                                     <constraint firstAttribute="height" constant="63" id="tsL-e1-JFO"/>
@@ -35,17 +35,8 @@
                                     <action selector="uploadPhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="qkg-04-PQI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-6L-UfE">
-                                <rect key="frame" x="131" y="493" width="59" height="30"/>
-                                <state key="normal" title="Take Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="VHi-IV-O6C"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-Cz-Fe8">
-                                <rect key="frame" x="16" y="54" width="288" height="330"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-Cz-Fe8">
+                                <rect key="frame" x="16" y="83" width="288" height="330"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -56,7 +47,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PP9-sz-oW8">
-                                <rect key="frame" x="227" y="493" width="32" height="30"/>
+                                <rect key="frame" x="272" y="493" width="32" height="30"/>
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -72,23 +63,31 @@
                                     <constraint firstAttribute="height" constant="128" id="tEH-tW-LZV"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OD9-6L-UfE">
+                                <rect key="frame" x="122" y="493" width="77" height="30"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="VHi-IV-O6C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eCe-Zl-Lqc" firstAttribute="leading" secondItem="GGT-3v-7r6" secondAttribute="leading" constant="16" id="2sV-JG-u6h"/>
                             <constraint firstAttribute="centerX" secondItem="ahv-IW-Rsq" secondAttribute="centerX" id="2wZ-rE-Phb"/>
-                            <constraint firstItem="OD9-6L-UfE" firstAttribute="top" secondItem="ahv-IW-Rsq" secondAttribute="bottom" constant="38" id="6Zh-ZT-mlQ"/>
-                            <constraint firstItem="dc5-Cz-Fe8" firstAttribute="top" secondItem="oge-yS-Ave" secondAttribute="bottom" constant="34" id="980-tG-yek"/>
+                            <constraint firstItem="OD9-6L-UfE" firstAttribute="top" secondItem="ahv-IW-Rsq" secondAttribute="bottom" constant="9" id="6Zh-ZT-mlQ"/>
                             <constraint firstItem="Nus-Rs-RUf" firstAttribute="top" secondItem="P7H-CP-PPq" secondAttribute="bottom" constant="45" id="DKd-kY-2lE"/>
-                            <constraint firstAttribute="trailing" secondItem="PP9-sz-oW8" secondAttribute="trailing" constant="61" id="Gba-KW-3hs"/>
+                            <constraint firstAttribute="trailing" secondItem="PP9-sz-oW8" secondAttribute="trailing" constant="16" id="Gba-KW-3hs"/>
                             <constraint firstItem="Nus-Rs-RUf" firstAttribute="top" secondItem="PP9-sz-oW8" secondAttribute="bottom" constant="45" id="M8M-zb-Le5"/>
                             <constraint firstAttribute="trailing" secondItem="dc5-Cz-Fe8" secondAttribute="trailing" constant="16" id="OTI-gB-FPq"/>
                             <constraint firstItem="Nus-Rs-RUf" firstAttribute="top" secondItem="OD9-6L-UfE" secondAttribute="bottom" constant="45" id="ZKs-O0-bqr"/>
-                            <constraint firstAttribute="centerX" secondItem="OD9-6L-UfE" secondAttribute="centerX" id="Zrx-PW-jVk"/>
-                            <constraint firstItem="OD9-6L-UfE" firstAttribute="leading" secondItem="eCe-Zl-Lqc" secondAttribute="trailing" constant="115" id="d7l-ZZ-qRf"/>
-                            <constraint firstItem="eCe-Zl-Lqc" firstAttribute="top" secondItem="dc5-Cz-Fe8" secondAttribute="bottom" constant="8" id="ezM-hg-R4m"/>
+                            <constraint firstAttribute="centerX" secondItem="OD9-6L-UfE" secondAttribute="centerX" constant="-0.5" id="Zrx-PW-jVk"/>
+                            <constraint firstItem="OD9-6L-UfE" firstAttribute="leading" secondItem="eCe-Zl-Lqc" secondAttribute="trailing" constant="106" id="d7l-ZZ-qRf"/>
+                            <constraint firstItem="eCe-Zl-Lqc" firstAttribute="top" secondItem="dc5-Cz-Fe8" secondAttribute="bottom" constant="-53" id="ezM-hg-R4m"/>
                             <constraint firstItem="P7H-CP-PPq" firstAttribute="leading" secondItem="GGT-3v-7r6" secondAttribute="leading" constant="16" id="ozP-UW-d61"/>
-                            <constraint firstItem="PP9-sz-oW8" firstAttribute="top" secondItem="dc5-Cz-Fe8" secondAttribute="bottom" constant="141" id="vX1-rx-oSp"/>
+                            <constraint firstItem="PP9-sz-oW8" firstAttribute="top" secondItem="dc5-Cz-Fe8" secondAttribute="bottom" constant="80" id="vX1-rx-oSp"/>
                             <constraint firstItem="dc5-Cz-Fe8" firstAttribute="leading" secondItem="GGT-3v-7r6" secondAttribute="leading" constant="16" id="w4o-23-98X"/>
                         </constraints>
                     </view>
@@ -107,7 +106,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="573.33333333333337" y="1089.6133333333332"/>
+            <point key="canvasLocation" x="573" y="1089"/>
         </scene>
         <!--Take Photos Detail View Controller-->
         <scene sceneID="cih-ES-0u3">
@@ -121,12 +120,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you selling?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOD-DO-681">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you selling?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOD-DO-681">
                                 <rect key="frame" x="16" y="28" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe it ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-T7-b1g">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe it ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-T7-b1g">
                                 <rect key="frame" x="16" y="70" width="288" height="156"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="coX-X7-9HZ"/>
@@ -134,25 +133,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jIl-dI-g4g">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jIl-dI-g4g">
                                 <rect key="frame" x="16" y="234" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq7-XS-5V6">
-                                <rect key="frame" x="141" y="285" width="38" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq7-XS-5V6">
+                                <rect key="frame" x="141" y="329" width="38" height="30"/>
                                 <state key="normal" title="Sell it">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onSell:" destination="AQa-1U-RhL" eventType="touchUpInside" id="Tce-jW-I8b"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHT-qL-j22">
-                                <rect key="frame" x="95" y="285" width="48" height="30"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,13 +154,11 @@
                             <constraint firstAttribute="trailing" secondItem="CiO-T7-b1g" secondAttribute="trailing" constant="16" id="ZaD-WZ-DVI"/>
                             <constraint firstItem="gOD-DO-681" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="Znl-Ye-BeQ"/>
                             <constraint firstItem="CiO-T7-b1g" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="hTd-wJ-5hM"/>
-                            <constraint firstItem="eq7-XS-5V6" firstAttribute="top" secondItem="jIl-dI-g4g" secondAttribute="bottom" constant="21" id="ifN-xu-Jpp"/>
+                            <constraint firstItem="eq7-XS-5V6" firstAttribute="top" secondItem="jIl-dI-g4g" secondAttribute="bottom" constant="65" id="ifN-xu-Jpp"/>
                             <constraint firstAttribute="trailing" secondItem="gOD-DO-681" secondAttribute="trailing" constant="16" id="lPa-iv-gdq"/>
-                            <constraint firstItem="gOD-DO-681" firstAttribute="top" secondItem="NJl-rO-0vi" secondAttribute="bottom" constant="8" id="lTG-8s-wS5"/>
-                            <constraint firstItem="MHT-qL-j22" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="95" id="qLR-cm-rm9"/>
+                            <constraint firstItem="gOD-DO-681" firstAttribute="top" secondItem="NJl-rO-0vi" secondAttribute="bottom" constant="-36" id="lTG-8s-wS5"/>
                             <constraint firstAttribute="trailing" secondItem="jIl-dI-g4g" secondAttribute="trailing" constant="16" id="qqp-d4-Cg5"/>
                             <constraint firstAttribute="centerX" secondItem="eq7-XS-5V6" secondAttribute="centerX" id="tLR-TJ-eIQ"/>
-                            <constraint firstItem="MHT-qL-j22" firstAttribute="top" secondItem="jIl-dI-g4g" secondAttribute="bottom" constant="21" id="uov-Nc-W26"/>
                             <constraint firstItem="jIl-dI-g4g" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="xiY-1f-Xms"/>
                             <constraint firstItem="jIl-dI-g4g" firstAttribute="top" secondItem="CiO-T7-b1g" secondAttribute="bottom" constant="8" id="z3f-yp-HjF"/>
                         </constraints>
