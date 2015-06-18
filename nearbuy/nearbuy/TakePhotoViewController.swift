@@ -112,7 +112,7 @@ class TakePhotoViewController: UIViewController {
             
             // update the video orientation to the device one
             connection.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue)!
-            
+        
             self.stillCameraOutput.captureStillImageAsynchronouslyFromConnection(connection) {
                 (imageDataSampleBuffer, error) -> Void in
                 

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3D3B2C8B1B280F4C00BA59C8 /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */; };
 		3D3B2C8D1B28112400BA59C8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */; };
+		3DA8CD291B337DA100BAE6E8 /* PickCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */; };
+		3DA8CD2B1B337E6200BAE6E8 /* SellerAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */; };
+		3DA8CD2D1B33828C00BAE6E8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD2C1B33828C00BAE6E8 /* CategoryCell.swift */; };
+		3DA8CD2F1B338AB900BAE6E8 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA8CD2E1B338AB900BAE6E8 /* Welcome.storyboard */; };
+		3DA8CD311B338B5900BAE6E8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD301B338B5900BAE6E8 /* WelcomeViewController.swift */; };
 		3DD616F21B277B83001FEB6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD616F11B277B83001FEB6F /* AppDelegate.swift */; };
 		3DD616F41B277B83001FEB6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD616F31B277B83001FEB6F /* ViewController.swift */; };
 		3DD616F71B277B83001FEB6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD616F51B277B83001FEB6F /* Main.storyboard */; };
@@ -58,6 +63,11 @@
 /* Begin PBXFileReference section */
 		3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
 		3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCategoriesViewController.swift; sourceTree = "<group>"; };
+		3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerAddressViewController.swift; sourceTree = "<group>"; };
+		3DA8CD2C1B33828C00BAE6E8 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		3DA8CD2E1B338AB900BAE6E8 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		3DA8CD301B338B5900BAE6E8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		3DD616EC1B277B83001FEB6F /* nearbuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nearbuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD616F01B277B83001FEB6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DD616F11B277B83001FEB6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +167,7 @@
 				3DF79DAF1B27F11000395B0A /* TakePhoto.storyboard */,
 				3DD616F51B277B83001FEB6F /* Main.storyboard */,
 				3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */,
+				3DA8CD2E1B338AB900BAE6E8 /* Welcome.storyboard */,
 				A3E959F41B2E82BC0080AC64 /* Auth.storyboard */,
 				3DD616F81B277B83001FEB6F /* Images.xcassets */,
 				3DD616FA1B277B83001FEB6F /* LaunchScreen.xib */,
@@ -229,7 +240,10 @@
 			children = (
 				D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */,
 				3DD616F31B277B83001FEB6F /* ViewController.swift */,
+				3DA8CD301B338B5900BAE6E8 /* WelcomeViewController.swift */,
+				3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */,
 				D2E1287B1B27DB2700221321 /* ChatViewController.swift */,
+				3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */,
 				A3E959F61B2E83A80080AC64 /* AuthViewController.swift */,
 				3DF79DB11B28080A00395B0A /* TakePhotosDetailViewController.swift */,
 				D2E1287D1B27DB3400221321 /* BrowseViewController.swift */,
@@ -244,6 +258,7 @@
 				D2E128791B27DAFC00221321 /* ItemCollectionViewCell.swift */,
 				D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */,
 				3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */,
+				3DA8CD2C1B33828C00BAE6E8 /* CategoryCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -335,6 +350,7 @@
 				3DD616FC1B277B83001FEB6F /* LaunchScreen.xib in Resources */,
 				3DF79DB01B27F11000395B0A /* TakePhoto.storyboard in Resources */,
 				3DD616F91B277B83001FEB6F /* Images.xcassets in Resources */,
+				3DA8CD2F1B338AB900BAE6E8 /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,11 +369,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2E1287A1B27DAFC00221321 /* ItemCollectionViewCell.swift in Sources */,
+				3DA8CD311B338B5900BAE6E8 /* WelcomeViewController.swift in Sources */,
+				3DA8CD2D1B33828C00BAE6E8 /* CategoryCell.swift in Sources */,
 				3DF79DB21B28080A00395B0A /* TakePhotosDetailViewController.swift in Sources */,
 				A3E959F91B2E97840080AC64 /* Shyp.swift in Sources */,
 				D25368F81B2E38E400DAA78A /* ItemDetailTableViewCell.swift in Sources */,
 				D25368F61B2E38D500DAA78A /* ItemDetailViewController.swift in Sources */,
 				3DF79DC81B280C4B00395B0A /* RestfulAPI.swift in Sources */,
+				3DA8CD2B1B337E6200BAE6E8 /* SellerAddressViewController.swift in Sources */,
 				3DD616F41B277B83001FEB6F /* ViewController.swift in Sources */,
 				D2E1287C1B27DB2700221321 /* ChatViewController.swift in Sources */,
 				A347FD7E1B282134002548F8 /* Product.swift in Sources */,
@@ -368,6 +387,7 @@
 				A347FD7C1B28212A002548F8 /* User.swift in Sources */,
 				A3E959FB1B2E978D0080AC64 /* Stripe.swift in Sources */,
 				D2E1287E1B27DB3400221321 /* BrowseViewController.swift in Sources */,
+				3DA8CD291B337DA100BAE6E8 /* PickCategoriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
