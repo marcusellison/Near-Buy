@@ -9,8 +9,12 @@
 import UIKit
 import Parse
 import Bolts
+
 // let's decide on this later
 let themeColor = UIColor(red: 0.5, green: 0.41, blue: 0.22, alpha: 1.0)
+
+/* Stripe Key */
+let stripeKey = ""
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var api : API = API();
         api.initParse()
+        
+        /* Init Stripe */
+        Stripe.setDefaultPublishableKey(stripeKey)
         
         // instantiate storyboards
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)

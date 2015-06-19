@@ -121,14 +121,9 @@ class API: NSObject {
                     if let productObjects = productObjects as? [PFObject] {
                         /* Save this on the Parse Local Object */
                         products = productObjects
-<<<<<<< HEAD
                         println("\(products)")
-                        /* Do whatever needs to be done here - use a notification to update a specific object */
-=======
                         
-                        println("\(products)")
                         /* Do whatever you want here - use a notification to update a specific object */
->>>>>>> 3550ddbab34643f537fa06c3e6149b839b260e1c
                         
                     }
                 } else {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15EAC0501B33F3310000EF67 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EAC04F1B33F3310000EF67 /* Social.framework */; };
+		15EAC0521B33F3390000EF67 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EAC0511B33F3390000EF67 /* Accounts.framework */; };
+		15EAC0541B33F6EA0000EF67 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EAC0531B33F6EA0000EF67 /* Payments.swift */; };
 		2632977908EF25C5FD1B006E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5C74D7ECBF00B2F86ECBAD /* libPods.a */; };
 		3D3B2C8B1B280F4C00BA59C8 /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */; };
 		3D3B2C8D1B28112400BA59C8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */; };
@@ -42,7 +45,6 @@
 		A3E959F51B2E82BC0080AC64 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E959F41B2E82BC0080AC64 /* Auth.storyboard */; };
 		A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F61B2E83A80080AC64 /* AuthViewController.swift */; };
 		A3E959F91B2E97840080AC64 /* Shyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F81B2E97840080AC64 /* Shyp.swift */; };
-		A3E959FB1B2E978D0080AC64 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959FA1B2E978D0080AC64 /* Stripe.swift */; };
 		D25368F61B2E38D500DAA78A /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */; };
 		D25368F81B2E38E400DAA78A /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */; };
 		D254DC291B33C59700FB976F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D254DC281B33C59700FB976F /* Settings.storyboard */; };
@@ -64,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15B464921B33F175000817FB /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		15EAC04F1B33F3310000EF67 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		15EAC0511B33F3390000EF67 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		15EAC0531B33F6EA0000EF67 /* Payments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
 		3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
 		3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCategoriesViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +110,6 @@
 		A3E959F41B2E82BC0080AC64 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		A3E959F61B2E83A80080AC64 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A3E959F81B2E97840080AC64 /* Shyp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shyp.swift; sourceTree = "<group>"; };
-		A3E959FA1B2E978D0080AC64 /* Stripe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D254DC281B33C59700FB976F /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -121,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15EAC0521B33F3390000EF67 /* Accounts.framework in Frameworks */,
+				15EAC0501B33F3310000EF67 /* Social.framework in Frameworks */,
 				3DF79DCE1B280C8C00395B0A /* libsqlite3.dylib in Frameworks */,
 				3DF79DCC1B280C7F00395B0A /* libz.dylib in Frameworks */,
 				3DF79DCA1B280C7100395B0A /* SystemConfiguration.framework in Frameworks */,
@@ -171,6 +178,7 @@
 		3DD616EE1B277B83001FEB6F /* nearbuy */ = {
 			isa = PBXGroup;
 			children = (
+				15B464921B33F175000817FB /* Bridging-Header.h */,
 				3DD616F11B277B83001FEB6F /* AppDelegate.swift */,
 				A347FD7A1B282111002548F8 /* Models */,
 				D2E128781B27DAA300221321 /* Views */,
@@ -228,8 +236,8 @@
 			children = (
 				3DF79DC71B280C4B00395B0A /* RestfulAPI.swift */,
 				A3E959F81B2E97840080AC64 /* Shyp.swift */,
-				A3E959FA1B2E978D0080AC64 /* Stripe.swift */,
 				A347FD7D1B282134002548F8 /* Product.swift */,
+				15EAC0531B33F6EA0000EF67 /* Payments.swift */,
 				A347FD7B1B28212A002548F8 /* User.swift */,
 			);
 			name = Models;
@@ -238,6 +246,8 @@
 		B824A1D489236F67415F20F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15EAC0511B33F3390000EF67 /* Accounts.framework */,
+				15EAC04F1B33F3310000EF67 /* Social.framework */,
 				6C5C74D7ECBF00B2F86ECBAD /* libPods.a */,
 			);
 			name = Frameworks;
@@ -344,7 +354,7 @@
 				TargetAttributes = {
 					3DD616EB1B277B83001FEB6F = {
 						CreatedOnToolsVersion = 6.3.2;
-						DevelopmentTeam = JSH982M67C;
+						DevelopmentTeam = N7S4HUUEJF;
 					};
 					3DD617001B277B83001FEB6F = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -452,7 +462,7 @@
 				A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */,
 				3D3B2C8D1B28112400BA59C8 /* TestViewController.swift in Sources */,
 				A347FD7C1B28212A002548F8 /* User.swift in Sources */,
-				A3E959FB1B2E978D0080AC64 /* Stripe.swift in Sources */,
+				15EAC0541B33F6EA0000EF67 /* Payments.swift in Sources */,
 				D2E1287E1B27DB3400221321 /* BrowseViewController.swift in Sources */,
 				3DA8CD291B337DA100BAE6E8 /* PickCategoriesViewController.swift in Sources */,
 			);
@@ -592,6 +602,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "nearbuy/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -610,6 +621,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "nearbuy/Bridging-Header.h";
 			};
 			name = Release;
 		};
