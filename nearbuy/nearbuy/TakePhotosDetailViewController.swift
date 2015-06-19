@@ -15,6 +15,8 @@ class TakePhotosDetailViewController: UIViewController {
     
     var sampleImage : UIImage?
     
+    var productImage : UIImage?
+    
     
     // Should this always be implicity unwrapped?
     private var product: Product!
@@ -25,7 +27,9 @@ class TakePhotosDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         sampleImage = UIImage(named:"bicycle")!
-        println("\(sampleImage)")
+        
+        println("image")
+        println(productImage)
     }
 
     override func didReceiveMemoryWarning() {

@@ -53,7 +53,7 @@
                                 </state>
                                 <connections>
                                     <action selector="takePhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="bwJ-zs-MAq"/>
-                                    <segue destination="AQa-1U-RhL" kind="push" id="jig-en-HDe"/>
+                                    <segue destination="AQa-1U-RhL" kind="push" identifier="ProductDetail" id="jig-en-HDe"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-Zl-Lqc">
