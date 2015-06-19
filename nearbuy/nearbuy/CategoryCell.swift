@@ -8,17 +8,39 @@
 
 import UIKit
 
+protocol CategoryCellDelegate {
+  func userTapped(category: String)
+}
+
 class CategoryCell: UITableViewCell {
+    
+    var delegate = CategoryCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        self.userInteractionEnabled = true
+
+        self.addGestureRecognizer(tapRecognizer)
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    
+    func userTapped(){
+        println("Image tapped")
+        
+        if let delegate = delegate {
+            delegate.userTapped(tweet!.user!)
+        }
+        
     }
 
 }

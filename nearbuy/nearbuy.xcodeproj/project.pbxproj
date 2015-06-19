@@ -246,8 +246,8 @@
 				3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */,
 				A3E959F61B2E83A80080AC64 /* AuthViewController.swift */,
 				3DF79DB11B28080A00395B0A /* TakePhotosDetailViewController.swift */,
-				D2E1287D1B27DB3400221321 /* BrowseViewController.swift */,
 				D2E1287F1B27DB5A00221321 /* TakePhotoViewController.swift */,
+				D2E1287D1B27DB3400221321 /* BrowseViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

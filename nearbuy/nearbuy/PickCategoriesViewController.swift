@@ -12,8 +12,7 @@ class PickCategoriesViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var categories = ["art", "fashion", "electronics", "home", "sports", "other"]
-    
+    var categories = ["art", "fashion", "electronics", "home", "sports", "other"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,6 @@ class PickCategoriesViewController: UIViewController, UITableViewDelegate, UITab
         tableView.delegate = self
         tableView.dataSource = self
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

@@ -253,6 +253,10 @@
                                                 <constraint firstAttribute="centerX" secondItem="Nfi-Xq-B9T" secondAttribute="centerX" id="mBp-pj-7s8"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="HnD-HB-Sll" appends="YES" id="LOG-vO-nqW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -271,6 +275,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNt-2y-Kur" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HnD-HB-Sll"/>
             </objects>
             <point key="canvasLocation" x="950" y="1806"/>
         </scene>

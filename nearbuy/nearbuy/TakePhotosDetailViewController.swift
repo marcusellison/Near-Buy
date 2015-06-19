@@ -13,8 +13,6 @@ class TakePhotosDetailViewController: UIViewController {
     @IBOutlet weak var productDescriptionField: UITextField!
     @IBOutlet weak var productPriceField: UITextField!
     
-    var sampleImage : UIImage?
-    
     var productImage : UIImage?
     
     
@@ -26,10 +24,6 @@ class TakePhotosDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        sampleImage = UIImage(named:"bicycle")!
-        
-        println("image")
-        println(productImage)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +41,8 @@ class TakePhotosDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
     @IBAction func onSell(sender: AnyObject) {
         
         println("sell me!")
@@ -56,21 +52,15 @@ class TakePhotosDetailViewController: UIViewController {
         println("Product name field: \(productPriceField.text)")
         
         // need to pull in image and link up
-        var image = self.sampleImage;
-        println("\(image)")
+        var image = self.productImage
         
-        
-        /*
-        var params: NSDictionary = ["username":"kvodel@mixpanel.com",
-            "name":"testing",
-            "description":"testing",
-            "price":"100",
+        var params: NSDictionary = ["username":"seller@awesome.com",
+            "name":productNameField.text,
+            "description":productDescriptionField.text,
+            "price": productPriceField.text,
             "shared":"true",
             "category":"shoes",
-            "image":image]
-        */
-
-        // "image": image
+            "image":image!]
         
         // product.create(params)
         
