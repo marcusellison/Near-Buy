@@ -13,7 +13,7 @@ protocol CategoryCellDelegate {
 }
 
 class CategoryCell: UITableViewCell {
-    
+    /*
     var delegate = CategoryCellDelegate?
 
     override func awakeFromNib() {
@@ -42,5 +42,7 @@ class CategoryCell: UITableViewCell {
         }
         
     }
+
+*/
 
 }
