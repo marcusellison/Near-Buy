@@ -44,6 +44,8 @@
 		A3E959FB1B2E978D0080AC64 /* Stripe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959FA1B2E978D0080AC64 /* Stripe.swift */; };
 		D25368F61B2E38D500DAA78A /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */; };
 		D25368F81B2E38E400DAA78A /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */; };
+		D254DC291B33C59700FB976F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D254DC281B33C59700FB976F /* Settings.storyboard */; };
+		D254DC2B1B33C5CC00FB976F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */; };
 		D2E1287A1B27DAFC00221321 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E128791B27DAFC00221321 /* ItemCollectionViewCell.swift */; };
 		D2E1287C1B27DB2700221321 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E1287B1B27DB2700221321 /* ChatViewController.swift */; };
 		D2E1287E1B27DB3400221321 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E1287D1B27DB3400221321 /* BrowseViewController.swift */; };
@@ -102,6 +104,8 @@
 		A3E959FA1B2E978D0080AC64 /* Stripe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stripe.swift; sourceTree = "<group>"; };
 		D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
+		D254DC281B33C59700FB976F /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D2E128791B27DAFC00221321 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2E1287B1B27DB2700221321 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D2E1287D1B27DB3400221321 /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				3DF79DAF1B27F11000395B0A /* TakePhoto.storyboard */,
 				3DD616F51B277B83001FEB6F /* Main.storyboard */,
 				3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */,
+				D254DC281B33C59700FB976F /* Settings.storyboard */,
 				3DA8CD2E1B338AB900BAE6E8 /* Welcome.storyboard */,
 				A3E959F41B2E82BC0080AC64 /* Auth.storyboard */,
 				3DD616F81B277B83001FEB6F /* Images.xcassets */,
@@ -248,6 +253,7 @@
 				3DF79DB11B28080A00395B0A /* TakePhotosDetailViewController.swift */,
 				D2E1287D1B27DB3400221321 /* BrowseViewController.swift */,
 				D2E1287F1B27DB5A00221321 /* TakePhotoViewController.swift */,
+				D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 				A3E959F51B2E82BC0080AC64 /* Auth.storyboard in Resources */,
 				3D3B2C8B1B280F4C00BA59C8 /* ItemDetail.storyboard in Resources */,
 				3DD616F71B277B83001FEB6F /* Main.storyboard in Resources */,
+				D254DC291B33C59700FB976F /* Settings.storyboard in Resources */,
 				3DD616FC1B277B83001FEB6F /* LaunchScreen.xib in Resources */,
 				3DF79DB01B27F11000395B0A /* TakePhoto.storyboard in Resources */,
 				3DD616F91B277B83001FEB6F /* Images.xcassets in Resources */,
@@ -370,6 +377,7 @@
 			files = (
 				D2E1287A1B27DAFC00221321 /* ItemCollectionViewCell.swift in Sources */,
 				3DA8CD311B338B5900BAE6E8 /* WelcomeViewController.swift in Sources */,
+				D254DC2B1B33C5CC00FB976F /* SettingsViewController.swift in Sources */,
 				3DA8CD2D1B33828C00BAE6E8 /* CategoryCell.swift in Sources */,
 				3DF79DB21B28080A00395B0A /* TakePhotosDetailViewController.swift in Sources */,
 				A3E959F91B2E97840080AC64 /* Shyp.swift in Sources */,
