@@ -25,7 +25,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var api : API = API();
         api.initParse()
         
-    
+        // instantiate storyboards
+        let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
+        let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+      
+        // instantiate VCs within storyboards
+        let buyViewController = buyStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
+        let sellViewController = sellStoryboard.instantiateViewControllerWithIdentifier("takePhoto") as! TakePhotoViewController
+        let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+        
+        // instantiate tab bar and nav bar
+        let tabBarController = UITabBarController()
+        let navigationController = UINavigationController()
+        
+        // configure tab bar and embed in nav bar
+        let tabBarConfig = [buyViewController, sellViewController, settingsViewController]
+        tabBarController.viewControllers = tabBarConfig
+        navigationController.pushViewController(tabBarController, animated: true)
+        window?.rootViewController = navigationController
+        
+        // customize tab bar
+        buyViewController.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
+        sellViewController.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
+        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 3)
+        
         return true
     }
 

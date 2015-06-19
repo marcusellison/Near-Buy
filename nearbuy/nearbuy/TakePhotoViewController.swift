@@ -17,6 +17,8 @@ class TakePhotoViewController: UIViewController {
     
     @IBOutlet weak var capturePhotoView: UIView!
     
+    private var photoImage: UIImage?
+    
     
     private let captureSession = AVCaptureSession()
     private let sessionQueue = dispatch_queue_create("com.marcusellison.nearbuy.sessionqueue", nil)
@@ -89,15 +91,21 @@ class TakePhotoViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ProductDetail" {
+            let takePhotosDetailViewController = segue.destinationViewController as! TakePhotosDetailViewController
+            
+            takePhotosDetailViewController.productImage = self.photoImage
+            
+            
+        }
     }
-    */
     
     
     // saving the image
@@ -112,7 +120,7 @@ class TakePhotoViewController: UIViewController {
             
             // update the video orientation to the device one
             connection.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.currentDevice().orientation.rawValue)!
-            
+        
             self.stillCameraOutput.captureStillImageAsynchronouslyFromConnection(connection) {
                 (imageDataSampleBuffer, error) -> Void in
                 
@@ -130,6 +138,9 @@ class TakePhotoViewController: UIViewController {
                         // save the image or do something interesting with it
                         println("saving the image")
                         println(image)
+                        
+                        // set image
+                        self.photoImage = image
                         
                         
                         
