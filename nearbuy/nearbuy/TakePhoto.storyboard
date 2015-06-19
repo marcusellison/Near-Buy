@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RWq-7S-eH0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aRu-j7-hhv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Take Photos-->
+        <!--TakePhotoViewController-->
         <scene sceneID="AIB-lJ-u2I">
             <objects>
-                <viewController storyboardIdentifier="takePhoto" id="aRu-j7-hhv" customClass="TakePhotoViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="takePhoto" title="TakePhotoViewController" id="aRu-j7-hhv" customClass="TakePhotoViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oge-yS-Ave"/>
                         <viewControllerLayoutGuide type="bottom" id="Nus-Rs-RUf"/>
@@ -278,24 +278,6 @@
                 <tapGestureRecognizer id="HnD-HB-Sll"/>
             </objects>
             <point key="canvasLocation" x="950" y="1806"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="a4z-Fo-fZF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RWq-7S-eH0" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="akk-Xa-GEm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="aRu-j7-hhv" kind="relationship" relationship="rootViewController" id="HnE-LX-ucN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bHY-Lk-L3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="140.26666666666665" y="1089.6133333333332"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
