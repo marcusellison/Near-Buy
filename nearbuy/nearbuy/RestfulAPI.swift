@@ -124,6 +124,7 @@ class API: NSObject {
                         /* Save this on the Parse Local Object */
                         products = productObjects
                         
+                        println("\(products)")
                         /* Do whatever you want here - use a notification to update a specific object */
                         
                     }
