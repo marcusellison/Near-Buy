@@ -22,8 +22,6 @@ class API: NSObject {
         Parse.setApplicationId(applicationID, clientKey: clientKey)
     }
     
-    
-    
     /* 
         Auth 
     */
@@ -123,8 +121,8 @@ class API: NSObject {
                     if let productObjects = productObjects as? [PFObject] {
                         /* Save this on the Parse Local Object */
                         products = productObjects
-                        
-                        /* Do whatever you want here - use a notification to update a specific object */
+                        println("\(products)")
+                        /* Do whatever needs to be done here - use a notification to update a specific object */
                         
                     }
                 } else {

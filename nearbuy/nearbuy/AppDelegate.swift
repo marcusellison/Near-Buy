@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var api : API = API();
         api.initParse()
         
+    
         return true
     }
 

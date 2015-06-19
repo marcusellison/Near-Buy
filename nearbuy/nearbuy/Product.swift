@@ -43,9 +43,9 @@ class Product: NSObject {
         api.queryProducts(params)
     }
     
-    /* 
-        Create Product:
+    /*
     
+        Create Product:
         This maybe shouldn't return anything, but if you do want to do something with the product after it's been saved I'll return the Parse Object for you to use
         
         Example Usage:
