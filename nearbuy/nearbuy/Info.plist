@@ -10,6 +10,21 @@
 	<string>com.marcusellison.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>FacebookAppID</key>
+	<string>1601895506756802</string>
+	<key>FacebookDisplayName</key>
+	<string>Near-Buy</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1601895506756802</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>

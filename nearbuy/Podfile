@@ -1,2 +1,4 @@
 pod 'Stripe'
 pod 'CardIO'
+pod 'FBSDKLoginKit'
+pod 'FBSDKCoreKit'

@@ -242,6 +242,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		A3DB5CFF1B35F10D001D54C3 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A3E959F61B2E83A80080AC64 /* AuthViewController.swift */,
+				A3E959F41B2E82BC0080AC64 /* Auth.storyboard */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
 		B824A1D489236F67415F20F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,7 +269,6 @@
 				3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */,
 				D254DC281B33C59700FB976F /* Settings.storyboard */,
 				3DA8CD2E1B338AB900BAE6E8 /* Welcome.storyboard */,
-				A3E959F41B2E82BC0080AC64 /* Auth.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -289,6 +297,7 @@
 		D2E128771B27DA9B00221321 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A3DB5CFF1B35F10D001D54C3 /* Auth */,
 				3DFFC78C1B34B03D00CC7BA7 /* BrowseViewController.swift */,
 				D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */,
 				3DD616F31B277B83001FEB6F /* ViewController.swift */,
@@ -296,7 +305,6 @@
 				3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */,
 				D2E1287B1B27DB2700221321 /* ChatViewController.swift */,
 				3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */,
-				A3E959F61B2E83A80080AC64 /* AuthViewController.swift */,
 				3DF79DB11B28080A00395B0A /* TakePhotosDetailViewController.swift */,
 				D2E1287F1B27DB5A00221321 /* TakePhotoViewController.swift */,
 				D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */,

@@ -102,7 +102,7 @@ class API: NSObject {
     
     func buyProduct(object: PFObject) -> Bool {
         /* Should I save this locally?  Delete it?  For now I'll delete but this could change */
-        object.deleteInBackground()
+        // object.deleteInBackground()
         
         return true
     }

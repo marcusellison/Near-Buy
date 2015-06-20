@@ -8,7 +8,7 @@
 
 import UIKit
 import Parse
-import Bolts
+
 
 // let's decide on this later
 let themeColor = UIColor(red: 0.5, green: 0.41, blue: 0.22, alpha: 1.0)
@@ -27,10 +27,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /* Initialize Parse */
         
         var api : API = API();
+        var user : User = User()
         api.initParse()
         
         /* Init Stripe */
         Stripe.setDefaultPublishableKey(stripeKey)
+        
+        /* User Authentication Flow */
+        
+        if (PFUser.currentUser() != nil) {
+            /* User is Authed - Take them to root view controller*/
+            
+            
+        } else {
+            /* Parse Facebook Authentication */
+            
+            
+        }
+        
         
         // instantiate storyboards
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
