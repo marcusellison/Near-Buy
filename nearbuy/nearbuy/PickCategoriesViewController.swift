@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol CategoryPickedDelegate {
+    func didSelectCategory(category: String)
+}
+
 class PickCategoriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var categories = ["art", "fashion", "electronics", "home", "sports", "other"]
+    private let categories = ["art", "fashion", "electronics", "home", "sports", "other"]
+    
+    var categoryDelegate: CategoryPickedDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,17 +37,24 @@ class PickCategoriesViewController: UIViewController, UITableViewDelegate, UITab
         return categories.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let category = categories[indexPath.row]
+        
+        self.categoryDelegate?.didSelectCategory(category)
+        
+        navigationController?.popViewControllerAnimated(true )
+        
+    }
+    
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
+   /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    } */
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) as! CategoryCell
         

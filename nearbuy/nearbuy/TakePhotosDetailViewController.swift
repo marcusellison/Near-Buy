@@ -8,22 +8,33 @@
 
 import UIKit
 
-class TakePhotosDetailViewController: UIViewController {
+class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
+    
     @IBOutlet weak var productNameField: UITextField!
     @IBOutlet weak var productDescriptionField: UITextField!
     @IBOutlet weak var productPriceField: UITextField!
+    @IBOutlet weak var categoryField: UITextField!
     
     var productImage : UIImage?
     
+    var pickCategoriesViewController: PickCategoriesViewController?
+    
     
     // Should this always be implicity unwrapped?
-    private var product: Product!
+    private var product: Product = Product(params: [:])
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        //dismiss keyboard on tap
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    func DismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,26 +43,20 @@ class TakePhotosDetailViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        // assigns picks categories as delegate
+        if segue.identifier == "PickCategories" {
+            (segue.destinationViewController as! PickCategoriesViewController).categoryDelegate = self
+        }
     }
-    */
-    
     
     @IBAction func onSell(sender: AnyObject) {
         
-        println("sell me!")
-        
-        println("Product name field: \(productNameField.text)")
-        println("Product name field: \(productDescriptionField.text)")
-        println("Product name field: \(productPriceField.text)")
-        
-        // need to pull in image and link up
         var image = self.productImage
         
         var params: NSDictionary = ["username":"seller@awesome.com",
@@ -59,14 +64,30 @@ class TakePhotosDetailViewController: UIViewController {
             "description":productDescriptionField.text,
             "price": productPriceField.text,
             "shared":"true",
-            "category":"shoes",
+            "category":categoryField.text,
             "image":image!]
         
-        // product.create(params)
+        // probably not the best way to test. Generate alert if field is empty
+        for (title, fieldValue) in params {
+            if "\(fieldValue)" == "" {
+                var alert = UIAlertController(title: "Oops!", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
         
-        // load data into model.
+        for (title, fieldValue) in params {
+            println("Title: \(title), Field Value: \(fieldValue)")
+        }
         
+        // Let's create this!
+        product.create(params)
         
+    }
+    
+    // implementing protocol
+    func didSelectCategory(category: String) {
+        categoryField.text = category
     }
 
 }

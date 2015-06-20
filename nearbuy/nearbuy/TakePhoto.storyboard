@@ -35,7 +35,7 @@
                                     <action selector="uploadPhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="qkg-04-PQI"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-Cz-Fe8">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-Cz-Fe8">
                                 <rect key="frame" x="16" y="83" width="288" height="330"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -46,7 +46,7 @@
                                     <outletCollection property="gestureRecognizers" destination="SHh-pq-bhC" appends="YES" id="V6A-x8-9kQ"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PP9-sz-oW8">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PP9-sz-oW8">
                                 <rect key="frame" x="272" y="493" width="32" height="30"/>
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,7 +56,7 @@
                                     <segue destination="AQa-1U-RhL" kind="push" identifier="ProductDetail" id="jig-en-HDe"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-Zl-Lqc">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-Zl-Lqc">
                                 <rect key="frame" x="16" y="421" width="66" height="74"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -121,12 +121,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you selling?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOD-DO-681">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you selling?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gOD-DO-681">
                                 <rect key="frame" x="16" y="79" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe it ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-T7-b1g">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="156" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Describe it ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-T7-b1g">
                                 <rect key="frame" x="16" y="121" width="288" height="156"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="coX-X7-9HZ"/>
@@ -134,12 +134,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jIl-dI-g4g">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jIl-dI-g4g">
                                 <rect key="frame" x="16" y="345" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq7-XS-5V6">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq7-XS-5V6">
                                 <rect key="frame" x="141" y="416" width="38" height="30"/>
                                 <state key="normal" title="Sell it">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,7 +149,7 @@
                                     <segue destination="Fdy-6O-y7b" kind="push" id="La1-6n-9S3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Buz-9d-1RP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Buz-9d-1RP">
                                 <rect key="frame" x="16" y="298" width="288" height="30"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" notEnabled="YES"/>
@@ -157,13 +157,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTI-q9-K6h">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTI-q9-K6h">
                                 <rect key="frame" x="16" y="297" width="288" height="30"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aco-KX-Acq" kind="push" id="c7K-iY-r79"/>
+                                    <segue destination="aco-KX-Acq" kind="push" identifier="PickCategories" id="c7K-iY-r79"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -190,6 +190,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Product Detail" id="pgj-4f-Qcc"/>
                     <connections>
+                        <outlet property="categoryField" destination="Buz-9d-1RP" id="Vnz-Tr-2m7"/>
                         <outlet property="productDescriptionField" destination="CiO-T7-b1g" id="aya-iO-nD8"/>
                         <outlet property="productNameField" destination="gOD-DO-681" id="DXJ-eg-D2j"/>
                         <outlet property="productPriceField" destination="jIl-dI-g4g" id="OT9-q5-AKy"/>
@@ -254,9 +255,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="HnD-HB-Sll" appends="YES" id="LOG-vO-nqW"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -275,7 +273,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNt-2y-Kur" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="HnD-HB-Sll"/>
             </objects>
             <point key="canvasLocation" x="950" y="1806"/>
         </scene>
