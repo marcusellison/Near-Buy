@@ -15,3 +15,6 @@
 #import "Stripe.h"
 #import "CardIO.h"
 @import Foundation;
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>

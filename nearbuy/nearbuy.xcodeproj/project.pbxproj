@@ -43,6 +43,9 @@
 		A37AF19C1B360865001EE497 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF79DCD1B280C8C00395B0A /* libsqlite3.dylib */; };
 		A37AF19D1B3608EE001EE497 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EAC0511B33F3390000EF67 /* Accounts.framework */; };
 		A37AF19E1B3608F3001EE497 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EAC04F1B33F3310000EF67 /* Social.framework */; };
+		A37AF1B01B3615CB001EE497 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37AF1AF1B3615CB001EE497 /* ParseFacebookUtilsV4.framework */; };
+		A37AF1B31B36164C001EE497 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37AF1B11B36164C001EE497 /* FBSDKCoreKit.framework */; };
+		A37AF1B41B36164C001EE497 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37AF1B21B36164C001EE497 /* FBSDKLoginKit.framework */; };
 		A3E959F51B2E82BC0080AC64 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E959F41B2E82BC0080AC64 /* Auth.storyboard */; };
 		A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F61B2E83A80080AC64 /* AuthViewController.swift */; };
 		A3E959F91B2E97840080AC64 /* Shyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F81B2E97840080AC64 /* Shyp.swift */; };
@@ -110,6 +113,9 @@
 		A347FD7D1B282134002548F8 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		A37AF18E1B36074A001EE497 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A37AF18F1B36074A001EE497 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A37AF1AF1B3615CB001EE497 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		A37AF1B11B36164C001EE497 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A37AF1B21B36164C001EE497 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A3E959F41B2E82BC0080AC64 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		A3E959F61B2E83A80080AC64 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A3E959F81B2E97840080AC64 /* Shyp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shyp.swift; sourceTree = "<group>"; };
@@ -137,13 +143,16 @@
 				A37AF19A1B360856001EE497 /* SystemConfiguration.framework in Frameworks */,
 				A37AF1991B36084E001EE497 /* StoreKit.framework in Frameworks */,
 				A37AF1981B360847001EE497 /* Security.framework in Frameworks */,
+				A37AF1B31B36164C001EE497 /* FBSDKCoreKit.framework in Frameworks */,
 				A37AF1971B36083E001EE497 /* QuartzCore.framework in Frameworks */,
 				A37AF1961B360838001EE497 /* MobileCoreServices.framework in Frameworks */,
 				A37AF1951B360831001EE497 /* CoreLocation.framework in Frameworks */,
 				A37AF1941B360821001EE497 /* CoreGraphics.framework in Frameworks */,
 				A37AF1931B360819001EE497 /* CFNetwork.framework in Frameworks */,
+				A37AF1B41B36164C001EE497 /* FBSDKLoginKit.framework in Frameworks */,
 				A37AF1921B360810001EE497 /* AudioToolbox.framework in Frameworks */,
 				2632977908EF25C5FD1B006E /* libPods.a in Frameworks */,
+				A37AF1B01B3615CB001EE497 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				A37AF1911B36074A001EE497 /* Parse.framework in Frameworks */,
 				A37AF1901B36074A001EE497 /* Bolts.framework in Frameworks */,
 			);
@@ -254,6 +263,9 @@
 		B824A1D489236F67415F20F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A37AF1B11B36164C001EE497 /* FBSDKCoreKit.framework */,
+				A37AF1B21B36164C001EE497 /* FBSDKLoginKit.framework */,
+				A37AF1AF1B3615CB001EE497 /* ParseFacebookUtilsV4.framework */,
 				A37AF18E1B36074A001EE497 /* Bolts.framework */,
 				A37AF18F1B36074A001EE497 /* Parse.framework */,
 				15EAC0511B33F3390000EF67 /* Accounts.framework */,
@@ -620,6 +632,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/cvbourne/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = nearbuy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -639,6 +652,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/cvbourne/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = nearbuy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

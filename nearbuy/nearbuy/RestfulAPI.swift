@@ -17,7 +17,7 @@ class API: NSObject {
     /* Init Parse */
     
     func initParse() {
-        // Parse.enableLocalDatastore()
+        Parse.enableLocalDatastore()
         Parse.setApplicationId(applicationID, clientKey: clientKey)
     }
     
