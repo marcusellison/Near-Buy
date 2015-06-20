@@ -13,9 +13,6 @@ class User: NSObject {
 
     /* Represents Authenticated User */
     
-    func getUser() -> PFUser {
-        return PFUser.currentUser()!
-    }
     
     /* needs address, bank account info, cc info, list of products he's sold? */
     

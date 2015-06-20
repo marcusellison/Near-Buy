@@ -8,7 +8,6 @@
 
 import UIKit
 import Parse
-import Bolts
 
 // let's decide on this later
 let themeColor = UIColor(red: 0.5, green: 0.41, blue: 0.22, alpha: 1.0)
@@ -27,12 +26,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /* Initialize Parse */
         
         var api : API = API();
+        var user : User = User()
         api.initParse()
         
         /* Init Stripe */
         Stripe.setDefaultPublishableKey(stripeKey)
         
+        /* Initialize Facebook */
+        PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        /* User Authentication Flow */
+        
+        if (PFUser.currentUser() != nil) {
+            /* User is Authed - Take them to root view controller*/
+            println("\(PFUser.currentUser())")
+            
+            
+        } else {
+            /* Parse Facebook Authentication */
+            println("authenticate")
+            let navigationController = UINavigationController()
+            let authViewController = AuthViewController()
+            authViewController.view.backgroundColor = UIColor.whiteColor()
+            window?.rootViewController = navigationController
+            navigationController.navigationBarHidden = true
+            navigationController.pushViewController(authViewController, animated: true)
+        }
+        
+        
         // instantiate storyboards
+        /*
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -50,13 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarConfig = [buyViewController, sellViewController, settingsViewController]
         tabBarController.viewControllers = tabBarConfig
         navigationController.pushViewController(tabBarController, animated: true)
-        window?.rootViewController = navigationController
+        // window?.rootViewController = navigationController
         
         // customize tab bar
         buyViewController.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewController.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 3)
-        
+        */
         return true
     }
 
@@ -80,6 +103,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    /* Return Facebook Singleton   */
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String?,
+        annotation: AnyObject?) -> Bool {
+            return FBSDKApplicationDelegate.sharedInstance().application(application,
+                openURL: url,
+                sourceApplication: sourceApplication,
+                annotation: annotation)
     }
 
 

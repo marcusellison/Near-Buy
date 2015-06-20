@@ -7,283 +7,283 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0AF20FBB7BE259CB63F41BC9 /* STPCheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1563B1239D1FF04DF176C6EF /* STPCheckoutViewController.m */; };
-		10C26937204AC68332E3DE87 /* STPCheckoutWebViewAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 33D531D2087F03E60C4499B4 /* STPCheckoutWebViewAdapter.h */; };
-		10F29315471563BB1E4625D8 /* Pods-Stripe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A8E57982D3EF49F7FCB116 /* Pods-Stripe-dummy.m */; };
-		12F9494EFE5DC0E2601EE331 /* STPIOSCheckoutWebViewAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3083D2005C7FDABCFCC0BA25 /* STPIOSCheckoutWebViewAdapter.h */; };
-		199B7089E2F18F570C15388E /* STPColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6051047D3F4FF81DE9D10577 /* STPColorUtils.m */; };
-		1B6B25E695BCFF2E05E29B25 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE60307E19C1ABECD168C9C4 /* Pods-dummy.m */; };
-		1BBF919DDD671B74DB92A550 /* STPToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A1AA3325BFD2E753382CF2 /* STPToken.m */; };
-		23422AF01229A76E20D8D7FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DE12B0787FB70A4BD5EB17 /* Foundation.framework */; };
-		2761415B75E8A5416ABD57B5 /* STPNullabilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D430F3E2A1319CD6DA97108 /* STPNullabilityMacros.h */; };
-		2B5E9A3D26097F34C4569816 /* STPStrictURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 0377BCA6F2C6B4EF24738E0F /* STPStrictURLProtocol.h */; };
-		2FC1602F57AE8A5897E8A916 /* StripeError.h in Headers */ = {isa = PBXBuildFile; fileRef = D301CB880804DDEB8CCBB034 /* StripeError.h */; };
-		3019BB66CE32AC68125A610B /* STPCheckoutOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = C1B7131EE0B199BF002AAA6F /* STPCheckoutOptions.h */; };
-		31C60A4E134BBAEC1BDEC361 /* STPOSXCheckoutWebViewAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AE9E4FCCA2C76D76DD4E429 /* STPOSXCheckoutWebViewAdapter.h */; };
-		368E34547D06592314F63032 /* STPBankAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 68D43336BD5FD430E8FB0E10 /* STPBankAccount.h */; };
-		46F10CC46528C67182335609 /* STPCheckoutDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 28CFAEA873E5FD960B3BF2C1 /* STPCheckoutDelegate.h */; };
-		51A3AE01825A43A4AD1FB0C8 /* Stripe.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EE9B14B22BC797A230B5EF /* Stripe.h */; };
-		547804657823BDE88320AC2F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EE6B41423A3EE387B1AB76 /* Security.framework */; };
-		547FDBAB20EAA52B50066EFE /* STPAPIConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A88DE984DDFFD3BDFDE7D46 /* STPAPIConnection.h */; };
-		623093D6C7D2A27CF0F34AAE /* STPToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 80EFB892223ED263B598FAD7 /* STPToken.h */; };
-		626146E3FD360947CC4DF5DA /* STPFormEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 688875C03FF7CD219C714F0D /* STPFormEncoder.h */; };
-		6732F79BC70F6A99B48CCC5F /* STPBankAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF6B99EA63961DE01B7EDC1 /* STPBankAccount.m */; };
-		6C90293D79498F022BD083F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DE12B0787FB70A4BD5EB17 /* Foundation.framework */; };
-		7A821BFCD2C1F5A1D354563B /* STPCard.h in Headers */ = {isa = PBXBuildFile; fileRef = C968D25F036EC1CB12582F64 /* STPCard.h */; };
-		84D8B4C2CAEF7CCD4B58B452 /* STPCard.m in Sources */ = {isa = PBXBuildFile; fileRef = B08E813EB58E4136A8483335 /* STPCard.m */; };
-		8E106C31589C4731047F099D /* STPOSXCheckoutWebViewAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A2875595332648EC956942 /* STPOSXCheckoutWebViewAdapter.m */; };
-		963D6DC50EBD46C582EFF280 /* STPColorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CE91B75DCD953813DB3E9066 /* STPColorUtils.h */; };
-		9B65C45AAC47678E68A16B3E /* STPAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 820D1921ABFBB2F3D5DF69D2 /* STPAPIClient.h */; };
-		A731B9275BCE133572044623 /* STPCheckoutOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9CCF9CACAA030F28CF60A5 /* STPCheckoutOptions.m */; };
-		A8FDB5672EF3C5B5B3D1A12F /* STPFormEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD56EF600D7FF55F64D61B6 /* STPFormEncoder.m */; };
-		C10210C742CD1CE5C57B95E6 /* STPStrictURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FD85F7A5222F1F8F88DBBF /* STPStrictURLProtocol.m */; };
-		C237A4C6E266C89075089687 /* STPCheckoutViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FEF7C4948393187141494F1 /* STPCheckoutViewController.h */; };
-		D2149DD99DEEBD722243D5F4 /* STPAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4757E348773D3C170C375 /* STPAPIClient.m */; };
-		DAA8A57B56536BFE9F4553E2 /* StripeError.m in Sources */ = {isa = PBXBuildFile; fileRef = 8553EA402C6356F4EA454CBD /* StripeError.m */; };
-		E0C9457960CAFC1C780F2FA9 /* STPIOSCheckoutWebViewAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2CA7AE67F75717E78E06B /* STPIOSCheckoutWebViewAdapter.m */; };
-		E1AD457AEEA2E2618BD0E2AA /* STPCheckoutInternalUIWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E44EB7ACD30A826A926B2E1 /* STPCheckoutInternalUIWebViewController.h */; };
-		EA360BD7005C7DB4A7AE3488 /* STPAPIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B045B7A5E6CD76FCD9FA0825 /* STPAPIConnection.m */; };
-		EDB4F8385AAA704527D83B7F /* STPCheckoutInternalUIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0602AC1655480ECABF064A53 /* STPCheckoutInternalUIWebViewController.m */; };
+		00CCB0AFF6DB5F8DCEAE0380 /* STPAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99FB7D01960443DA48BE66 /* STPAPIClient.m */; };
+		07E6FDD6F6B02CE7E2842257 /* STPIOSCheckoutWebViewAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5624881549F931A83023B8B8 /* STPIOSCheckoutWebViewAdapter.h */; };
+		0FDD77538F2BF28ED0BB8853 /* STPStrictURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6106D621439E9B0E3FF3B6 /* STPStrictURLProtocol.m */; };
+		1D14760241E212079B819B7D /* STPAPIConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = C9F1B47FF31AF15786F6B194 /* STPAPIConnection.h */; };
+		20EDF375C26AC9129A07B447 /* STPAPIConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E808CDC82EFD89068DB1D2 /* STPAPIConnection.m */; };
+		21C5FFAC9F43445F5321A1D9 /* STPOSXCheckoutWebViewAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 8384960D173AE2C3E5F6036D /* STPOSXCheckoutWebViewAdapter.h */; };
+		2F14FCCC0DB8FFD79827A0E1 /* STPFormEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D98172422DECED712AC0C859 /* STPFormEncoder.m */; };
+		304FC7C20FA60177A7513AA0 /* STPStrictURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 87867F1B8E8949E52878F249 /* STPStrictURLProtocol.h */; };
+		334C2F15AC1ABC7AAD0F4882 /* STPNullabilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 169CA9AD537D552937A2D2DD /* STPNullabilityMacros.h */; };
+		35FA1D515895A2CBF3CCA54E /* STPOSXCheckoutWebViewAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FE89D735EEF41BA623588452 /* STPOSXCheckoutWebViewAdapter.m */; };
+		3BBB2371795192AF4EDBF06F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A34D4F8A75F17B379F538B /* Foundation.framework */; };
+		3D925B4DB369EE8910AD6D29 /* StripeError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AFF88233E3D59B5B03A1543 /* StripeError.h */; };
+		41601980C1FEBF4E8B81BCC8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F14FCD7F964052EA1995B3 /* Security.framework */; };
+		436FFF24CBAEA32BFB84D861 /* STPCheckoutViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FAA467E89C0F4715068FE48 /* STPCheckoutViewController.h */; };
+		4809517B673B0922C035041A /* STPIOSCheckoutWebViewAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B825AF139773C40B192273DD /* STPIOSCheckoutWebViewAdapter.m */; };
+		536E4BA8B189EA5A8CDF4DEF /* STPCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC871DB78DD25B5548F846C /* STPCard.h */; };
+		5DB13B9848CAAE621EF1553A /* STPFormEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 300CEEC78DC5C315C7B0B582 /* STPFormEncoder.h */; };
+		744B6CA98E0689E48574F196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A34D4F8A75F17B379F538B /* Foundation.framework */; };
+		76EE0823FCC46064BAC09853 /* STPCheckoutWebViewAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = F08DF9937D0F9C3F9C0A0521 /* STPCheckoutWebViewAdapter.h */; };
+		77B341F6528C43C6B69DA00A /* Pods-Stripe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 355FA014AB1FE50834338CFC /* Pods-Stripe-dummy.m */; };
+		79728D8D3294EF2C289CF797 /* STPCheckoutOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D442FACCFF6420F54E3CE2E /* STPCheckoutOptions.h */; };
+		8C0CED4DDBC790CA55C93D28 /* STPToken.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F644EB77AC313D405B0DEF /* STPToken.m */; };
+		9407342F98F9AA60EA15D8D9 /* STPAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 64BEA1C0DA5AF63CAB04735D /* STPAPIClient.h */; };
+		954002CFF801B512306AFC7C /* STPColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E01633099C2E9174462337B1 /* STPColorUtils.m */; };
+		9D6B9C612E0F8CAFBA6BFBC9 /* STPCheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB22680C404110F1A97E17C /* STPCheckoutViewController.m */; };
+		9F576D83F0ED3AFA7C8102DD /* STPCheckoutInternalUIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A89C76D6B1605F6855B99D /* STPCheckoutInternalUIWebViewController.m */; };
+		A26707004DAC73272BC680AD /* STPColorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F5ABC38961E4C802FC2E89B2 /* STPColorUtils.h */; };
+		A8F96DFAF455F71024CD6F68 /* STPCheckoutDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 872D13E2AB9E6B10DD4E0F84 /* STPCheckoutDelegate.h */; };
+		AC405B6C820EC11325858056 /* STPCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B95991F031A411F018C20B /* STPCard.m */; };
+		AC71F545B1595470B06128D8 /* StripeError.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A6E43409ABEE4C792E62AF /* StripeError.m */; };
+		B54C2AAA354ACE2E12687387 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4434CFF0E1D4B85DEBA664 /* Pods-dummy.m */; };
+		BEF93935C54FEEC5077F3989 /* STPCheckoutInternalUIWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A0AB70A1CDE1CD740AC93C0B /* STPCheckoutInternalUIWebViewController.h */; };
+		C679951DBB316E41BBF62053 /* STPBankAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 917A8C161E30E1DC8E48960B /* STPBankAccount.m */; };
+		CE622807305B2FF033A2D080 /* Stripe.h in Headers */ = {isa = PBXBuildFile; fileRef = 92F9F1A6F2581490FA13559B /* Stripe.h */; };
+		DCDB0A0F35BBE848937932D6 /* STPToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 81818D835E7B77D25C234747 /* STPToken.h */; };
+		F41441699A1D3710DA2BC248 /* STPBankAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B31B6F4341E3D50E2ED0B3 /* STPBankAccount.h */; };
+		FB719DBAE2AD76445BD7558F /* STPCheckoutOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB0EC21271156496B8C5EF2 /* STPCheckoutOptions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A719B47BAA6BE09470959BFD /* PBXContainerItemProxy */ = {
+		DBC3FD6C446066FC7F2DD0DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 17DA494C9C3085C33A89A674 /* Project object */;
+			containerPortal = 74CB7DE1E2FD0D8430F36810 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 92029BDF325F38749D63399D;
+			remoteGlobalIDString = EEA90D55D74342F91C12C47A;
 			remoteInfo = "Pods-Stripe";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0377BCA6F2C6B4EF24738E0F /* STPStrictURLProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPStrictURLProtocol.h; path = Stripe/Checkout/STPStrictURLProtocol.h; sourceTree = "<group>"; };
-		03EE6B41423A3EE387B1AB76 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		0602AC1655480ECABF064A53 /* STPCheckoutInternalUIWebViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCheckoutInternalUIWebViewController.m; path = Stripe/Checkout/STPCheckoutInternalUIWebViewController.m; sourceTree = "<group>"; };
-		13DC9DA90AFCB67E6DE9E143 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		14A1AA3325BFD2E753382CF2 /* STPToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPToken.m; path = Stripe/STPToken.m; sourceTree = "<group>"; };
-		1563B1239D1FF04DF176C6EF /* STPCheckoutViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCheckoutViewController.m; path = Stripe/Checkout/STPCheckoutViewController.m; sourceTree = "<group>"; };
-		255AB18FB8B8A39765D1BEBD /* libPods-Stripe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stripe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		28CFAEA873E5FD960B3BF2C1 /* STPCheckoutDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutDelegate.h; path = Stripe/Checkout/STPCheckoutDelegate.h; sourceTree = "<group>"; };
-		3083D2005C7FDABCFCC0BA25 /* STPIOSCheckoutWebViewAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPIOSCheckoutWebViewAdapter.h; path = Stripe/Checkout/STPIOSCheckoutWebViewAdapter.h; sourceTree = "<group>"; };
-		33D531D2087F03E60C4499B4 /* STPCheckoutWebViewAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutWebViewAdapter.h; path = Stripe/Checkout/STPCheckoutWebViewAdapter.h; sourceTree = "<group>"; };
-		34DE12B0787FB70A4BD5EB17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		37A2875595332648EC956942 /* STPOSXCheckoutWebViewAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPOSXCheckoutWebViewAdapter.m; path = Stripe/Checkout/STPOSXCheckoutWebViewAdapter.m; sourceTree = "<group>"; };
-		3BAD7CB0DA1460C18D7336F0 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		412215197B92F069833CD5E3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		46FD85F7A5222F1F8F88DBBF /* STPStrictURLProtocol.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPStrictURLProtocol.m; path = Stripe/Checkout/STPStrictURLProtocol.m; sourceTree = "<group>"; };
-		4BD56EF600D7FF55F64D61B6 /* STPFormEncoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPFormEncoder.m; path = Stripe/STPFormEncoder.m; sourceTree = "<group>"; };
-		4DCABDA6FDA30E6909C69259 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = CardIO/CardIOViewDelegate.h; sourceTree = "<group>"; };
-		4FC2CA7AE67F75717E78E06B /* STPIOSCheckoutWebViewAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPIOSCheckoutWebViewAdapter.m; path = Stripe/Checkout/STPIOSCheckoutWebViewAdapter.m; sourceTree = "<group>"; };
-		4FEF7C4948393187141494F1 /* STPCheckoutViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutViewController.h; path = Stripe/PublicHeaders/Checkout/STPCheckoutViewController.h; sourceTree = "<group>"; };
-		503D96D8C255346B67955076 /* CardIODetectionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = CardIO/CardIODetectionMode.h; sourceTree = "<group>"; };
-		5DF4757E348773D3C170C375 /* STPAPIClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPAPIClient.m; path = Stripe/STPAPIClient.m; sourceTree = "<group>"; };
-		6051047D3F4FF81DE9D10577 /* STPColorUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPColorUtils.m; path = Stripe/Checkout/STPColorUtils.m; sourceTree = "<group>"; };
-		62246ACF3C7F704829C50C88 /* Pods-Stripe.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stripe.xcconfig"; sourceTree = "<group>"; };
-		66BD47F336BD8CA90C8C615A /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = CardIO/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
-		688875C03FF7CD219C714F0D /* STPFormEncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPFormEncoder.h; path = Stripe/STPFormEncoder.h; sourceTree = "<group>"; };
-		68D43336BD5FD430E8FB0E10 /* STPBankAccount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPBankAccount.h; path = Stripe/PublicHeaders/STPBankAccount.h; sourceTree = "<group>"; };
-		6A88DE984DDFFD3BDFDE7D46 /* STPAPIConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPAPIConnection.h; path = Stripe/STPAPIConnection.h; sourceTree = "<group>"; };
-		6AE9E4FCCA2C76D76DD4E429 /* STPOSXCheckoutWebViewAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPOSXCheckoutWebViewAdapter.h; path = Stripe/Checkout/STPOSXCheckoutWebViewAdapter.h; sourceTree = "<group>"; };
-		6E44EB7ACD30A826A926B2E1 /* STPCheckoutInternalUIWebViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutInternalUIWebViewController.h; path = Stripe/Checkout/STPCheckoutInternalUIWebViewController.h; sourceTree = "<group>"; };
-		80EFB892223ED263B598FAD7 /* STPToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPToken.h; path = Stripe/PublicHeaders/STPToken.h; sourceTree = "<group>"; };
-		81D31C50F5AE957525B05FAF /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = CardIO/CardIOView.h; sourceTree = "<group>"; };
-		820D1921ABFBB2F3D5DF69D2 /* STPAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPAPIClient.h; path = Stripe/PublicHeaders/STPAPIClient.h; sourceTree = "<group>"; };
-		8553EA402C6356F4EA454CBD /* StripeError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StripeError.m; path = Stripe/StripeError.m; sourceTree = "<group>"; };
-		8D430F3E2A1319CD6DA97108 /* STPNullabilityMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPNullabilityMacros.h; path = Stripe/PublicHeaders/STPNullabilityMacros.h; sourceTree = "<group>"; };
-		9012CB2AFFADA2DCDD5C8596 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = CardIO/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
-		9A69EE898DA00857B835A939 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = CardIO/CardIOPaymentViewController.h; sourceTree = "<group>"; };
-		9FF6B99EA63961DE01B7EDC1 /* STPBankAccount.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPBankAccount.m; path = Stripe/STPBankAccount.m; sourceTree = "<group>"; };
-		A1EE9B14B22BC797A230B5EF /* Stripe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Stripe.h; path = Stripe/PublicHeaders/Stripe.h; sourceTree = "<group>"; };
-		A4EFB5C76E39075829046454 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		A5C778C8DC99E185F48DC9F6 /* Pods-Stripe-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stripe-Private.xcconfig"; sourceTree = "<group>"; };
-		AB41BD3CBA44DFA59F3CCF90 /* Pods-Stripe-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Stripe-prefix.pch"; sourceTree = "<group>"; };
-		AC73D832DF80F7520B2872E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		AC9CCF9CACAA030F28CF60A5 /* STPCheckoutOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCheckoutOptions.m; path = Stripe/Checkout/STPCheckoutOptions.m; sourceTree = "<group>"; };
-		AFEF1A7B19EB8A1482CFF7D9 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B045B7A5E6CD76FCD9FA0825 /* STPAPIConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPAPIConnection.m; path = Stripe/STPAPIConnection.m; sourceTree = "<group>"; };
-		B08E813EB58E4136A8483335 /* STPCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCard.m; path = Stripe/STPCard.m; sourceTree = "<group>"; };
-		C1B7131EE0B199BF002AAA6F /* STPCheckoutOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutOptions.h; path = Stripe/PublicHeaders/Checkout/STPCheckoutOptions.h; sourceTree = "<group>"; };
-		C968D25F036EC1CB12582F64 /* STPCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCard.h; path = Stripe/PublicHeaders/STPCard.h; sourceTree = "<group>"; };
-		CE91B75DCD953813DB3E9066 /* STPColorUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPColorUtils.h; path = Stripe/Checkout/STPColorUtils.h; sourceTree = "<group>"; };
-		D2A8E57982D3EF49F7FCB116 /* Pods-Stripe-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Stripe-dummy.m"; sourceTree = "<group>"; };
-		D301CB880804DDEB8CCBB034 /* StripeError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StripeError.h; path = Stripe/PublicHeaders/StripeError.h; sourceTree = "<group>"; };
-		DBE96FC218D849DA5F007782 /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = CardIO/CardIO.h; sourceTree = "<group>"; };
-		DF4B8FD8EECF6148EE0B209E /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = CardIO/CardIOUtilities.h; sourceTree = "<group>"; };
-		E54AF3D2696B6791E9FDFDE3 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		FDF35C323E40ABC16A32BB3F /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		FE60307E19C1ABECD168C9C4 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		08E808CDC82EFD89068DB1D2 /* STPAPIConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPAPIConnection.m; path = Stripe/STPAPIConnection.m; sourceTree = "<group>"; };
+		0AB22680C404110F1A97E17C /* STPCheckoutViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCheckoutViewController.m; path = Stripe/Checkout/STPCheckoutViewController.m; sourceTree = "<group>"; };
+		0FAA467E89C0F4715068FE48 /* STPCheckoutViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutViewController.h; path = Stripe/PublicHeaders/Checkout/STPCheckoutViewController.h; sourceTree = "<group>"; };
+		169CA9AD537D552937A2D2DD /* STPNullabilityMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPNullabilityMacros.h; path = Stripe/PublicHeaders/STPNullabilityMacros.h; sourceTree = "<group>"; };
+		21CCA61CE158F94F38FA1A2B /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = CardIO/CardIO.h; sourceTree = "<group>"; };
+		300CEEC78DC5C315C7B0B582 /* STPFormEncoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPFormEncoder.h; path = Stripe/STPFormEncoder.h; sourceTree = "<group>"; };
+		355FA014AB1FE50834338CFC /* Pods-Stripe-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Stripe-dummy.m"; sourceTree = "<group>"; };
+		385ECCE817E20E4700FE95C6 /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = CardIO/CardIOView.h; sourceTree = "<group>"; };
+		3BF0DF0715D75B86E0D5E9ED /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		3C6106D621439E9B0E3FF3B6 /* STPStrictURLProtocol.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPStrictURLProtocol.m; path = Stripe/Checkout/STPStrictURLProtocol.m; sourceTree = "<group>"; };
+		45B31B6F4341E3D50E2ED0B3 /* STPBankAccount.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPBankAccount.h; path = Stripe/PublicHeaders/STPBankAccount.h; sourceTree = "<group>"; };
+		47BCE37412F50BE9B213A34E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4FE16CEFACB05D300254D8BB /* libPods-Stripe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Stripe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5624881549F931A83023B8B8 /* STPIOSCheckoutWebViewAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPIOSCheckoutWebViewAdapter.h; path = Stripe/Checkout/STPIOSCheckoutWebViewAdapter.h; sourceTree = "<group>"; };
+		5DC871DB78DD25B5548F846C /* STPCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCard.h; path = Stripe/PublicHeaders/STPCard.h; sourceTree = "<group>"; };
+		61A34D4F8A75F17B379F538B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		61A6E43409ABEE4C792E62AF /* StripeError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = StripeError.m; path = Stripe/StripeError.m; sourceTree = "<group>"; };
+		62F72D2569C1E5332BCC3BF9 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		64BEA1C0DA5AF63CAB04735D /* STPAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPAPIClient.h; path = Stripe/PublicHeaders/STPAPIClient.h; sourceTree = "<group>"; };
+		74E047E8D196066982ABEC36 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		75F14FCD7F964052EA1995B3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		7F758B75A227DB8CED99C7C5 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		81818D835E7B77D25C234747 /* STPToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPToken.h; path = Stripe/PublicHeaders/STPToken.h; sourceTree = "<group>"; };
+		8384960D173AE2C3E5F6036D /* STPOSXCheckoutWebViewAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPOSXCheckoutWebViewAdapter.h; path = Stripe/Checkout/STPOSXCheckoutWebViewAdapter.h; sourceTree = "<group>"; };
+		872D13E2AB9E6B10DD4E0F84 /* STPCheckoutDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutDelegate.h; path = Stripe/Checkout/STPCheckoutDelegate.h; sourceTree = "<group>"; };
+		87867F1B8E8949E52878F249 /* STPStrictURLProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPStrictURLProtocol.h; path = Stripe/Checkout/STPStrictURLProtocol.h; sourceTree = "<group>"; };
+		8D442FACCFF6420F54E3CE2E /* STPCheckoutOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutOptions.h; path = Stripe/PublicHeaders/Checkout/STPCheckoutOptions.h; sourceTree = "<group>"; };
+		917A8C161E30E1DC8E48960B /* STPBankAccount.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPBankAccount.m; path = Stripe/STPBankAccount.m; sourceTree = "<group>"; };
+		92B95991F031A411F018C20B /* STPCard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCard.m; path = Stripe/STPCard.m; sourceTree = "<group>"; };
+		92F9F1A6F2581490FA13559B /* Stripe.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Stripe.h; path = Stripe/PublicHeaders/Stripe.h; sourceTree = "<group>"; };
+		949689943EDDD5773765CC1B /* CardIODetectionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = CardIO/CardIODetectionMode.h; sourceTree = "<group>"; };
+		9AB0EC21271156496B8C5EF2 /* STPCheckoutOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCheckoutOptions.m; path = Stripe/Checkout/STPCheckoutOptions.m; sourceTree = "<group>"; };
+		9AFF88233E3D59B5B03A1543 /* StripeError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StripeError.h; path = Stripe/PublicHeaders/StripeError.h; sourceTree = "<group>"; };
+		9B99FB7D01960443DA48BE66 /* STPAPIClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPAPIClient.m; path = Stripe/STPAPIClient.m; sourceTree = "<group>"; };
+		A0AB70A1CDE1CD740AC93C0B /* STPCheckoutInternalUIWebViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutInternalUIWebViewController.h; path = Stripe/Checkout/STPCheckoutInternalUIWebViewController.h; sourceTree = "<group>"; };
+		A0F644EB77AC313D405B0DEF /* STPToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPToken.m; path = Stripe/STPToken.m; sourceTree = "<group>"; };
+		A2A449CB7DF6E20934ACC2A4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4A0D849873434B684E8DCD6 /* Pods-Stripe-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stripe-Private.xcconfig"; sourceTree = "<group>"; };
+		ADBA9E487B791F7A425AA00E /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = CardIO/CardIOViewDelegate.h; sourceTree = "<group>"; };
+		B825AF139773C40B192273DD /* STPIOSCheckoutWebViewAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPIOSCheckoutWebViewAdapter.m; path = Stripe/Checkout/STPIOSCheckoutWebViewAdapter.m; sourceTree = "<group>"; };
+		B8BFA4010234AC37897DE8E1 /* Pods-Stripe-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Stripe-prefix.pch"; sourceTree = "<group>"; };
+		B8DDE8686583C4D82957C7E0 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = CardIO/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		BD4434CFF0E1D4B85DEBA664 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		C16A2C1C47A5ED3385E7FB73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		C58A7C8D87F86E1EB325E798 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = CardIO/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
+		C8239D42646189F0CE02E736 /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = CardIO/CardIOUtilities.h; sourceTree = "<group>"; };
+		C9F1B47FF31AF15786F6B194 /* STPAPIConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPAPIConnection.h; path = Stripe/STPAPIConnection.h; sourceTree = "<group>"; };
+		D3A89C76D6B1605F6855B99D /* STPCheckoutInternalUIWebViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPCheckoutInternalUIWebViewController.m; path = Stripe/Checkout/STPCheckoutInternalUIWebViewController.m; sourceTree = "<group>"; };
+		D98172422DECED712AC0C859 /* STPFormEncoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPFormEncoder.m; path = Stripe/STPFormEncoder.m; sourceTree = "<group>"; };
+		DAFB612F416CEBAF79B29E94 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E01633099C2E9174462337B1 /* STPColorUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPColorUtils.m; path = Stripe/Checkout/STPColorUtils.m; sourceTree = "<group>"; };
+		E44DFB799E27EFC4B9EA9BFF /* Pods-Stripe.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stripe.xcconfig"; sourceTree = "<group>"; };
+		F08DF9937D0F9C3F9C0A0521 /* STPCheckoutWebViewAdapter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPCheckoutWebViewAdapter.h; path = Stripe/Checkout/STPCheckoutWebViewAdapter.h; sourceTree = "<group>"; };
+		F5ABC38961E4C802FC2E89B2 /* STPColorUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STPColorUtils.h; path = Stripe/Checkout/STPColorUtils.h; sourceTree = "<group>"; };
+		FDF9ED3DB19FEEBFA0352B10 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = CardIO/CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		FE89D735EEF41BA623588452 /* STPOSXCheckoutWebViewAdapter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STPOSXCheckoutWebViewAdapter.m; path = Stripe/Checkout/STPOSXCheckoutWebViewAdapter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		92BE851E2B3D92AFC1A7F3D1 /* Frameworks */ = {
+		2D5F3F225AE1BE9E2C2C222C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C90293D79498F022BD083F8 /* Foundation.framework in Frameworks */,
-				547804657823BDE88320AC2F /* Security.framework in Frameworks */,
+				3BBB2371795192AF4EDBF06F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98C40427A752B3D283C1B962 /* Frameworks */ = {
+		F50F85E07B530A8EC24BDC8F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23422AF01229A76E20D8D7FC /* Foundation.framework in Frameworks */,
+				744B6CA98E0689E48574F196 /* Foundation.framework in Frameworks */,
+				41601980C1FEBF4E8B81BCC8 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1367FD30E7015D87A763A90C /* Frameworks */ = {
+		2C27F41DA8C6F92BFA7D18EB /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
-				97D05616D33CE0C94C6F0EE8 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2396B6FE102EC8B57EE13D2B /* Checkout */ = {
-			isa = PBXGroup;
-			children = (
-				28CFAEA873E5FD960B3BF2C1 /* STPCheckoutDelegate.h */,
-				6E44EB7ACD30A826A926B2E1 /* STPCheckoutInternalUIWebViewController.h */,
-				0602AC1655480ECABF064A53 /* STPCheckoutInternalUIWebViewController.m */,
-				C1B7131EE0B199BF002AAA6F /* STPCheckoutOptions.h */,
-				AC9CCF9CACAA030F28CF60A5 /* STPCheckoutOptions.m */,
-				4FEF7C4948393187141494F1 /* STPCheckoutViewController.h */,
-				1563B1239D1FF04DF176C6EF /* STPCheckoutViewController.m */,
-				33D531D2087F03E60C4499B4 /* STPCheckoutWebViewAdapter.h */,
-				CE91B75DCD953813DB3E9066 /* STPColorUtils.h */,
-				6051047D3F4FF81DE9D10577 /* STPColorUtils.m */,
-				3083D2005C7FDABCFCC0BA25 /* STPIOSCheckoutWebViewAdapter.h */,
-				4FC2CA7AE67F75717E78E06B /* STPIOSCheckoutWebViewAdapter.m */,
-				6AE9E4FCCA2C76D76DD4E429 /* STPOSXCheckoutWebViewAdapter.h */,
-				37A2875595332648EC956942 /* STPOSXCheckoutWebViewAdapter.m */,
-				0377BCA6F2C6B4EF24738E0F /* STPStrictURLProtocol.h */,
-				46FD85F7A5222F1F8F88DBBF /* STPStrictURLProtocol.m */,
+				872D13E2AB9E6B10DD4E0F84 /* STPCheckoutDelegate.h */,
+				A0AB70A1CDE1CD740AC93C0B /* STPCheckoutInternalUIWebViewController.h */,
+				D3A89C76D6B1605F6855B99D /* STPCheckoutInternalUIWebViewController.m */,
+				8D442FACCFF6420F54E3CE2E /* STPCheckoutOptions.h */,
+				9AB0EC21271156496B8C5EF2 /* STPCheckoutOptions.m */,
+				0FAA467E89C0F4715068FE48 /* STPCheckoutViewController.h */,
+				0AB22680C404110F1A97E17C /* STPCheckoutViewController.m */,
+				F08DF9937D0F9C3F9C0A0521 /* STPCheckoutWebViewAdapter.h */,
+				F5ABC38961E4C802FC2E89B2 /* STPColorUtils.h */,
+				E01633099C2E9174462337B1 /* STPColorUtils.m */,
+				5624881549F931A83023B8B8 /* STPIOSCheckoutWebViewAdapter.h */,
+				B825AF139773C40B192273DD /* STPIOSCheckoutWebViewAdapter.m */,
+				8384960D173AE2C3E5F6036D /* STPOSXCheckoutWebViewAdapter.h */,
+				FE89D735EEF41BA623588452 /* STPOSXCheckoutWebViewAdapter.m */,
+				87867F1B8E8949E52878F249 /* STPStrictURLProtocol.h */,
+				3C6106D621439E9B0E3FF3B6 /* STPStrictURLProtocol.m */,
 			);
 			name = Checkout;
 			sourceTree = "<group>";
 		};
-		2A04E9EBF006E16A140AC766 = {
+		2E809CEED7404177336D5F4A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AFEF1A7B19EB8A1482CFF7D9 /* Podfile */,
-				1367FD30E7015D87A763A90C /* Frameworks */,
-				9A2C30DCEDE4932CA7C3F2E8 /* Pods */,
-				5D6ACF2A512353493681F432 /* Products */,
-				2BBEE30E995994AA43C3FF7A /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		2BBEE30E995994AA43C3FF7A /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8AEBA8A148D052D3580E190A /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		3FE2A0061B542FA811447BD4 /* CardIO */ = {
-			isa = PBXGroup;
-			children = (
-				DBE96FC218D849DA5F007782 /* CardIO.h */,
-				9012CB2AFFADA2DCDD5C8596 /* CardIOCreditCardInfo.h */,
-				503D96D8C255346B67955076 /* CardIODetectionMode.h */,
-				9A69EE898DA00857B835A939 /* CardIOPaymentViewController.h */,
-				66BD47F336BD8CA90C8C615A /* CardIOPaymentViewControllerDelegate.h */,
-				DF4B8FD8EECF6148EE0B209E /* CardIOUtilities.h */,
-				81D31C50F5AE957525B05FAF /* CardIOView.h */,
-				4DCABDA6FDA30E6909C69259 /* CardIOViewDelegate.h */,
-			);
-			path = CardIO;
-			sourceTree = "<group>";
-		};
-		5D6ACF2A512353493681F432 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				412215197B92F069833CD5E3 /* libPods.a */,
-				255AB18FB8B8A39765D1BEBD /* libPods-Stripe.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		8AEBA8A148D052D3580E190A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				13DC9DA90AFCB67E6DE9E143 /* Pods-acknowledgements.markdown */,
-				3BAD7CB0DA1460C18D7336F0 /* Pods-acknowledgements.plist */,
-				FE60307E19C1ABECD168C9C4 /* Pods-dummy.m */,
-				E54AF3D2696B6791E9FDFDE3 /* Pods-environment.h */,
-				FDF35C323E40ABC16A32BB3F /* Pods-resources.sh */,
-				A4EFB5C76E39075829046454 /* Pods.debug.xcconfig */,
-				AC73D832DF80F7520B2872E3 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		97D05616D33CE0C94C6F0EE8 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				34DE12B0787FB70A4BD5EB17 /* Foundation.framework */,
-				03EE6B41423A3EE387B1AB76 /* Security.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		9A2C30DCEDE4932CA7C3F2E8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3FE2A0061B542FA811447BD4 /* CardIO */,
-				AE07BBC43FB239366613C4BF /* Stripe */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		ACEA41E11DAAB2D1DAD2BAEB /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				62246ACF3C7F704829C50C88 /* Pods-Stripe.xcconfig */,
-				A5C778C8DC99E185F48DC9F6 /* Pods-Stripe-Private.xcconfig */,
-				D2A8E57982D3EF49F7FCB116 /* Pods-Stripe-dummy.m */,
-				AB41BD3CBA44DFA59F3CCF90 /* Pods-Stripe-prefix.pch */,
+				E44DFB799E27EFC4B9EA9BFF /* Pods-Stripe.xcconfig */,
+				A4A0D849873434B684E8DCD6 /* Pods-Stripe-Private.xcconfig */,
+				355FA014AB1FE50834338CFC /* Pods-Stripe-dummy.m */,
+				B8BFA4010234AC37897DE8E1 /* Pods-Stripe-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Pods-Stripe";
 			sourceTree = "<group>";
 		};
-		AE07BBC43FB239366613C4BF /* Stripe */ = {
+		38DDEE91753E0CC02376DE81 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2396B6FE102EC8B57EE13D2B /* Checkout */,
-				C436CD53AC3B0E4221CADCD1 /* Core */,
-				ACEA41E11DAAB2D1DAD2BAEB /* Support Files */,
+				64BEA1C0DA5AF63CAB04735D /* STPAPIClient.h */,
+				9B99FB7D01960443DA48BE66 /* STPAPIClient.m */,
+				C9F1B47FF31AF15786F6B194 /* STPAPIConnection.h */,
+				08E808CDC82EFD89068DB1D2 /* STPAPIConnection.m */,
+				45B31B6F4341E3D50E2ED0B3 /* STPBankAccount.h */,
+				917A8C161E30E1DC8E48960B /* STPBankAccount.m */,
+				5DC871DB78DD25B5548F846C /* STPCard.h */,
+				92B95991F031A411F018C20B /* STPCard.m */,
+				300CEEC78DC5C315C7B0B582 /* STPFormEncoder.h */,
+				D98172422DECED712AC0C859 /* STPFormEncoder.m */,
+				169CA9AD537D552937A2D2DD /* STPNullabilityMacros.h */,
+				81818D835E7B77D25C234747 /* STPToken.h */,
+				A0F644EB77AC313D405B0DEF /* STPToken.m */,
+				92F9F1A6F2581490FA13559B /* Stripe.h */,
+				9AFF88233E3D59B5B03A1543 /* StripeError.h */,
+				61A6E43409ABEE4C792E62AF /* StripeError.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		3C921FE2FCF9BE20C55112ED /* CardIO */ = {
+			isa = PBXGroup;
+			children = (
+				21CCA61CE158F94F38FA1A2B /* CardIO.h */,
+				C58A7C8D87F86E1EB325E798 /* CardIOCreditCardInfo.h */,
+				949689943EDDD5773765CC1B /* CardIODetectionMode.h */,
+				FDF9ED3DB19FEEBFA0352B10 /* CardIOPaymentViewController.h */,
+				B8DDE8686583C4D82957C7E0 /* CardIOPaymentViewControllerDelegate.h */,
+				C8239D42646189F0CE02E736 /* CardIOUtilities.h */,
+				385ECCE817E20E4700FE95C6 /* CardIOView.h */,
+				ADBA9E487B791F7A425AA00E /* CardIOViewDelegate.h */,
+			);
+			path = CardIO;
+			sourceTree = "<group>";
+		};
+		7340D9AC57111741D45B8A6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C921FE2FCF9BE20C55112ED /* CardIO */,
+				95FBD70E1EE766DCF01A50B9 /* Stripe */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		768FACA6DB97C00F59807BFB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				61A34D4F8A75F17B379F538B /* Foundation.framework */,
+				75F14FCD7F964052EA1995B3 /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7D39BECE875D9A840F3726AB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA505CB95A7A1F16C138A906 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		909FBCDBF234ED7C638A1050 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2A449CB7DF6E20934ACC2A4 /* libPods.a */,
+				4FE16CEFACB05D300254D8BB /* libPods-Stripe.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95FBD70E1EE766DCF01A50B9 /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				2C27F41DA8C6F92BFA7D18EB /* Checkout */,
+				38DDEE91753E0CC02376DE81 /* Core */,
+				2E809CEED7404177336D5F4A /* Support Files */,
 			);
 			path = Stripe;
 			sourceTree = "<group>";
 		};
-		C436CD53AC3B0E4221CADCD1 /* Core */ = {
+		CA505CB95A7A1F16C138A906 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				820D1921ABFBB2F3D5DF69D2 /* STPAPIClient.h */,
-				5DF4757E348773D3C170C375 /* STPAPIClient.m */,
-				6A88DE984DDFFD3BDFDE7D46 /* STPAPIConnection.h */,
-				B045B7A5E6CD76FCD9FA0825 /* STPAPIConnection.m */,
-				68D43336BD5FD430E8FB0E10 /* STPBankAccount.h */,
-				9FF6B99EA63961DE01B7EDC1 /* STPBankAccount.m */,
-				C968D25F036EC1CB12582F64 /* STPCard.h */,
-				B08E813EB58E4136A8483335 /* STPCard.m */,
-				688875C03FF7CD219C714F0D /* STPFormEncoder.h */,
-				4BD56EF600D7FF55F64D61B6 /* STPFormEncoder.m */,
-				8D430F3E2A1319CD6DA97108 /* STPNullabilityMacros.h */,
-				80EFB892223ED263B598FAD7 /* STPToken.h */,
-				14A1AA3325BFD2E753382CF2 /* STPToken.m */,
-				A1EE9B14B22BC797A230B5EF /* Stripe.h */,
-				D301CB880804DDEB8CCBB034 /* StripeError.h */,
-				8553EA402C6356F4EA454CBD /* StripeError.m */,
+				47BCE37412F50BE9B213A34E /* Pods-acknowledgements.markdown */,
+				7F758B75A227DB8CED99C7C5 /* Pods-acknowledgements.plist */,
+				BD4434CFF0E1D4B85DEBA664 /* Pods-dummy.m */,
+				74E047E8D196066982ABEC36 /* Pods-environment.h */,
+				62F72D2569C1E5332BCC3BF9 /* Pods-resources.sh */,
+				C16A2C1C47A5ED3385E7FB73 /* Pods.debug.xcconfig */,
+				3BF0DF0715D75B86E0D5E9ED /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		D216E118DF3102EE47B5DE7C = {
+			isa = PBXGroup;
+			children = (
+				DAFB612F416CEBAF79B29E94 /* Podfile */,
+				E49F572A1057D9B89BC30F66 /* Frameworks */,
+				7340D9AC57111741D45B8A6B /* Pods */,
+				909FBCDBF234ED7C638A1050 /* Products */,
+				7D39BECE875D9A840F3726AB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E49F572A1057D9B89BC30F66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				768FACA6DB97C00F59807BFB /* iOS */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -291,58 +291,58 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		C1B39834F5FED12D97C14412 /* Headers */ = {
+		C5A3F417E57DA13761BBEFBE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B65C45AAC47678E68A16B3E /* STPAPIClient.h in Headers */,
-				547FDBAB20EAA52B50066EFE /* STPAPIConnection.h in Headers */,
-				368E34547D06592314F63032 /* STPBankAccount.h in Headers */,
-				7A821BFCD2C1F5A1D354563B /* STPCard.h in Headers */,
-				46F10CC46528C67182335609 /* STPCheckoutDelegate.h in Headers */,
-				E1AD457AEEA2E2618BD0E2AA /* STPCheckoutInternalUIWebViewController.h in Headers */,
-				3019BB66CE32AC68125A610B /* STPCheckoutOptions.h in Headers */,
-				C237A4C6E266C89075089687 /* STPCheckoutViewController.h in Headers */,
-				10C26937204AC68332E3DE87 /* STPCheckoutWebViewAdapter.h in Headers */,
-				963D6DC50EBD46C582EFF280 /* STPColorUtils.h in Headers */,
-				626146E3FD360947CC4DF5DA /* STPFormEncoder.h in Headers */,
-				12F9494EFE5DC0E2601EE331 /* STPIOSCheckoutWebViewAdapter.h in Headers */,
-				2761415B75E8A5416ABD57B5 /* STPNullabilityMacros.h in Headers */,
-				31C60A4E134BBAEC1BDEC361 /* STPOSXCheckoutWebViewAdapter.h in Headers */,
-				2B5E9A3D26097F34C4569816 /* STPStrictURLProtocol.h in Headers */,
-				623093D6C7D2A27CF0F34AAE /* STPToken.h in Headers */,
-				51A3AE01825A43A4AD1FB0C8 /* Stripe.h in Headers */,
-				2FC1602F57AE8A5897E8A916 /* StripeError.h in Headers */,
+				9407342F98F9AA60EA15D8D9 /* STPAPIClient.h in Headers */,
+				1D14760241E212079B819B7D /* STPAPIConnection.h in Headers */,
+				F41441699A1D3710DA2BC248 /* STPBankAccount.h in Headers */,
+				536E4BA8B189EA5A8CDF4DEF /* STPCard.h in Headers */,
+				A8F96DFAF455F71024CD6F68 /* STPCheckoutDelegate.h in Headers */,
+				BEF93935C54FEEC5077F3989 /* STPCheckoutInternalUIWebViewController.h in Headers */,
+				79728D8D3294EF2C289CF797 /* STPCheckoutOptions.h in Headers */,
+				436FFF24CBAEA32BFB84D861 /* STPCheckoutViewController.h in Headers */,
+				76EE0823FCC46064BAC09853 /* STPCheckoutWebViewAdapter.h in Headers */,
+				A26707004DAC73272BC680AD /* STPColorUtils.h in Headers */,
+				5DB13B9848CAAE621EF1553A /* STPFormEncoder.h in Headers */,
+				07E6FDD6F6B02CE7E2842257 /* STPIOSCheckoutWebViewAdapter.h in Headers */,
+				334C2F15AC1ABC7AAD0F4882 /* STPNullabilityMacros.h in Headers */,
+				21C5FFAC9F43445F5321A1D9 /* STPOSXCheckoutWebViewAdapter.h in Headers */,
+				304FC7C20FA60177A7513AA0 /* STPStrictURLProtocol.h in Headers */,
+				DCDB0A0F35BBE848937932D6 /* STPToken.h in Headers */,
+				CE622807305B2FF033A2D080 /* Stripe.h in Headers */,
+				3D925B4DB369EE8910AD6D29 /* StripeError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		146608EB46470EBDA11EBE6E /* Pods */ = {
+		AD8793297DCF265E4945AEE0 /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 23C015D4D8D3C8547F78943B /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = C3079BA09C7EABD57704D90F /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				C7D853E0768103EB51F53AC9 /* Sources */,
-				98C40427A752B3D283C1B962 /* Frameworks */,
+				45F9BD8D7239A2A3CAF1AF4F /* Sources */,
+				2D5F3F225AE1BE9E2C2C222C /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				30D7373EF4A5949E5D1B3301 /* PBXTargetDependency */,
+				93BAB27A0100897640CC0975 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = 412215197B92F069833CD5E3 /* libPods.a */;
+			productReference = A2A449CB7DF6E20934ACC2A4 /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		92029BDF325F38749D63399D /* Pods-Stripe */ = {
+		EEA90D55D74342F91C12C47A /* Pods-Stripe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B7FEA66F9CA6B87CBA8EC528 /* Build configuration list for PBXNativeTarget "Pods-Stripe" */;
+			buildConfigurationList = AB7526E4E6CACBB1EA586750 /* Build configuration list for PBXNativeTarget "Pods-Stripe" */;
 			buildPhases = (
-				27D59F79A626EFC72B79D130 /* Sources */,
-				92BE851E2B3D92AFC1A7F3D1 /* Frameworks */,
-				C1B39834F5FED12D97C14412 /* Headers */,
+				8345A55FB5A89FE1A90F30B0 /* Sources */,
+				F50F85E07B530A8EC24BDC8F /* Frameworks */,
+				C5A3F417E57DA13761BBEFBE /* Headers */,
 			);
 			buildRules = (
 			);
@@ -350,81 +350,81 @@
 			);
 			name = "Pods-Stripe";
 			productName = "Pods-Stripe";
-			productReference = 255AB18FB8B8A39765D1BEBD /* libPods-Stripe.a */;
+			productReference = 4FE16CEFACB05D300254D8BB /* libPods-Stripe.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		17DA494C9C3085C33A89A674 /* Project object */ = {
+		74CB7DE1E2FD0D8430F36810 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = EB27B1E48E8C0CC4C6102C56 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 6E842F5DD574E7A0C3C97E9C /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 2A04E9EBF006E16A140AC766;
-			productRefGroup = 5D6ACF2A512353493681F432 /* Products */;
+			mainGroup = D216E118DF3102EE47B5DE7C;
+			productRefGroup = 909FBCDBF234ED7C638A1050 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				146608EB46470EBDA11EBE6E /* Pods */,
-				92029BDF325F38749D63399D /* Pods-Stripe */,
+				AD8793297DCF265E4945AEE0 /* Pods */,
+				EEA90D55D74342F91C12C47A /* Pods-Stripe */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		27D59F79A626EFC72B79D130 /* Sources */ = {
+		45F9BD8D7239A2A3CAF1AF4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10F29315471563BB1E4625D8 /* Pods-Stripe-dummy.m in Sources */,
-				D2149DD99DEEBD722243D5F4 /* STPAPIClient.m in Sources */,
-				EA360BD7005C7DB4A7AE3488 /* STPAPIConnection.m in Sources */,
-				6732F79BC70F6A99B48CCC5F /* STPBankAccount.m in Sources */,
-				84D8B4C2CAEF7CCD4B58B452 /* STPCard.m in Sources */,
-				EDB4F8385AAA704527D83B7F /* STPCheckoutInternalUIWebViewController.m in Sources */,
-				A731B9275BCE133572044623 /* STPCheckoutOptions.m in Sources */,
-				0AF20FBB7BE259CB63F41BC9 /* STPCheckoutViewController.m in Sources */,
-				199B7089E2F18F570C15388E /* STPColorUtils.m in Sources */,
-				A8FDB5672EF3C5B5B3D1A12F /* STPFormEncoder.m in Sources */,
-				E0C9457960CAFC1C780F2FA9 /* STPIOSCheckoutWebViewAdapter.m in Sources */,
-				8E106C31589C4731047F099D /* STPOSXCheckoutWebViewAdapter.m in Sources */,
-				C10210C742CD1CE5C57B95E6 /* STPStrictURLProtocol.m in Sources */,
-				1BBF919DDD671B74DB92A550 /* STPToken.m in Sources */,
-				DAA8A57B56536BFE9F4553E2 /* StripeError.m in Sources */,
+				B54C2AAA354ACE2E12687387 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7D853E0768103EB51F53AC9 /* Sources */ = {
+		8345A55FB5A89FE1A90F30B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B6B25E695BCFF2E05E29B25 /* Pods-dummy.m in Sources */,
+				77B341F6528C43C6B69DA00A /* Pods-Stripe-dummy.m in Sources */,
+				00CCB0AFF6DB5F8DCEAE0380 /* STPAPIClient.m in Sources */,
+				20EDF375C26AC9129A07B447 /* STPAPIConnection.m in Sources */,
+				C679951DBB316E41BBF62053 /* STPBankAccount.m in Sources */,
+				AC405B6C820EC11325858056 /* STPCard.m in Sources */,
+				9F576D83F0ED3AFA7C8102DD /* STPCheckoutInternalUIWebViewController.m in Sources */,
+				FB719DBAE2AD76445BD7558F /* STPCheckoutOptions.m in Sources */,
+				9D6B9C612E0F8CAFBA6BFBC9 /* STPCheckoutViewController.m in Sources */,
+				954002CFF801B512306AFC7C /* STPColorUtils.m in Sources */,
+				2F14FCCC0DB8FFD79827A0E1 /* STPFormEncoder.m in Sources */,
+				4809517B673B0922C035041A /* STPIOSCheckoutWebViewAdapter.m in Sources */,
+				35FA1D515895A2CBF3CCA54E /* STPOSXCheckoutWebViewAdapter.m in Sources */,
+				0FDD77538F2BF28ED0BB8853 /* STPStrictURLProtocol.m in Sources */,
+				8C0CED4DDBC790CA55C93D28 /* STPToken.m in Sources */,
+				AC71F545B1595470B06128D8 /* StripeError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		30D7373EF4A5949E5D1B3301 /* PBXTargetDependency */ = {
+		93BAB27A0100897640CC0975 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Stripe";
-			target = 92029BDF325F38749D63399D /* Pods-Stripe */;
-			targetProxy = A719B47BAA6BE09470959BFD /* PBXContainerItemProxy */;
+			target = EEA90D55D74342F91C12C47A /* Pods-Stripe */;
+			targetProxy = DBC3FD6C446066FC7F2DD0DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		117B0E7C5D1FC1C68792F751 /* Debug */ = {
+		0E8FEF91352E739EBBB1EB35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5C778C8DC99E185F48DC9F6 /* Pods-Stripe-Private.xcconfig */;
+			baseConfigurationReference = A4A0D849873434B684E8DCD6 /* Pods-Stripe-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-Stripe/Pods-Stripe-prefix.pch";
@@ -438,9 +438,9 @@
 			};
 			name = Debug;
 		};
-		3389BCB0DF6537E3F9BB663F /* Release */ = {
+		3872439D32C6F8D9818F03D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC73D832DF80F7520B2872E3 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3BF0DF0715D75B86E0D5E9ED /* Pods.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -454,7 +454,73 @@
 			};
 			name = Release;
 		};
-		C46886F298B2CAA043973AD2 /* Debug */ = {
+		4F59CC62065668288A130623 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AED5795206F6292D82EDA184 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C16A2C1C47A5ED3385E7FB73 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CA110DE5DCAB32730D19BDFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4A0D849873434B684E8DCD6 /* Pods-Stripe-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Stripe/Pods-Stripe-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F95314D159BC306DC48736EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -493,40 +559,6 @@
 			};
 			name = Debug;
 		};
-		D89673FD09A26ED04CD520FE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		EAFC2A1A6C3078AEC8FD6681 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A5C778C8DC99E185F48DC9F6 /* Pods-Stripe-Private.xcconfig */;
@@ -562,34 +594,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		23C015D4D8D3C8547F78943B /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		6E842F5DD574E7A0C3C97E9C /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FEF8030E8583375E8BA98F9B /* Debug */,
-				3389BCB0DF6537E3F9BB663F /* Release */,
+				F95314D159BC306DC48736EF /* Debug */,
+				4F59CC62065668288A130623 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B7FEA66F9CA6B87CBA8EC528 /* Build configuration list for PBXNativeTarget "Pods-Stripe" */ = {
+		AB7526E4E6CACBB1EA586750 /* Build configuration list for PBXNativeTarget "Pods-Stripe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				117B0E7C5D1FC1C68792F751 /* Debug */,
-				EAFC2A1A6C3078AEC8FD6681 /* Release */,
+				0E8FEF91352E739EBBB1EB35 /* Debug */,
+				CA110DE5DCAB32730D19BDFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EB27B1E48E8C0CC4C6102C56 /* Build configuration list for PBXProject "Pods" */ = {
+		C3079BA09C7EABD57704D90F /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C46886F298B2CAA043973AD2 /* Debug */,
-				D89673FD09A26ED04CD520FE /* Release */,
+				AED5795206F6292D82EDA184 /* Debug */,
+				3872439D32C6F8D9818F03D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 17DA494C9C3085C33A89A674 /* Project object */;
+	rootObject = 74CB7DE1E2FD0D8430F36810 /* Project object */;
 }
