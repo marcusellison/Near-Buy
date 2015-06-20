@@ -11,6 +11,8 @@
 		15EAC0521B33F3390000EF67 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EAC0511B33F3390000EF67 /* Accounts.framework */; };
 		15EAC0541B33F6EA0000EF67 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EAC0531B33F6EA0000EF67 /* Payments.swift */; };
 		2632977908EF25C5FD1B006E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5C74D7ECBF00B2F86ECBAD /* libPods.a */; };
+		3D0CAA521B35FD48003C8229 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CAA511B35FD48003C8229 /* GooglePlacesAutocomplete.swift */; };
+		3D0CAA561B35FF9A003C8229 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0CAA551B35FF9A003C8229 /* GooglePlacesAutocomplete.xib */; };
 		3D3B2C8B1B280F4C00BA59C8 /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */; };
 		3D3B2C8D1B28112400BA59C8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */; };
 		3DA8CD291B337DA100BAE6E8 /* PickCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */; };
@@ -72,6 +74,8 @@
 		15EAC04F1B33F3310000EF67 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		15EAC0511B33F3390000EF67 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		15EAC0531B33F6EA0000EF67 /* Payments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
+		3D0CAA511B35FD48003C8229 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
+		3D0CAA551B35FF9A003C8229 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
 		3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
 		3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCategoriesViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D0CAA501B35FD15003C8229 /* Location API */ = {
+			isa = PBXGroup;
+			children = (
+				3D0CAA511B35FD48003C8229 /* GooglePlacesAutocomplete.swift */,
+			);
+			name = "Location API";
+			sourceTree = "<group>";
+		};
 		3DD616E31B277B83001FEB6F = {
 			isa = PBXGroup;
 			children = (
@@ -185,10 +197,12 @@
 				15B464921B33F175000817FB /* Bridging-Header.h */,
 				3DD616F11B277B83001FEB6F /* AppDelegate.swift */,
 				A347FD7A1B282111002548F8 /* Models */,
+				3D0CAA501B35FD15003C8229 /* Location API */,
 				D2E128781B27DAA300221321 /* Views */,
 				D2E128771B27DA9B00221321 /* View Controllers */,
 				D252AB9C1B3525A0006DFE3E /* Storyboards */,
 				3DD616F81B277B83001FEB6F /* Images.xcassets */,
+				3D0CAA551B35FF9A003C8229 /* GooglePlacesAutocomplete.xib */,
 				3DD616FA1B277B83001FEB6F /* LaunchScreen.xib */,
 				D273BB3E1B28135700511C10 /* Framework */,
 				3DD616EF1B277B83001FEB6F /* Supporting Files */,
@@ -405,6 +419,7 @@
 				D254DC291B33C59700FB976F /* Settings.storyboard in Resources */,
 				3DB30FE71B34ACF20083E849 /* LaunchScreen.xib in Resources */,
 				3DF79DB01B27F11000395B0A /* TakePhoto.storyboard in Resources */,
+				3D0CAA561B35FF9A003C8229 /* GooglePlacesAutocomplete.xib in Resources */,
 				3DD616F91B277B83001FEB6F /* Images.xcassets in Resources */,
 				3DA8CD2F1B338AB900BAE6E8 /* Welcome.storyboard in Resources */,
 			);
@@ -457,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0CAA521B35FD48003C8229 /* GooglePlacesAutocomplete.swift in Sources */,
 				3DFFC78D1B34B03D00CC7BA7 /* BrowseViewController.swift in Sources */,
 				D2E1287A1B27DAFC00221321 /* ItemCollectionViewCell.swift in Sources */,
 				3DA8CD311B338B5900BAE6E8 /* WelcomeViewController.swift in Sources */,
