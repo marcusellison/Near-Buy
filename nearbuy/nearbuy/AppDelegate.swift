@@ -39,16 +39,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if (PFUser.currentUser() != nil) {
             /* User is Authed - Take them to root view controller*/
+            println("\(PFUser.currentUser())")
             
             
         } else {
             /* Parse Facebook Authentication */
-            
-            
+            println("authenticate")
+            let navigationController = UINavigationController()
+            let authViewController = AuthViewController()
+            authViewController.view.backgroundColor = UIColor.whiteColor()
+            window?.rootViewController = navigationController
+            navigationController.navigationBarHidden = true
+            navigationController.pushViewController(authViewController, animated: true)
         }
         
         
         // instantiate storyboards
+        /*
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -66,13 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarConfig = [buyViewController, sellViewController, settingsViewController]
         tabBarController.viewControllers = tabBarConfig
         navigationController.pushViewController(tabBarController, animated: true)
-        window?.rootViewController = navigationController
+        // window?.rootViewController = navigationController
         
         // customize tab bar
         buyViewController.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewController.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 3)
-        
+        */
         return true
     }
 
