@@ -125,12 +125,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vc5-7W-haT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="274"/>
+            <point key="canvasLocation" x="1075" y="274"/>
         </scene>
-        <!--View Controller-->
+        <!--Shipping Info View Controller-->
         <scene sceneID="kYS-DD-iaO">
             <objects>
-                <viewController id="0B0-E3-muU" sceneMemberID="viewController">
+                <viewController id="0B0-E3-muU" customClass="ShippingInfoViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U5c-A8-v7L"/>
                         <viewControllerLayoutGuide type="bottom" id="8Di-p9-nIu"/>
@@ -202,6 +202,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="nextButtonTapped:" destination="0B0-E3-muU" eventType="touchUpInside" id="Gc2-ox-PYa"/>
                                             <segue destination="DcH-KY-hql" kind="push" id="Jqy-ud-pYj"/>
                                         </connections>
                                     </button>
@@ -271,10 +272,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UA9-gU-rkU"/>
+                    <connections>
+                        <outlet property="itemImageView" destination="VhX-ev-txa" id="xid-K0-o1x"/>
+                        <outlet property="shippingCityTextfield" destination="3mm-Q1-Mxs" id="Vq5-OS-81E"/>
+                        <outlet property="shippingNameTextfield" destination="Haq-tE-g1o" id="dUe-gg-wd2"/>
+                        <outlet property="shippingPhoneTextfield" destination="ATk-pz-Mmx" id="Smh-E5-mGn"/>
+                        <outlet property="shippingStateTextfield" destination="aVz-vC-FtD" id="gaD-7q-6T1"/>
+                        <outlet property="shippingStreetAddressTextfield" destination="bYD-8J-dsf" id="kMh-Xu-d7g"/>
+                        <outlet property="shippingZipcodeTextfield" destination="Uds-QW-pUL" id="Vwl-YQ-ISg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BVk-bZ-AqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="274"/>
+            <point key="canvasLocation" x="1496" y="274"/>
         </scene>
         <!--Billing Info View Controller-->
         <scene sceneID="YB1-Ot-wEt">
@@ -434,7 +444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXx-Xj-rxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371" y="274"/>
+            <point key="canvasLocation" x="1903" y="274"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="r3o-yZ-dWO">
@@ -454,8 +464,8 @@
                             <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8m-DP-fFo">
                                 <rect key="frame" x="0.0" y="318" width="320" height="250"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSO-Zs-93E">
-                                        <rect key="frame" x="26" y="161" width="280" height="43"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSO-Zs-93E">
+                                        <rect key="frame" x="25" y="161" width="270" height="43"/>
                                         <color key="backgroundColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="aJD-hk-2pe"/>
@@ -465,7 +475,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="7dw-b8-OYs" kind="modal" id="W4B-yy-Nlk"/>
+                                            <segue destination="7dw-b8-OYs" kind="push" id="o0y-ai-jLd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -483,7 +493,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45o-zc-Ek5">
-                                <rect key="frame" x="80" y="356.5" width="38" height="20.5"/>
+                                <rect key="frame" x="80" y="356" width="38" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -549,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Un-xl-YWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="274"/>
+            <point key="canvasLocation" x="2307" y="274"/>
         </scene>
         <!--Completed Purchase View Controller-->
         <scene sceneID="nOa-yc-Vpc">
@@ -599,10 +609,11 @@
                             <constraint firstItem="oH8-SK-miM" firstAttribute="top" secondItem="JT3-GB-Y1d" secondAttribute="top" id="er0-qL-rts"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="48k-DW-PXi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lpq-kj-vLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2189" y="274"/>
+            <point key="canvasLocation" x="2721" y="274"/>
         </scene>
     </scenes>
     <resources>

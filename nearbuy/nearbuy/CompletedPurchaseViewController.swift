@@ -22,11 +22,16 @@ class CompletedPurchaseViewController: UIViewController {
     }
     
     @IBAction func returnToBrowse(sender: AnyObject) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let browseVC = mainStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
-        let navController = UINavigationController()
-        navController.pushViewController(browseVC, animated: true)
-        presentViewController(navController, animated: true, completion: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
+//        self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+        //        self.parentViewController?.navigationController?.popToRootViewControllerAnimated(false)
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//        self.parentViewController?.navigationController?.popToRootViewControllerAnimated(true)
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let browseVC = mainStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
+//        let navController = UINavigationController()
+//        navController.pushViewController(browseVC, animated: true)
+//        presentViewController(navController, animated: true, completion: nil)
     }
 
     /*

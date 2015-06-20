@@ -46,6 +46,7 @@
 		A3E959F51B2E82BC0080AC64 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E959F41B2E82BC0080AC64 /* Auth.storyboard */; };
 		A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F61B2E83A80080AC64 /* AuthViewController.swift */; };
 		A3E959F91B2E97840080AC64 /* Shyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F81B2E97840080AC64 /* Shyp.swift */; };
+		D2395E991B362CFA00C1E7C2 /* ShippingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2395E981B362CFA00C1E7C2 /* ShippingInfoViewController.swift */; };
 		D252ABA11B353A2D006DFE3E /* BillingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252ABA01B353A2D006DFE3E /* BillingInfoViewController.swift */; };
 		D25368F61B2E38D500DAA78A /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */; };
 		D25368F81B2E38E400DAA78A /* ItemDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */; };
@@ -113,6 +114,7 @@
 		A3E959F41B2E82BC0080AC64 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		A3E959F61B2E83A80080AC64 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		A3E959F81B2E97840080AC64 /* Shyp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shyp.swift; sourceTree = "<group>"; };
+		D2395E981B362CFA00C1E7C2 /* ShippingInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingInfoViewController.swift; sourceTree = "<group>"; };
 		D252ABA01B353A2D006DFE3E /* BillingInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingInfoViewController.swift; sourceTree = "<group>"; };
 		D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		D25368F71B2E38E400DAA78A /* ItemDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */,
 				D252ABA01B353A2D006DFE3E /* BillingInfoViewController.swift */,
 				D277971A1B35470800D6FA2A /* CompletedPurchaseViewController.swift */,
+				D2395E981B362CFA00C1E7C2 /* ShippingInfoViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				3DD616F41B277B83001FEB6F /* ViewController.swift in Sources */,
 				D2E1287C1B27DB2700221321 /* ChatViewController.swift in Sources */,
 				A347FD7E1B282134002548F8 /* Product.swift in Sources */,
+				D2395E991B362CFA00C1E7C2 /* ShippingInfoViewController.swift in Sources */,
 				3DD616F21B277B83001FEB6F /* AppDelegate.swift in Sources */,
 				D2E128801B27DB5A00221321 /* TakePhotoViewController.swift in Sources */,
 				A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */,
