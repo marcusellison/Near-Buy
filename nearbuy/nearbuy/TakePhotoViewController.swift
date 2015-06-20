@@ -19,7 +19,6 @@ class TakePhotoViewController: UIViewController {
     
     private var photoImage: UIImage?
     
-    
     private let captureSession = AVCaptureSession()
     private let sessionQueue = dispatch_queue_create("com.marcusellison.nearbuy.sessionqueue", nil)
     
