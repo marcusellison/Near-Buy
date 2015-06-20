@@ -9,7 +9,6 @@
 import UIKit
 import Parse
 
-
 // let's decide on this later
 let themeColor = UIColor(red: 0.5, green: 0.41, blue: 0.22, alpha: 1.0)
 

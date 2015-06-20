@@ -9,7 +9,6 @@
 import UIKit
 import Parse
 
-
 class Payments: NSObject {
     
     /*

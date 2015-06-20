@@ -14,6 +14,4 @@
 
 #import "Stripe.h"
 #import "CardIO.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <Bolts/Bolts.h>
 @import Foundation;

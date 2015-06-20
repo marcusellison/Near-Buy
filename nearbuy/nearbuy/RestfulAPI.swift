@@ -9,7 +9,6 @@
 import UIKit
 import Parse
 
-
 let applicationID = "MXh7k8fs6DYgHe3289YMuEiVXfVT3tfgc39DMqXm"
 let clientKey = "0co1OmbuCeuovw5r2YdbiJ7wh9AkczJaMdoLGOF0"
 
@@ -18,7 +17,7 @@ class API: NSObject {
     /* Init Parse */
     
     func initParse() {
-        Parse.enableLocalDatastore()
+        // Parse.enableLocalDatastore()
         Parse.setApplicationId(applicationID, clientKey: clientKey)
     }
     
