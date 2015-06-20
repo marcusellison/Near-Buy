@@ -298,15 +298,11 @@
 				3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */,
 				A3E959F61B2E83A80080AC64 /* AuthViewController.swift */,
 				3DF79DB11B28080A00395B0A /* TakePhotosDetailViewController.swift */,
-				D2E1287F1B27DB5A00221321 /* TakePhotoViewController.swift */,
-<<<<<<< HEAD
-				D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */,
-=======
+				D2E1287F1B27DB5A00221321 /* TakePhotoViewController.swift */,=
 				D2E1287D1B27DB3400221321 /* BrowseViewController.swift */,
 				D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */,
 				D252ABA01B353A2D006DFE3E /* BillingInfoViewController.swift */,
 				D277971A1B35470800D6FA2A /* CompletedPurchaseViewController.swift */,
->>>>>>> f218ae414020487e35b319ff8d7a5bd4e6b71908
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -373,10 +369,6 @@
 				TargetAttributes = {
 					3DD616EB1B277B83001FEB6F = {
 						CreatedOnToolsVersion = 6.3.2;
-<<<<<<< HEAD
-						DevelopmentTeam = JSH982M67C;
-=======
->>>>>>> f218ae414020487e35b319ff8d7a5bd4e6b71908
 					};
 					3DD617001B277B83001FEB6F = {
 						CreatedOnToolsVersion = 6.3.2;
