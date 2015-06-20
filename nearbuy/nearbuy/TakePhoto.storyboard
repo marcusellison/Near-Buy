@@ -52,7 +52,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="takePhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="bwJ-zs-MAq"/>
                                     <segue destination="AQa-1U-RhL" kind="push" identifier="ProductDetail" id="jig-en-HDe"/>
                                 </connections>
                             </button>

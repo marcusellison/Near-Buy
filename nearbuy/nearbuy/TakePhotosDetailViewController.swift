@@ -19,8 +19,6 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
     
     var pickCategoriesViewController: PickCategoriesViewController?
     
-    
-    // Should this always be implicity unwrapped?
     private var product: Product = Product(params: [:])
 
     override func viewDidLoad() {
@@ -76,11 +74,7 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
             }
         }
         
-        for (title, fieldValue) in params {
-            println("Title: \(title), Field Value: \(fieldValue)")
-        }
-        
-        // Let's create this!
+        // Let's create a product!
         product.create(params)
         
     }

@@ -101,8 +101,6 @@ class TakePhotoViewController: UIViewController {
             let takePhotosDetailViewController = segue.destinationViewController as! TakePhotosDetailViewController
             
             takePhotosDetailViewController.productImage = self.photoImage
-            
-            
         }
     }
     
@@ -134,14 +132,11 @@ class TakePhotoViewController: UIViewController {
                     let metadata:NSDictionary = CMCopyDictionaryOfAttachments(nil, imageDataSampleBuffer, CMAttachmentMode(kCMAttachmentMode_ShouldPropagate)).takeUnretainedValue()
                     
                     if let image = UIImage(data: imageData) {
-                        // save the image or do something interesting with it
                         println("saving the image")
                         println(image)
                         
                         // set image
                         self.photoImage = image
-                        
-                        
                         
                         if self.capturedPhotos.count < 3 {
                             self.capturedPhotos.append(image)
@@ -163,20 +158,6 @@ class TakePhotoViewController: UIViewController {
         })
 
         
-    }
-    
-    // not being used right now.
-    private class func getTemporaryFileURL() -> NSURL {
-        let guid = NSUUID().UUIDString
-        let outputFile = "video_\(guid).mp4"
-        let outputDirectory = NSTemporaryDirectory()
-        let outputPath = outputDirectory.stringByAppendingPathComponent(outputFile)
-        let outputURL = NSURL.fileURLWithPath(outputPath)
-        
-//         Take out in production
-//        assert(!NSFileManager.defaultManager().fileExistsAtPath(outputPath), "Could not setup an output file. File exists.")
-        
-        return outputURL!
     }
     
     @IBAction func uploadPhoto(sender: AnyObject) {
