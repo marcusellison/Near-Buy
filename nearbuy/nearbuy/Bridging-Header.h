@@ -13,4 +13,5 @@
 #endif
 
 #import "Stripe.h"
+#import "CardIO.h"
 @import Foundation;
