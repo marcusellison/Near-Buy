@@ -9,7 +9,6 @@
 import UIKit
 import Parse
 
-
 let applicationID = "MXh7k8fs6DYgHe3289YMuEiVXfVT3tfgc39DMqXm"
 let clientKey = "0co1OmbuCeuovw5r2YdbiJ7wh9AkczJaMdoLGOF0"
 
@@ -102,7 +101,7 @@ class API: NSObject {
     
     func buyProduct(object: PFObject) -> Bool {
         /* Should I save this locally?  Delete it?  For now I'll delete but this could change */
-        object.deleteInBackground()
+        // object.deleteInBackground()
         
         return true
     }

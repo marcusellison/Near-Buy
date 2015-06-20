@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Parse
 
 class Payments: NSObject {
     
@@ -21,7 +21,7 @@ class Payments: NSObject {
     */
     
     
-    func getStripetoken(params: NSDictionary) -> Int {
+    func getStripetoken(params: NSDictionary){
         /* Create a Stripe Card Object */
             
         let creditCard = STPCard()
@@ -44,7 +44,6 @@ class Payments: NSObject {
             })
         }
         
-        return 1 // On success else 0?
     }
         
     func chargeUser() -> Int {
@@ -53,4 +52,5 @@ class Payments: NSObject {
         
         return 1
     }
+    
 }

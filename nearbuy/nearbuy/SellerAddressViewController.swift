@@ -9,11 +9,18 @@
 import UIKit
 
 class SellerAddressViewController: UIViewController {
+    
+    let gpaViewController = GooglePlacesAutocomplete(
+        apiKey: "AIzaSyDYDEWYu34-J1RJbSv6E4m2521hiJ_HCKA",
+        placeType: .Address
+    )
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        gpaViewController.placeDelegate = self // Conforms to GooglePlacesAutocompleteDelegate
+        
+        presentViewController(gpaViewController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,4 +39,20 @@ class SellerAddressViewController: UIViewController {
     }
     */
 
+}
+
+extension SellerAddressViewController: GooglePlacesAutocompleteDelegate {
+
+    func placeSelected(place: Place) {
+        
+        println(place.description)
+        
+        place.getDetails { details in
+            println(details)
+        }
+    }
+    
+    func placeViewClosed() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }

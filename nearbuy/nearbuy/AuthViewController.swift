@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBAction func userDidAuth(sender: UIButton) {
         
@@ -17,16 +17,70 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        /* Log the User in */
+        
+        let loginView : FBSDKLoginButton = FBSDKLoginButton()
+        self.view.addSubview(loginView)
+        loginView.center = self.view.center
+        loginView.readPermissions = ["public_profile", "email", "user_friends"]
+        loginView.delegate = self
+        
+        /* Check for an existing Token -- we should never get here because Parse should have a current User.  If we do get here, let's not make them sign in again */
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            /* There's already an existing access token -- skip the login flow and redirect */
+        }
+        
+        /* Add a target action to the button
+        
+        loginView.addTarget(self, action: loginButtonTapped, forControlEvents: UIControlEvents.TouchUpInside)
+        */
     }
     
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        println("User Logged In")
+        
+        if ((error) != nil) {
+            /* Process error - maybe ask the user to try again? */
+        }
+        else if result.isCancelled {
+            /* Not sure what to do here? */
+        }
+        else {
+            /* Populate the User Object with Profile Data */
+            self.returnUserData()
+            /* Segue into the Collection View with Products */
+            
 
+            /*
+                if result.grantedPermissions.contains("email") {
+                    // Do work
+                }
+            */
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        println("User Logged Out")
+    }
+
+    func returnUserData()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            if ((error) != nil) {
+                // Process error
+                println("Error: \(error)")
+            }
+            else {
+                println("fetched user: \(result)")
+                let userName : NSString = result.valueForKey("name") as! NSString
+                println("User Name is: \(userName)")
+                let userEmail : NSString = result.valueForKey("email") as! NSString
+                println("User Email is: \(userEmail)")
+            }
+        })
+    }
+    
     /*
     // MARK: - Navigation
 
