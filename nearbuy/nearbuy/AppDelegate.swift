@@ -13,7 +13,7 @@ import Parse
 let themeColor = UIColor(red: 0.5, green: 0.41, blue: 0.22, alpha: 1.0)
 
 /* Stripe Key */
-let stripeKey = ""
+let stripeKey = "pk_test_9wwe6T1laHfjJWiiquq04p5b"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,16 +27,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var api : API = API();
         var user : User = User()
+        var payments: Payments = Payments()
         api.initParse()
         
         /* Init Stripe */
         Stripe.setDefaultPublishableKey(stripeKey)
+        
+        var paymentsParams: NSDictionary = ["cvc": 479, "number":"4242424242424242", "expMonth": 08, "expYear":2018]
+        payments.getStripetoken(paymentsParams)
+        
+        
+        
+        
         
         /* Initialize Facebook */
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         /* User Authentication Flow
         
+        /*
         if (PFUser.currentUser() != nil) {
             /* User is Authed - Take them to root view controller*/
             println("\(PFUser.currentUser())")
@@ -55,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         */
         
         // instantiate storyboards
-        
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)

@@ -9,6 +9,8 @@
 import UIKit
 
 class AuthViewController: UIViewController, FBSDKLoginButtonDelegate {
+    
+    lazy var user : User = User()
 
     @IBAction func userDidAuth(sender: UIButton) {
         
@@ -28,13 +30,16 @@ class AuthViewController: UIViewController, FBSDKLoginButtonDelegate {
         /* Check for an existing Token -- we should never get here because Parse should have a current User.  If we do get here, let's not make them sign in again */
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             /* There's already an existing access token -- skip the login flow and redirect */
+            println("access token exists")
         }
         
         /* Add a target action to the button
         
-        loginView.addTarget(self, action: loginButtonTapped, forControlEvents: UIControlEvents.TouchUpInside)
+            loginView.addTarget(self, action: loginButtonTapped, forControlEvents: UIControlEvents.TouchUpInside)
         */
+        
     }
+    
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
@@ -68,21 +73,33 @@ class AuthViewController: UIViewController, FBSDKLoginButtonDelegate {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             if ((error) != nil) {
-                // Process error
+                /* Process error */
                 println("Error: \(error)")
             }
             else {
-                println("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                println("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                println("User Email is: \(userEmail)")
+                
+                let userName : String = result.valueForKey("name") as! String
+                let userEmail : String = result.valueForKey("email") as! String
+                let gender : String = result.valueForKey("gender") as! String
+                println("\(userName)")
+                println("\(userEmail)")
+                println("\(gender)")
+                /* User Attributes to Save after the Request Returns */
+                var params: NSDictionary = [:]
+                /*
+                params.setValue(userName, forKey: "name")
+                params.setValue(userEmail, forKey: "email")
+                params.setValue(gender, forKey: "gender")
+                */
+                
+                
+                
+                // self.user.save(params)
             }
         })
     }
     
     /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
