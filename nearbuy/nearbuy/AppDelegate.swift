@@ -64,10 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         */
         
         // instantiate storyboards
-<<<<<<< HEAD
-=======
-        
->>>>>>> 573025e276616c63ba0c636b99abee8184ecf927
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -91,10 +87,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buyViewController.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewController.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 3)
-<<<<<<< HEAD
-=======
-        
->>>>>>> 573025e276616c63ba0c636b99abee8184ecf927
         return true
     }
 
