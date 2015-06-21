@@ -10,8 +10,28 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var userLocationLabel: UILabel!
+    @IBOutlet weak var trustScoreView: UIImageView!
+    
+    @IBOutlet weak var firstItemLabel: UILabel!
+    @IBOutlet weak var firstItemCost: UILabel!
+    
+    @IBOutlet weak var secondItemLabel: UILabel!
+    @IBOutlet weak var secondItemCost: UILabel!
+    
+    @IBOutlet weak var creditCardNumberLabel: UILabel!
+    
+//    let products = [Product]()
+//    let user: User
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileImageView.layer.cornerRadius = 10
+        profileImageView.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }

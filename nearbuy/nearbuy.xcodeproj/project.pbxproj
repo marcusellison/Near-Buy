@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		15EAC0541B33F6EA0000EF67 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EAC0531B33F6EA0000EF67 /* Payments.swift */; };
-		15FA066F1B3643CD000E77D1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FA066D1B3643CD000E77D1 /* FBSDKCoreKit.framework */; };
-		15FA06701B3643CD000E77D1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FA066E1B3643CD000E77D1 /* FBSDKLoginKit.framework */; };
 		2632977908EF25C5FD1B006E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5C74D7ECBF00B2F86ECBAD /* libPods.a */; };
 		3D0CAA521B35FD48003C8229 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0CAA511B35FD48003C8229 /* GooglePlacesAutocomplete.swift */; };
 		3D0CAA561B35FF9A003C8229 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D0CAA551B35FF9A003C8229 /* GooglePlacesAutocomplete.xib */; };
-		3D2526A61B36459500DA8F43 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2526A41B36459500DA8F43 /* FBSDKCoreKit.framework */; };
-		3D2526A71B36459500DA8F43 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2526A51B36459500DA8F43 /* FBSDKLoginKit.framework */; };
 		3D2526A91B365EE100DA8F43 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2526A81B365EE100DA8F43 /* Profile.storyboard */; };
 		3D2526AB1B365FAA00DA8F43 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2526AA1B365FAA00DA8F43 /* ProfileViewController.swift */; };
 		3D3B2C8B1B280F4C00BA59C8 /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */; };
@@ -22,6 +18,8 @@
 		3D98DCE01B366C3600EF2BC6 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DCDF1B366C3600EF2BC6 /* ProfileDetailViewController.swift */; };
 		3D98DCE21B366CFB00EF2BC6 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DCE11B366CFB00EF2BC6 /* HistoryDetailViewController.swift */; };
 		3D98DCE41B366DA800EF2BC6 /* PaymentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DCE31B366DA800EF2BC6 /* PaymentDetailViewController.swift */; };
+		3D98DCE71B36735E00EF2BC6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98DCE51B36735E00EF2BC6 /* FBSDKCoreKit.framework */; };
+		3D98DCE81B36735E00EF2BC6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98DCE61B36735E00EF2BC6 /* FBSDKLoginKit.framework */; };
 		3DA8CD291B337DA100BAE6E8 /* PickCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */; };
 		3DA8CD2B1B337E6200BAE6E8 /* SellerAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */; };
 		3DA8CD2D1B33828C00BAE6E8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD2C1B33828C00BAE6E8 /* CategoryCell.swift */; };
@@ -85,12 +83,8 @@
 		15EAC04F1B33F3310000EF67 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		15EAC0511B33F3390000EF67 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		15EAC0531B33F6EA0000EF67 /* Payments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
-		15FA066D1B3643CD000E77D1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Downloads/Archive/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		15FA066E1B3643CD000E77D1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Downloads/Archive/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3D0CAA511B35FD48003C8229 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
 		3D0CAA551B35FF9A003C8229 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
-		3D2526A41B36459500DA8F43 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Downloads/Archive/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		3D2526A51B36459500DA8F43 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Downloads/Archive/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3D2526A81B365EE100DA8F43 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		3D2526AA1B365FAA00DA8F43 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
@@ -98,6 +92,8 @@
 		3D98DCDF1B366C3600EF2BC6 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		3D98DCE11B366CFB00EF2BC6 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
 		3D98DCE31B366DA800EF2BC6 /* PaymentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailViewController.swift; sourceTree = "<group>"; };
+		3D98DCE51B36735E00EF2BC6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Downloads/Archive/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		3D98DCE61B36735E00EF2BC6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Downloads/Archive/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCategoriesViewController.swift; sourceTree = "<group>"; };
 		3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerAddressViewController.swift; sourceTree = "<group>"; };
 		3DA8CD2C1B33828C00BAE6E8 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -163,13 +159,13 @@
 				A37AF19A1B360856001EE497 /* SystemConfiguration.framework in Frameworks */,
 				A37AF1991B36084E001EE497 /* StoreKit.framework in Frameworks */,
 				A37AF1981B360847001EE497 /* Security.framework in Frameworks */,
-				15FA066F1B3643CD000E77D1 /* FBSDKCoreKit.framework in Frameworks */,
+				3D98DCE71B36735E00EF2BC6 /* FBSDKCoreKit.framework in Frameworks */,
 				A37AF1971B36083E001EE497 /* QuartzCore.framework in Frameworks */,
 				A37AF1961B360838001EE497 /* MobileCoreServices.framework in Frameworks */,
 				A37AF1951B360831001EE497 /* CoreLocation.framework in Frameworks */,
 				A37AF1941B360821001EE497 /* CoreGraphics.framework in Frameworks */,
 				A37AF1931B360819001EE497 /* CFNetwork.framework in Frameworks */,
-				15FA06701B3643CD000E77D1 /* FBSDKLoginKit.framework in Frameworks */,
+				3D98DCE81B36735E00EF2BC6 /* FBSDKLoginKit.framework in Frameworks */,
 				A37AF1921B360810001EE497 /* AudioToolbox.framework in Frameworks */,
 				2632977908EF25C5FD1B006E /* libPods.a in Frameworks */,
 				A37AF1B01B3615CB001EE497 /* ParseFacebookUtilsV4.framework in Frameworks */,
@@ -293,8 +289,8 @@
 		B824A1D489236F67415F20F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				15FA066D1B3643CD000E77D1 /* FBSDKCoreKit.framework */,
-				15FA066E1B3643CD000E77D1 /* FBSDKLoginKit.framework */,
+				3D98DCE51B36735E00EF2BC6 /* FBSDKCoreKit.framework */,
+				3D98DCE61B36735E00EF2BC6 /* FBSDKLoginKit.framework */,
 				A37AF1AF1B3615CB001EE497 /* ParseFacebookUtilsV4.framework */,
 				A37AF18E1B36074A001EE497 /* Bolts.framework */,
 				A37AF18F1B36074A001EE497 /* Parse.framework */,
@@ -678,6 +674,7 @@
 					"$(PROJECT_DIR)",
 					/Users/cvbourne/Documents/FacebookSDK,
 					/Users/paichen/Downloads/Archive,
+					/Users/mje/Downloads/Archive,
 				);
 				INFOPLIST_FILE = nearbuy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -699,6 +696,7 @@
 					"$(PROJECT_DIR)",
 					/Users/cvbourne/Documents/FacebookSDK,
 					/Users/paichen/Downloads/Archive,
+					/Users/mje/Downloads/Archive,
 				);
 				INFOPLIST_FILE = nearbuy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
