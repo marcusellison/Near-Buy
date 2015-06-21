@@ -74,28 +74,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
         let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         
-        
         // instantiate tab bar and nav bar
         let tabBarController = UITabBarController()
         let navigationController = UINavigationController()
         let buyViewNav = UINavigationController()
         let sellViewNav = UINavigationController()
-        let settingsViewNav = UINavigationController()
+        let profileViewNav = UINavigationController()
         buyViewNav.pushViewController(buyViewController, animated: true)
         sellViewNav.pushViewController(sellViewController, animated: true)
-        settingsViewNav.pushViewController(settingsViewController, animated: true)
-        
-        //TODO Customize tab bar for profile view controller
+        profileViewNav.pushViewController(profileViewController, animated: true)
         
         // configure tab bar and embed in nav bar
-        let tabBarConfig = [buyViewNav, sellViewNav, settingsViewNav]
+        let tabBarConfig = [buyViewNav, sellViewNav, profileViewNav]
         tabBarController.viewControllers = tabBarConfig
         window?.rootViewController = tabBarController
         
         // customize tab bar
         buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
-        settingsViewNav.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 3)
+        profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
         
         return true
     }
