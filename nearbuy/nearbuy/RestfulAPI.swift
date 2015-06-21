@@ -12,6 +12,8 @@ import Parse
 let applicationID = "MXh7k8fs6DYgHe3289YMuEiVXfVT3tfgc39DMqXm"
 let clientKey = "0co1OmbuCeuovw5r2YdbiJ7wh9AkczJaMdoLGOF0"
 
+let ProductsDidReturn = "ProductsDidReturn"
+
 class API: NSObject {
     
     /* Init Parse */
@@ -21,43 +23,7 @@ class API: NSObject {
         Parse.setApplicationId(applicationID, clientKey: clientKey)
     }
     
-    /* 
-        Auth 
-    */
-    
-    func registerUser(username: String, password: String){
-        var user = PFUser()
-        user.username = username;
-        user.password = password;
-        // user.email = "email@example.com"
-        
-        user.signUpInBackgroundWithBlock {
-            (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
-            } else {
-            
-            }
-        }
-    }
-    
-    func logUserIn(username: String, password: String){
-        
-        PFUser.logInWithUsernameInBackground(username, password:password) {
-            (user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
-            
-            } else {
-                println(error?.description)
-            }
-        }
-    }
-    
-    func logUserOut(){
-        PFUser.logOut()
-        var currentUser = PFUser.currentUser()  // This will now be nil
-    }
-    
+  
     /* 
         Sell 
     */
@@ -120,9 +86,9 @@ class API: NSObject {
                     if let productObjects = productObjects as? [PFObject] {
                         /* Save this on the Parse Local Object */
                         products = productObjects
-                        println("\(products)")
                         
                         /* Do whatever you want here - use a notification to update a specific object */
+                        NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
                         
                     }
                 } else {
