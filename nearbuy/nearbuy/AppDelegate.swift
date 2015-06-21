@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         /* User Authentication Flow */
-        
+        /*
         if (PFUser.currentUser() != nil) {
             /* User is Authed - Take them to root view controller*/
             println("\(PFUser.currentUser())")
@@ -52,10 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.navigationBarHidden = true
             navigationController.pushViewController(authViewController, animated: true)
         }
-        
+        */
         
         // instantiate storyboards
-        /*
+        
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -68,18 +68,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // instantiate tab bar and nav bar
         let tabBarController = UITabBarController()
         let navigationController = UINavigationController()
+        let buyViewNav = UINavigationController()
+        let sellViewNav = UINavigationController()
+        let settingsViewNav = UINavigationController()
+        buyViewNav.pushViewController(buyViewController, animated: true)
+        sellViewNav.pushViewController(sellViewController, animated: true)
+        settingsViewNav.pushViewController(settingsViewController, animated: true)
         
         // configure tab bar and embed in nav bar
-        let tabBarConfig = [buyViewController, sellViewController, settingsViewController]
+        let tabBarConfig = [buyViewNav, sellViewNav, settingsViewNav]
         tabBarController.viewControllers = tabBarConfig
-        navigationController.pushViewController(tabBarController, animated: true)
-        // window?.rootViewController = navigationController
+        window?.rootViewController = tabBarController
         
         // customize tab bar
-        buyViewController.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
-        sellViewController.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
-        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 3)
-        */
+        buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
+        sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
+        settingsViewNav.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 3)
+        
+        
         return true
     }
 
