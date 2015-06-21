@@ -16,6 +16,8 @@ let ProductsDidReturn = "ProductsDidReturn"
 
 class API: NSObject {
     
+    lazy var user: User = User()
+    
     /* Init Parse */
     
     func initParse() {
@@ -38,6 +40,9 @@ class API: NSObject {
         product["shared"] = productInfo["shared"]
         product["category"] = productInfo["category"]
         let image: UIImage = productInfo["image"] as! UIImage
+        
+        /* Add a user field to each product - this will crash in test scenarios if you're not authed */
+        product["user"] = user.currentUser
         
         let imageData = UIImagePNGRepresentation(image)
         

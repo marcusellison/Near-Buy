@@ -11,30 +11,34 @@ import Parse
 
 class User: NSObject {
     
-    
     var name: String?
     var email: String?
-    var address: NSDictionary?
-    var creditCard: NSDictionary?
-    var productList: [Product]?
+    var address: Dictionary<String, String>?
+    var creditCard: Dictionary<String, String>?
+    var purchases: [Product]?
+    var currentUser: PFUser?
+    
     
     override init(){
-        // var currentUser: PFUser.currentUser()
+        /* Assign any of the optional values that exist in Parse on this User object */
     }
     
     func registerUser(username: String, password: String){
         var user = PFUser()
         user.username = username;
-        // user.email = "email@example.com"
+        user.password = username;
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
                 let errorString = error.userInfo?["error"] as? NSString
             } else {
-                
+                /* Set this user to the current user */
+                self.currentUser = user
             }
         }
+        
+        
     }
     
     func logUserIn(username: String, password: String){
@@ -42,6 +46,7 @@ class User: NSObject {
         PFUser.logInWithUsernameInBackground(username, password:password) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
+                self.currentUser = user;
                 
             } else {
                 println(error?.description)
@@ -49,23 +54,18 @@ class User: NSObject {
         }
     }
     
+    /* Logout User and set currentUser to nil */
     func logUserOut(){
         PFUser.logOut()
-        var currentUser = PFUser.currentUser()  // This will now be nil
+        var currentUser = PFUser.currentUser()
     }
     
-    func saveCreditCard(params:NSDictionary) {
+    /* Save attributes to a user */
+    
+    func save(params:Dictionary<String, String>) {
+        var attributes = PFObject(className: "Attributes", dictionary: params)
         
+        attributes.save()
     }
     
-    func saveAddress(params:NSDictionary){
-        
-    }
-    
-    func getProducts(params:NSDictionary) /* -> [Product]?*/ {
-        
-        
-    }
-    
-   
 }
