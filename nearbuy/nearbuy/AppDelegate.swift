@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /* Initialize Facebook */
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
-        /* User Authentication Flow
+        /* User Authentication Flow */
         
         /*
         if (PFUser.currentUser() != nil) {
