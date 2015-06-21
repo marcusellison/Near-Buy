@@ -210,9 +210,50 @@
                     <view key="view" contentMode="scaleToFill" id="438-Fk-9h4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIb-Fi-XW5">
+                                <rect key="frame" x="189" y="269" width="115" height="30"/>
+                                <state key="normal" title="Confirm Address">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onConfirmAddress:" destination="Fdy-6O-y7b" eventType="touchUpInside" id="I1w-7e-Ftg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcA-RG-Z29">
+                                <rect key="frame" x="16" y="269" width="114" height="30"/>
+                                <state key="normal" title="Change Address">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onChangeAddress:" destination="Fdy-6O-y7b" eventType="touchUpInside" id="neP-PP-fK8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="975 Valencia Street Apt 2, San Francisco CA" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-yJ-pZ9">
+                                <rect key="frame" x="60" y="123" width="200" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="b93-93-BdO"/>
+                                    <constraint firstAttribute="width" constant="200" id="mzC-Dj-Hgs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gcA-RG-Z29" firstAttribute="leading" secondItem="438-Fk-9h4" secondAttribute="leading" constant="16" id="H0O-xb-PWw"/>
+                            <constraint firstItem="gcA-RG-Z29" firstAttribute="top" secondItem="AHy-yJ-pZ9" secondAttribute="bottom" constant="94" id="HDJ-dO-iR2"/>
+                            <constraint firstAttribute="centerX" secondItem="AHy-yJ-pZ9" secondAttribute="centerX" id="b7p-PM-boB"/>
+                            <constraint firstItem="dIb-Fi-XW5" firstAttribute="top" secondItem="AHy-yJ-pZ9" secondAttribute="bottom" constant="94" id="kRd-C7-wC7"/>
+                            <constraint firstAttribute="trailing" secondItem="dIb-Fi-XW5" secondAttribute="trailing" constant="16" id="ryR-1B-D93"/>
+                            <constraint firstItem="AHy-yJ-pZ9" firstAttribute="top" secondItem="4om-vW-L06" secondAttribute="bottom" constant="103" id="xiT-6w-WIm"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Address" id="bb6-Mp-ld2"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="AHy-yJ-pZ9" id="AC4-w6-evR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dcs-fU-lW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
