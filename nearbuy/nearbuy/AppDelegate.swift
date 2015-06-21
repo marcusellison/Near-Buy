@@ -59,18 +59,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
       
         // instantiate VCs within storyboards
         let buyViewController = buyStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
         let sellViewController = sellStoryboard.instantiateViewControllerWithIdentifier("takePhoto") as! TakePhotoViewController
+        let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
         let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+        
         
         // instantiate tab bar and nav bar
         let tabBarController = UITabBarController()
         let navigationController = UINavigationController()
         
+        //TODO Customize tab bar for profile view controller
+        
         // configure tab bar and embed in nav bar
-        let tabBarConfig = [buyViewController, sellViewController, settingsViewController]
+        let tabBarConfig = [buyViewController, sellViewController, profileViewController]
         tabBarController.viewControllers = tabBarConfig
         navigationController.pushViewController(tabBarController, animated: true)
          window?.rootViewController = navigationController
@@ -78,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // customize tab bar
         buyViewController.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewController.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
-        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 3)
+        profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
         
         return true
     }
