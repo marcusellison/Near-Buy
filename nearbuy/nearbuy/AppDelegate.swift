@@ -13,7 +13,7 @@ import Parse
 let themeColor = UIColor(red: 0.5, green: 0.41, blue: 0.22, alpha: 1.0)
 
 /* Stripe Key */
-let stripeKey = ""
+let stripeKey = "pk_test_9wwe6T1laHfjJWiiquq04p5b"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,10 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var api : API = API();
         var user : User = User()
+        var payments: Payments = Payments()
         api.initParse()
         
         /* Init Stripe */
         Stripe.setDefaultPublishableKey(stripeKey)
+        
+        var paymentsParams: NSDictionary = ["cvc": 479, "number":"4242424242424242", "expMonth": 08, "expYear":2018]
+        payments.getStripetoken(paymentsParams)
+        
+        
+        
+        
         
         /* Initialize Facebook */
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
@@ -55,15 +63,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         */
         
         // instantiate storyboards
-        
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
       
         // instantiate VCs within storyboards
         let buyViewController = buyStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
         let sellViewController = sellStoryboard.instantiateViewControllerWithIdentifier("takePhoto") as! TakePhotoViewController
+        let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
         let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+        
         
         // instantiate tab bar and nav bar
         let tabBarController = UITabBarController()
@@ -75,6 +85,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sellViewNav.pushViewController(sellViewController, animated: true)
         settingsViewNav.pushViewController(settingsViewController, animated: true)
         
+        //TODO Customize tab bar for profile view controller
+        
         // configure tab bar and embed in nav bar
         let tabBarConfig = [buyViewNav, sellViewNav, settingsViewNav]
         tabBarController.viewControllers = tabBarConfig
@@ -84,7 +96,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         settingsViewNav.tabBarItem = UITabBarItem(title: "Settings", image: nil, tag: 3)
-        
         
         return true
     }
