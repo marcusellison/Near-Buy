@@ -10,10 +10,31 @@ import UIKit
 
 class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDelegate {
 
+    @IBOutlet weak var itemImageView: UIImageView!
+    @IBOutlet weak var creditCardTextfield: UITextField!
+    @IBOutlet weak var billingStreetAddressTextfield: UITextField!
+    @IBOutlet weak var billingCityTextfield: UITextField!
+    @IBOutlet weak var billingStateTextfield: UITextField!
+    @IBOutlet weak var billingZipcodeTextfield: UITextField!
+
+    var creditCardNumber: String?
+    var creditCardExpirationMonth: UInt?
+    var creditCardExpirationYear: UInt?
+    var creditCardCVV: String?
+    var billingStreetAddress: String?
+    var billingCity: String?
+    var billingState: String?
+    var billingZip: String?
+    
+    var userBillingInformation: [String : String]?
+    
+    
+    // let's integrate google address search here
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         CardIOUtilities.preload()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,10 +55,26 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     func userDidProvideCreditCardInfo(cardInfo: CardIOCreditCardInfo!, inPaymentViewController paymentViewController: CardIOPaymentViewController!) {
         if let info = cardInfo {
             let str = NSString(format: "Received card info.\n Number: %@\n expiry: %02lu/%lu\n cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv)
+            creditCardNumber = info.cardNumber
+            creditCardTextfield.text = info.redactedCardNumber
+            creditCardExpirationMonth = info.expiryMonth
+            creditCardExpirationYear = info.expiryYear
+            creditCardCVV = info.cvv
+            println(str)            
         }
         paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func nextButtonTapped(sender: AnyObject) {
+        // do i need to set credit card number here or does it carry down?
+        billingStreetAddress = billingStreetAddressTextfield.text
+        billingCity = billingCityTextfield.text
+        billingState = billingStateTextfield.text
+        billingZip = billingZipcodeTextfield.text
+        
+        userBillingInformation = ["creditCard": creditCardNumber!, "streetAddress": billingStreetAddress!, "city": billingCity!, "state": billingState!, "zip": billingZip!]
+        println(userBillingInformation!)
+    }
     /*
     // MARK: - Navigation
 

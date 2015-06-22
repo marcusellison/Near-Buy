@@ -11,61 +11,87 @@ import Parse
 
 class User: NSObject {
     
-    
     var name: String?
     var email: String?
-    var address: NSDictionary?
-    var creditCard: NSDictionary?
-    var productList: [Product]?
+    var address: Dictionary<String, String>?
+    var creditCard: Dictionary<String, String>?
+    var purchases: [Product]?
+    var currentUser: PFUser?
     
     override init(){
-        // var currentUser: PFUser.currentUser()
+        super.init()
+        
+        /* Assign any of the optional values that exist in Parse on this User object */
+        currentUser = PFUser.currentUser()
     }
     
-    func registerUser(username: String, password: String){
+    func register(params: Dictionary<String, AnyObject>){
         var user = PFUser()
-        user.username = username;
-        // user.email = "email@example.com"
+        user.username = (params["username"] as! String)
+        user.password = (params["username"] as! String)
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
                 let errorString = error.userInfo?["error"] as? NSString
             } else {
-                
+                println("success")
+                self.save(params)
             }
         }
+        
+        
     }
     
-    func logUserIn(username: String, password: String){
+    func login(params: Dictionary<String, AnyObject>){
+        let username = params["username"] as! String
+        let password = params["username"] as! String
         
         PFUser.logInWithUsernameInBackground(username, password:password) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                
+                println("success")
             } else {
                 println(error?.description)
             }
         }
     }
     
+    /* Logout User and set currentUser to nil */
     func logUserOut(){
         PFUser.logOut()
-        var currentUser = PFUser.currentUser()  // This will now be nil
     }
     
-    func saveCreditCard(params:NSDictionary) {
+    /* Save attributes to a user */
+    
+    func save(params:Dictionary<String, AnyObject>) {
+        var user = PFUser()
+        var attributes = PFObject(className: "Attributes", dictionary: params)
+        user["attributes"] = attributes
+        user.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
+            if success {
+                self.currentUser = user
+            } else {
+                /* Shit went wrong */
+            }
+            
+        })
+        println("\(user)")
+    }
+    
+    func update(params:Dictionary<String, AnyObject>) {
+        
         
     }
     
-    func saveAddress(params:NSDictionary){
+    /* Fetch Current User State */
+    func fetch(username: String){
+        PFUser.currentUser()?.fetchInBackgroundWithBlock({ (user: PFObject?, error:NSError?) -> Void in
+            if error == nil {
+                self.currentUser = (user as! PFUser)
+                println("\(user)")
+            }
+        })
         
     }
-    
-    func getProducts(params:NSDictionary) /* -> [Product]?*/ {
-        
-        
-    }
-    
-   
 }

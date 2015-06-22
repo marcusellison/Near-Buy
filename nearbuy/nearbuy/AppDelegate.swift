@@ -25,16 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         /* Initialize Parse */
         
-        var api : API = API();
+        var api : API = API()
+        api.initParse()
         var user : User = User()
         var payments: Payments = Payments()
-        api.initParse()
         
         /* Init Stripe */
         Stripe.setDefaultPublishableKey(stripeKey)
         
         var paymentsParams: NSDictionary = ["cvc": 479, "number":"4242424242424242", "expMonth": 08, "expYear":2018]
-        payments.getStripetoken(paymentsParams)
+        var amount = "100"
+        payments.chargeUser(paymentsParams, amount: amount)
         
         
         
@@ -44,11 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         /* User Authentication Flow */
-        /*
         if (PFUser.currentUser() != nil) {
-            /* User is Authed - Take them to root view controller*/
-            println("\(PFUser.currentUser())")
-            
+            /* 
+                User is already Authed - Take them to root view controller 
+                Fetch Current User State
+            */
+            let userDict = PFUser.currentUser()!
+            println("\(userDict)")
+            user.fetch(userDict["username"] as! String)
             
         } else {
             /* Parse Facebook Authentication */
@@ -60,9 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.navigationBarHidden = true
             navigationController.pushViewController(authViewController, animated: true)
         }
-        */
         
         // instantiate storyboards
+        /*
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -93,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
-        
+        */
         return true
     }
 

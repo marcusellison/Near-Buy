@@ -11,8 +11,10 @@ import Parse
 
 class Product: NSObject {
     
+    var products: [NSObject]?
     
-    var products: [PFObject]?
+    static let sharedInstance = Product(params: [:]);
+    
     var api: API = API()
     
     /*
@@ -71,7 +73,7 @@ class Product: NSObject {
     
     func search(searchString: String, params: NSDictionary) -> [PFObject]? {
         var matchedProducts: [PFObject]?
-        if let products = products {
+        /* if let products = products {
             for product in products {
                 if let productName: String = product["productName"] as? String {
                     if productName.rangeOfString(searchString, options: .CaseInsensitiveSearch) != nil {
@@ -79,7 +81,7 @@ class Product: NSObject {
                     }
                 }
             }
-        }
+        }*/
         
         return matchedProducts
     
