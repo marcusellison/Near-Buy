@@ -34,7 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Stripe.setDefaultPublishableKey(stripeKey)
         
         var paymentsParams: NSDictionary = ["cvc": 479, "number":"4242424242424242", "expMonth": 08, "expYear":2018]
-        payments.getStripetoken(paymentsParams)
+        var amount = "100"
+        payments.chargeUser(paymentsParams, amount: amount)
         
         
         
@@ -96,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
-        
+        */
         return true
     }
 

@@ -15,8 +15,8 @@ let clientKey = "0co1OmbuCeuovw5r2YdbiJ7wh9AkczJaMdoLGOF0"
 let ProductsDidReturn = "ProductsDidReturn"
 
 class API: NSObject {
-    
     lazy var user: User = User()
+    // var product: Product = Product(params: ["username":"kavodel@mixpanel.com"])
     
     /* Init Parse */
     
@@ -90,8 +90,7 @@ class API: NSObject {
                 if error == nil {
                     if let productObjects = productObjects as? [PFObject] {
                         /* Save this on the Parse Local Object */
-                        products = productObjects
-                        
+                        Product.sharedInstance.products = productObjects
                         /* Do whatever you want here - use a notification to update a specific object */
                         NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
                         

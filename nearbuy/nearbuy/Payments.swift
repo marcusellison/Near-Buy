@@ -19,6 +19,7 @@ class Payments: NSObject {
         Name,
         Token,
     */
+    lazy var user: User = User()
     
     
     func chargeUser(params: NSDictionary, amount:String){
@@ -38,8 +39,11 @@ class Payments: NSObject {
                 if let token = token {
                     /* Charge the User */
                     self.sendChargeToStripe("\(token)", amount: amount)
-                    
+                    self.user.currentUser?.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
+                        
+                    })
                     /* Also increment the amount on the Parse Object */
+                    
                 } else {
                     println("\(error)")
                     

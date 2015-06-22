@@ -19,8 +19,16 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
         var params: NSDictionary = ["username":"kavodel@mixpanel.com"]
         var prod = Product(params: params)
         prod.get(params)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "specialFunction", name: "ProductsDidReturn", object: nil)
         
     }
+    
+    func specialFunction(){
+        var products = Product.sharedInstance.products
+        println("\(products)")
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
