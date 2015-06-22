@@ -166,7 +166,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zTI-q9-K6h" firstAttribute="top" secondItem="CiO-T7-b1g" secondAttribute="bottom" constant="20" id="59r-f8-1iX"/>
                             <constraint firstItem="CiO-T7-b1g" firstAttribute="top" secondItem="gOD-DO-681" secondAttribute="bottom" constant="12" id="C2L-n8-6Ra"/>
@@ -229,7 +229,7 @@
                                     <action selector="onChangeAddress:" destination="Fdy-6O-y7b" eventType="touchUpInside" id="neP-PP-fK8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="975 Valencia Street Apt 2, San Francisco CA" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-yJ-pZ9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHy-yJ-pZ9">
                                 <rect key="frame" x="60" y="123" width="200" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="b93-93-BdO"/>

@@ -65,20 +65,30 @@ extension SellerAddressViewController: GooglePlacesAutocompleteDelegate {
         //update address
         addressLabel.text = place.description
         
-        self.placeViewClosed()
+        // break out address into street, streetName, city, state, zip
+//        place.getDetails { details in
+//            println("StreetNumber: \(details.streetNumber)")
+//            println("StreetName: \(details.streetName)")
+//            println("City: \(details.cityName)")
+//            println("State: \(details.stateName)")
+//            println("Zip: \(details.zip)")
+//            
+//        }
+        
+        self.closeSearchView()
         
     }
     
-    func placeViewClosed() {
+    func closeSearchView() {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     func returnToBrowse(sender: AnyObject) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let browseVC = mainStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
-        let navController = UINavigationController()
-        navController.pushViewController(browseVC, animated: true)
-        presentViewController(navController, animated: true, completion: nil)
+        // Go to root view
+        navigationController?.popToRootViewControllerAnimated(true)
+        
+        // switch tab
+        tabBarController?.selectedIndex = 0
     }
     
     func loadSearchView() {

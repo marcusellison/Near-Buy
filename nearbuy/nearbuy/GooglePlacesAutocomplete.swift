@@ -66,6 +66,12 @@ public class PlaceDetails: Printable {
     public let latitude: Double
     public let longitude: Double
     public let raw: [String: AnyObject]
+    public let addressComponents: [NSDictionary]
+    public let streetNumber: String
+    public let streetName: String
+    public let cityName: String
+    public let stateName: String
+    public let zip: String
     
     public init(json: [String: AnyObject]) {
         let result = json["result"] as! [String: AnyObject]
@@ -76,6 +82,13 @@ public class PlaceDetails: Printable {
         self.latitude = location["lat"] as! Double
         self.longitude = location["lng"] as! Double
         self.raw = json
+        
+        self.addressComponents = result["address_components"] as! [NSDictionary]
+        self.streetNumber = self.addressComponents[0]["long_name"] as! String
+        self.streetName = self.addressComponents[1]["long_name"] as! String
+        self.cityName = self.addressComponents[2]["long_name"] as! String
+        self.stateName = self.addressComponents[3]["long_name"] as! String
+        self.zip = self.addressComponents[5]["long_name"] as! String
     }
     
     public var description: String {

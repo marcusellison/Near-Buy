@@ -12,7 +12,7 @@ import Parse
 class Product: NSObject {
     
     var products: [NSObject]?
-    var productImages: [NSObject]?
+    var productImages: [UIImage]?
     
     static let sharedInstance = Product(params: [:]);
     

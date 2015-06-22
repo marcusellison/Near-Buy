@@ -77,8 +77,21 @@ class API: NSObject {
         return true
     }
     
+    func downloadImage(file: PFFile) {
+        file.getDataInBackgroundWithBlock {
+            (imageData: NSData?, error: NSError?) -> Void in
+            if error != nil {
+                var img = UIImage(data:imageData!);
+                Product.sharedInstance.productImages?.append(img!)
+            }
+        }
+    }
+    
     func queryProducts(params: NSDictionary){
         var products: [PFObject]?
+        var images: [UIImage]?
+        
+        /* If Cache - set those images on the Product.sharedInstance */
         
         /* Query for all products where username is not the seller */
         var query = PFQuery(className:"Product")
@@ -92,16 +105,9 @@ class API: NSObject {
                         /* Save this on the Parse Local Object */
                         Product.sharedInstance.products = productObjects
                         
-                        /* Save the Product Images in an Array */
-                        for product in productObjects {
-                        
-                        }
-                        
-                        //Product.sharedInstance.productImages
-                        
-                        
                         /* Do whatever you want here - use a notification to update a specific object */
                         NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
+                        
                         
                     }
                 } else {

@@ -7,29 +7,23 @@
 //
 
 import UIKit
+import Parse
 
 class BrowseViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var products: [NSObject]?
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         var params: NSDictionary = ["username":"kavodel@mixpanel.com"]
-        var prod = Product(params: params)
-        prod.get(params)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "specialFunction", name: "ProductsDidReturn", object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadCollectionView", name: "ProductsDidReturn", object: nil)
     }
     
-    func specialFunction(){
-        var products = Product.sharedInstance.products
-        for product in products! {
-            var name = product.valueForKey("productName") as! String
-            println("\(name)")
-        }
-        
+    func reloadCollectionView(){
+        self.products = Product.sharedInstance.products
+        collectionView.reloadData()
     }
     
 
@@ -41,11 +35,28 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ItemCollectionViewCell", forIndexPath: indexPath) as! ItemCollectionViewCell
         cell.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
+        /* Iterate through Prods and load images async */
+        
+        if let products = products {
+            var product = products[indexPath.row]
+            let userImageFile = product.valueForKey("image") as? PFFile
+            userImageFile!.getDataInBackgroundWithBlock {
+                (imageData: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    cell.itemImageView.image = UIImage(data:imageData!)
+                }
+            }
+            
+        }
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        var count = 10
+        if let products = products {
+            var count = products.count
+        }
+        return count
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
