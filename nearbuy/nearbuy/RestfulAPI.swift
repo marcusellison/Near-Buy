@@ -92,7 +92,7 @@ class API: NSObject {
                         /* Save this on the Parse Local Object */
                         Product.sharedInstance.products = productObjects
                         /* Do whatever you want here - use a notification to update a specific object */
-                        // NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
+                        NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
                         
                         
                     }

@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         /* User Authentication Flow */
+        /*
         if (PFUser.currentUser() != nil) {
             /* 
                 User is already Authed - Take them to root view controller 
@@ -64,9 +65,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.navigationBarHidden = true
             navigationController.pushViewController(authViewController, animated: true)
         }
-        
+        */
         // instantiate storyboards
-        /*
+        
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -97,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
-        */
+        
         return true
     }
 
