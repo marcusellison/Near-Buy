@@ -88,7 +88,8 @@ class API: NSObject {
                         products = productObjects
                         
                         /* Do whatever you want here - use a notification to update a specific object */
-                        NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
+                        // NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
+                        
                         
                     }
                 } else {

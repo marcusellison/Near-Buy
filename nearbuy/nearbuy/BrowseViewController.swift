@@ -12,13 +12,13 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var product: Product = Product(params: ["username":"kavodel@mixpanel.com"])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        var params: NSDictionary = ["username":"kavodel@mixpanel.com"]
-        var prod = Product(params: params)
-        prod.get(params)
+        NSNotificationCenter.defaultCenter().addObser
         
     }
 
