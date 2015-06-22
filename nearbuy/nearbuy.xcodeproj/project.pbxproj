@@ -18,6 +18,8 @@
 		3D98DCE01B366C3600EF2BC6 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DCDF1B366C3600EF2BC6 /* ProfileDetailViewController.swift */; };
 		3D98DCE21B366CFB00EF2BC6 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DCE11B366CFB00EF2BC6 /* HistoryDetailViewController.swift */; };
 		3D98DCE41B366DA800EF2BC6 /* PaymentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DCE31B366DA800EF2BC6 /* PaymentDetailViewController.swift */; };
+		3D98DCE71B36735E00EF2BC6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98DCE51B36735E00EF2BC6 /* FBSDKCoreKit.framework */; };
+		3D98DCE81B36735E00EF2BC6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D98DCE61B36735E00EF2BC6 /* FBSDKLoginKit.framework */; };
 		3DA8CD291B337DA100BAE6E8 /* PickCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */; };
 		3DA8CD2B1B337E6200BAE6E8 /* SellerAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */; };
 		3DA8CD2D1B33828C00BAE6E8 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA8CD2C1B33828C00BAE6E8 /* CategoryCell.swift */; };
@@ -92,6 +94,8 @@
 		3D98DCDF1B366C3600EF2BC6 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		3D98DCE11B366CFB00EF2BC6 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
 		3D98DCE31B366DA800EF2BC6 /* PaymentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailViewController.swift; sourceTree = "<group>"; };
+		3D98DCE51B36735E00EF2BC6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Downloads/Archive/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		3D98DCE61B36735E00EF2BC6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Downloads/Archive/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickCategoriesViewController.swift; sourceTree = "<group>"; };
 		3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerAddressViewController.swift; sourceTree = "<group>"; };
 		3DA8CD2C1B33828C00BAE6E8 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -157,11 +161,13 @@
 				A37AF19C1B360865001EE497 /* libsqlite3.dylib in Frameworks */,
 				A37AF19B1B36085E001EE497 /* libz.dylib in Frameworks */,
 				A37AF19A1B360856001EE497 /* SystemConfiguration.framework in Frameworks */,
+				D2174B691B36456800932E84 /* FBSDKCoreKit.framework in Frameworks */,
 				A37AF1991B36084E001EE497 /* StoreKit.framework in Frameworks */,
 				A37AF1981B360847001EE497 /* Security.framework in Frameworks */,
 				A3B862871B3769A8009DEC46 /* FBSDKCoreKit.framework in Frameworks */,
 				A37AF1971B36083E001EE497 /* QuartzCore.framework in Frameworks */,
 				A37AF1961B360838001EE497 /* MobileCoreServices.framework in Frameworks */,
+				D2174B6B1B36457300932E84 /* FBSDKLoginKit.framework in Frameworks */,
 				A37AF1951B360831001EE497 /* CoreLocation.framework in Frameworks */,
 				A37AF1941B360821001EE497 /* CoreGraphics.framework in Frameworks */,
 				A37AF1931B360819001EE497 /* CFNetwork.framework in Frameworks */,
@@ -317,6 +323,8 @@
 		D273BB3E1B28135700511C10 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				D2174B6A1B36457300932E84 /* FBSDKLoginKit.framework */,
+				D2174B681B36456800932E84 /* FBSDKCoreKit.framework */,
 				3DF79DCD1B280C8C00395B0A /* libsqlite3.dylib */,
 				3DF79DCB1B280C7F00395B0A /* libz.dylib */,
 				3DF79DC91B280C7100395B0A /* SystemConfiguration.framework */,
@@ -673,7 +681,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/cvbourne/Documents/FacebookSDK,
+					/Users/jchoi/Downloads/Archive,
 					/Users/paichen/Downloads/Archive,
+					/Users/mje/Downloads/Archive,
 				);
 				INFOPLIST_FILE = nearbuy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -694,7 +704,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/cvbourne/Documents/FacebookSDK,
+					/Users/jchoi/Downloads/Archive,
 					/Users/paichen/Downloads/Archive,
+					/Users/mje/Downloads/Archive,
 				);
 				INFOPLIST_FILE = nearbuy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

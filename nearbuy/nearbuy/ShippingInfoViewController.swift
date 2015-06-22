@@ -26,7 +26,7 @@ class ShippingInfoViewController: UIViewController {
     var shippingPhone: String?
 
     // array
-    var userShippingInformation: [String :String]?
+    var userShippingInformation: [String : String]?
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
         shippingName = shippingNameTextfield.text

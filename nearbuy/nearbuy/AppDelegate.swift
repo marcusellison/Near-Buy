@@ -77,24 +77,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
         let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         
-        
         // instantiate tab bar and nav bar
         let tabBarController = UITabBarController()
         let navigationController = UINavigationController()
-        
-        //TODO Customize tab bar for profile view controller
+        let buyViewNav = UINavigationController()
+        let sellViewNav = UINavigationController()
+        let profileViewNav = UINavigationController()
+        buyViewNav.pushViewController(buyViewController, animated: true)
+        sellViewNav.pushViewController(sellViewController, animated: true)
+        profileViewNav.pushViewController(profileViewController, animated: true)
         
         // configure tab bar and embed in nav bar
-        let tabBarConfig = [buyViewController, sellViewController, profileViewController]
+        let tabBarConfig = [buyViewNav, sellViewNav, profileViewNav]
         tabBarController.viewControllers = tabBarConfig
-        navigationController.pushViewController(tabBarController, animated: true)
-         window?.rootViewController = navigationController
+        window?.rootViewController = tabBarController
         
         // customize tab bar
-        buyViewController.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
-        sellViewController.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
-        profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
-        */
+        buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
+        sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
+        profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
+        
         return true
     }
 
