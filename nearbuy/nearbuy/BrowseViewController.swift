@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class BrowseViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+
+    var prods: [NSObject]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +27,9 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     }
     
     func specialFunction(){
-        var products = Product.sharedInstance.products
-        println("\(products)")
-        
+        prods = Product.sharedInstance.products
+        println("\(prods)")
+        collectionView.reloadData()
     }
     
 
@@ -37,11 +41,30 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ItemCollectionViewCell", forIndexPath: indexPath) as! ItemCollectionViewCell
         cell.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
+        if let prods = prods {
+            var product = prods[indexPath.row]
+//            let userImageFile = product.valueForKey("image") as? PFFile
+//            
+//            var imageFile = userImageFile?.getData()
+//           
+//            cell.itemImageView.image = UIImage(data:imageFile!)
+            let userImageFile = product.valueForKey("image") as? PFFile
+            userImageFile!.getDataInBackgroundWithBlock {
+                (imageData: NSData?, error: NSError?) -> Void in
+                if error != nil {
+                    cell.itemImageView.image = UIImage(data:imageData!)
+                }
+            }
+        }
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        var count = 10
+        if let prods = prods {
+            var count = prods.count
+        }
+        return count
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
