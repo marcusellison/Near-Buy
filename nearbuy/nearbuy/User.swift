@@ -18,36 +18,39 @@ class User: NSObject {
     var purchases: [Product]?
     var currentUser: PFUser?
     
-    
     override init(){
+        super.init()
+        
         /* Assign any of the optional values that exist in Parse on this User object */
+        currentUser = PFUser.currentUser()
     }
     
-    func registerUser(username: String, password: String){
+    func register(params: Dictionary<String, AnyObject>){
         var user = PFUser()
-        user.username = username;
-        user.password = username;
+        user.username = (params["username"] as! String)
+        user.password = (params["username"] as! String)
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
                 let errorString = error.userInfo?["error"] as? NSString
             } else {
-                /* Set this user to the current user */
-                self.currentUser = user
+                println("success")
+                self.save(params)
             }
         }
         
         
     }
     
-    func logUserIn(username: String, password: String){
+    func login(params: Dictionary<String, AnyObject>){
+        let username = params["username"] as! String
+        let password = params["username"] as! String
         
         PFUser.logInWithUsernameInBackground(username, password:password) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                self.currentUser = user;
-                
+                println("success")
             } else {
                 println(error?.description)
             }
@@ -57,15 +60,38 @@ class User: NSObject {
     /* Logout User and set currentUser to nil */
     func logUserOut(){
         PFUser.logOut()
-        var currentUser = PFUser.currentUser()
     }
     
     /* Save attributes to a user */
     
-    func save(params:Dictionary<String, String>) {
+    func save(params:Dictionary<String, AnyObject>) {
+        var user = PFUser()
         var attributes = PFObject(className: "Attributes", dictionary: params)
-        
-        attributes.save()
+        user["attributes"] = attributes
+        user.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
+            if success {
+                self.currentUser = user
+            } else {
+                /* Shit went wrong */
+            }
+            
+        })
+        println("\(user)")
     }
     
+    func update(params:Dictionary<String, AnyObject>) {
+        
+        
+    }
+    
+    /* Fetch Current User State */
+    func fetch(username: String){
+        PFUser.currentUser()?.fetchInBackgroundWithBlock({ (user: PFObject?, error:NSError?) -> Void in
+            if error == nil {
+                self.currentUser = (user as! PFUser)
+                println("\(user)")
+            }
+        })
+        
+    }
 }

@@ -25,10 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         /* Initialize Parse */
         
-        var api : API = API();
+        var api : API = API()
+        api.initParse()
         var user : User = User()
         var payments: Payments = Payments()
-        api.initParse()
         
         /* Init Stripe */
         Stripe.setDefaultPublishableKey(stripeKey)
@@ -44,12 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         /* User Authentication Flow */
-        
-        /*
         if (PFUser.currentUser() != nil) {
-            /* User is Authed - Take them to root view controller*/
-            println("\(PFUser.currentUser())")
-            
+            /* 
+                User is already Authed - Take them to root view controller 
+                Fetch Current User State
+            */
+            let userDict = PFUser.currentUser()!
+            println("\(userDict)")
+            user.fetch(userDict["username"] as! String)
             
         } else {
             /* Parse Facebook Authentication */
@@ -61,9 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.navigationBarHidden = true
             navigationController.pushViewController(authViewController, animated: true)
         }
-        */
         
         // instantiate storyboards
+        /*
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -92,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buyViewController.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewController.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         profileViewController.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
-        
+        */
         return true
     }
 

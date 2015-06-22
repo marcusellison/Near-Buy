@@ -31,6 +31,7 @@ class AuthViewController: UIViewController, FBSDKLoginButtonDelegate {
         /* Check for an existing Token -- we should never get here because Parse should have a current User.  If we do get here, let's not make them sign in again */
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             /* There's already an existing access token -- skip the login flow and redirect */
+            
             println("access token exists")
         }
         
@@ -55,9 +56,8 @@ class AuthViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) -> PFUser? {
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!){
         user.logUserOut();
-        return user.currentUser
     }
 
     func returnUserData() {
@@ -74,15 +74,14 @@ class AuthViewController: UIViewController, FBSDKLoginButtonDelegate {
                 let gender : String = result.valueForKey("gender") as! String
                 /* User Attributes to Save after the Request Returns */
                 
-                var params: Dictionary<String, String> = [:];
+                var params: Dictionary<String, AnyObject> = [:];
                 
                 params["username"] = userName
                 params["email"] = userEmail
+                params["gender"] = gender
+                self.user.register(params)
                 
-                
-                
-                
-                // self.user.save(params)
+                /* Segue into next view */
             }
         })
     }

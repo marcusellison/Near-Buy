@@ -21,7 +21,7 @@ class Payments: NSObject {
     */
     
     
-    func getStripetoken(params: NSDictionary){
+    func chargeUser(params: NSDictionary, amount:String){
         /* Create a Stripe Card Object */
         let creditCard = STPCard()
         
@@ -37,7 +37,9 @@ class Payments: NSObject {
             STPAPIClient.sharedClient().createTokenWithCard(creditCard, completion: {(token: STPToken?, error: NSError?) -> Void in
                 if let token = token {
                     /* Charge the User */
-                    self.chargeUser("\(token)")
+                    self.sendChargeToStripe("\(token)", amount: amount)
+                    
+                    /* Also increment the amount on the Parse Object */
                 } else {
                     println("\(error)")
                     
@@ -49,7 +51,7 @@ class Payments: NSObject {
         
     }
         
-    func chargeUser(token: String) {
+    func sendChargeToStripe(token: String, amount:String) {
         /* Make Call to Django Backend to Charge User */
         
         

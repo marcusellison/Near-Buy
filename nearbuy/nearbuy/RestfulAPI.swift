@@ -42,7 +42,7 @@ class API: NSObject {
         let image: UIImage = productInfo["image"] as! UIImage
         
         /* Add a user field to each product - this will crash in test scenarios if you're not authed */
-        product["user"] = user.currentUser
+        // product["user"] = use
         
         let imageData = UIImagePNGRepresentation(image)
         
