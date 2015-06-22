@@ -352,6 +352,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="nextButtonTapped:" destination="DcH-KY-hql" eventType="touchUpInside" id="NMU-ni-VCY"/>
                                             <segue destination="eIn-oe-PSn" kind="push" id="awy-YO-oyu"/>
                                         </connections>
                                     </button>
@@ -441,6 +442,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vQO-5b-fyf"/>
+                    <connections>
+                        <outlet property="billingCityTextfield" destination="owy-Q0-es9" id="Xt0-UP-515"/>
+                        <outlet property="billingStateTextfield" destination="FXq-MP-kkV" id="xZI-6w-Gl6"/>
+                        <outlet property="billingStreetAddressTextfield" destination="36r-Nc-XAI" id="6Yv-b1-trb"/>
+                        <outlet property="billingZipcodeTextfield" destination="QVf-Vx-qf0" id="Hci-m3-gb4"/>
+                        <outlet property="creditCardTextfield" destination="ba0-gX-jlC" id="acZ-67-sOb"/>
+                        <outlet property="itemImageView" destination="aFY-Wb-wyZ" id="B5u-na-EWT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXx-Xj-rxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -470,7 +479,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="aJD-hk-2pe"/>
                                         </constraints>
-                                        <state key="normal" title="Order Now">
+                                        <state key="normal" title="Complete Purchase">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -486,35 +495,24 @@
                                     <constraint firstItem="hSO-Zs-93E" firstAttribute="leading" secondItem="p8m-DP-fFo" secondAttribute="leading" constant="25" id="ydW-2T-rk4"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bose headphones" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fq-JB-ruO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Bose headphones" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fq-JB-ruO">
                                 <rect key="frame" x="80" y="328" width="134" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45o-zc-Ek5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$150" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45o-zc-Ek5">
                                 <rect key="frame" x="80" y="356" width="38" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="great noise cancelling headphones! selling my spare " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRC-xs-67z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="cc ending: 0181" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRC-xs-67z">
                                 <rect key="frame" x="10" y="398" width="300" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZS-ID-yY3">
-                                <rect key="frame" x="10" y="328" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.36165835730000001" green="1" blue="0.81658574520000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="0VX-vz-jLW"/>
-                                    <constraint firstAttribute="height" constant="60" id="Tew-Nv-aU6"/>
-                                </constraints>
-                                <state key="normal" title="seller">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <view alpha="0.64999997615814209" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yw3-EN-dyq">
                                 <rect key="frame" x="275" y="295" width="45" height="25"/>
                                 <subviews>
@@ -542,16 +540,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="CRC-xs-67z" secondAttribute="trailing" constant="-6" id="E0e-rQ-uFS"/>
                             <constraint firstItem="jT2-IC-pAF" firstAttribute="top" secondItem="xyT-L9-5i9" secondAttribute="top" id="Fwr-zN-c7D"/>
                             <constraint firstItem="5fq-JB-ruO" firstAttribute="leading" secondItem="45o-zc-Ek5" secondAttribute="leading" id="RBf-nl-jAp"/>
-                            <constraint firstItem="xZS-ID-yY3" firstAttribute="top" secondItem="jT2-IC-pAF" secondAttribute="bottom" constant="8" id="U0Z-81-asF"/>
                             <constraint firstItem="p8m-DP-fFo" firstAttribute="top" secondItem="X1h-eu-Uh1" secondAttribute="bottom" constant="298" id="U23-cp-tXW"/>
                             <constraint firstItem="45o-zc-Ek5" firstAttribute="top" secondItem="5fq-JB-ruO" secondAttribute="bottom" constant="8" id="VQP-qZ-8Rs"/>
                             <constraint firstItem="jT2-IC-pAF" firstAttribute="leading" secondItem="xyT-L9-5i9" secondAttribute="leading" id="b0z-Ax-Kxh"/>
-                            <constraint firstItem="5fq-JB-ruO" firstAttribute="leading" secondItem="xZS-ID-yY3" secondAttribute="trailing" constant="10" id="bcZ-zY-t5G"/>
                             <constraint firstItem="jT2-IC-pAF" firstAttribute="width" secondItem="jT2-IC-pAF" secondAttribute="height" multiplier="1:1" id="iaa-e5-nVg"/>
-                            <constraint firstItem="CRC-xs-67z" firstAttribute="top" secondItem="xZS-ID-yY3" secondAttribute="bottom" constant="10" id="lwN-cL-JWY"/>
-                            <constraint firstItem="xZS-ID-yY3" firstAttribute="leading" secondItem="xyT-L9-5i9" secondAttribute="leading" constant="10" id="w5k-AQ-dfw"/>
                             <constraint firstItem="p8m-DP-fFo" firstAttribute="leading" secondItem="xyT-L9-5i9" secondAttribute="leading" id="xhr-Dx-P2O"/>
-                            <constraint firstItem="xZS-ID-yY3" firstAttribute="top" secondItem="5fq-JB-ruO" secondAttribute="top" id="xuj-rS-ay7"/>
                             <constraint firstAttribute="trailing" secondItem="p8m-DP-fFo" secondAttribute="trailing" id="zrc-pO-M7i"/>
                         </constraints>
                     </view>
