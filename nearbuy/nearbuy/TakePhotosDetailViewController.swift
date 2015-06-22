@@ -66,16 +66,16 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
             "image":image!]
         
         // probably not the best way to test. Generate alert if field is empty
-        for (title, fieldValue) in params {
-            if "\(fieldValue)" == "" {
-                var alert = UIAlertController(title: "Oops!", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
-            }
-        }
+//        for (title, fieldValue) in params {
+//            if "\(fieldValue)" == "" {
+//                var alert = UIAlertController(title: "Oops!", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.Alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+//                self.presentViewController(alert, animated: true, completion: nil)
+//            }
+//        }
         
         // Let's create a product!
-        product.create(params)
+//        product.create(params)
         
     }
     

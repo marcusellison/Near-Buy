@@ -198,6 +198,28 @@
 			name = "Location API";
 			sourceTree = "<group>";
 		};
+		3D4FC1171B379189009CDD11 /* Sell */ = {
+			isa = PBXGroup;
+			children = (
+				D2E1287F1B27DB5A00221321 /* TakePhotoViewController.swift */,
+				3DF79DB11B28080A00395B0A /* TakePhotosDetailViewController.swift */,
+				3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */,
+				3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */,
+			);
+			name = Sell;
+			sourceTree = "<group>";
+		};
+		3D4FC1181B3791B7009CDD11 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3D2526AA1B365FAA00DA8F43 /* ProfileViewController.swift */,
+				3D98DCDF1B366C3600EF2BC6 /* ProfileDetailViewController.swift */,
+				3D98DCE11B366CFB00EF2BC6 /* HistoryDetailViewController.swift */,
+				D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		3DD616E31B277B83001FEB6F = {
 			isa = PBXGroup;
 			children = (
@@ -349,19 +371,13 @@
 				D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */,
 				3DD616F31B277B83001FEB6F /* ViewController.swift */,
 				3DA8CD301B338B5900BAE6E8 /* WelcomeViewController.swift */,
-				3DA8CD2A1B337E6200BAE6E8 /* SellerAddressViewController.swift */,
 				D2E1287B1B27DB2700221321 /* ChatViewController.swift */,
-				3D2526AA1B365FAA00DA8F43 /* ProfileViewController.swift */,
 				3D98DCE31B366DA800EF2BC6 /* PaymentDetailViewController.swift */,
-				3D98DCDF1B366C3600EF2BC6 /* ProfileDetailViewController.swift */,
-				3DA8CD281B337DA100BAE6E8 /* PickCategoriesViewController.swift */,
-				3DF79DB11B28080A00395B0A /* TakePhotosDetailViewController.swift */,
-				3D98DCE11B366CFB00EF2BC6 /* HistoryDetailViewController.swift */,
-				D2E1287F1B27DB5A00221321 /* TakePhotoViewController.swift */,
-				D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */,
-				D252ABA01B353A2D006DFE3E /* BillingInfoViewController.swift */,
+				3D4FC1171B379189009CDD11 /* Sell */,
+				3D4FC1181B3791B7009CDD11 /* Profile */,
 				D277971A1B35470800D6FA2A /* CompletedPurchaseViewController.swift */,
 				D2395E981B362CFA00C1E7C2 /* ShippingInfoViewController.swift */,
+				D252ABA01B353A2D006DFE3E /* BillingInfoViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
