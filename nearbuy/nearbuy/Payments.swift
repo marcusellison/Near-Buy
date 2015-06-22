@@ -19,12 +19,11 @@ class Payments: NSObject {
         Name,
         Token,
     */
+    lazy var user: User = User()
     
     
-    func getStripetoken(params: NSDictionary){
+    func chargeUser(params: NSDictionary, amount:String){
         /* Create a Stripe Card Object */
-        
-        println("in")
         let creditCard = STPCard()
         
         creditCard.number = params["number"] as? String
@@ -38,14 +37,16 @@ class Payments: NSObject {
             var stripeError: NSError!
             STPAPIClient.sharedClient().createTokenWithCard(creditCard, completion: {(token: STPToken?, error: NSError?) -> Void in
                 if let token = token {
-                    // Token was returned!
-                    
                     /* Charge the User */
-                    println("in")
-                    println("\(token)")
-                    self.chargeUser("\(token)")
+                    self.sendChargeToStripe("\(token)", amount: amount)
+                    self.user.currentUser?.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
+                        
+                    })
+                    /* Also increment the amount on the Parse Object */
+                    
                 } else {
                     println("\(error)")
+                    
                 }
             })
         } else {
@@ -54,8 +55,11 @@ class Payments: NSObject {
         
     }
         
-    func chargeUser(token: String) -> Int {
+    func sendChargeToStripe(token: String, amount:String) {
         /* Make Call to Django Backend to Charge User */
+        
+        
+        /* Add the amount of the purchase to this user's Parse Profile */
         
         let paymentsURL = NSURL(string:"http://104.236.212.145:8000/payments/")
         let request = NSMutableURLRequest(URL: paymentsURL!)
@@ -74,30 +78,19 @@ class Payments: NSObject {
                 return
             }
             
-            // You can print out response object
-            println("response = \(response)")
-            
-            // Print out response body
             let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)
-            println("responseString = \(responseString)")
-            
-            //Let's convert response sent from a server side script to a NSDictionary object:
-            
             var err: NSError?
             var myJSON = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error:&err) as? NSDictionary
             
             if let parseJSON = myJSON {
-                // Now we can access value of First Name by its key
                 var foo = parseJSON["bar"] as? String
                 println("foo: \(foo)")
+                
             }
             
         }
         
         task.resume()
-        
-        
-        return 1
     }
     
 }

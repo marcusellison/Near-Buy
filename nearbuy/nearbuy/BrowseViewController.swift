@@ -12,15 +12,22 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var product: Product = Product(params: ["username":"kavodel@mixpanel.com"])
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        NSNotificationCenter.defaultCenter().addObser
+        var params: NSDictionary = ["username":"kavodel@mixpanel.com"]
+        var prod = Product(params: params)
+        prod.get(params)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "specialFunction", name: "ProductsDidReturn", object: nil)
+    }
+    
+    func specialFunction(){
+        var products = Product.sharedInstance.products
+        println("\(products)")
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
