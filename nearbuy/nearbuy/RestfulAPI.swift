@@ -91,6 +91,15 @@ class API: NSObject {
                     if let productObjects = productObjects as? [PFObject] {
                         /* Save this on the Parse Local Object */
                         Product.sharedInstance.products = productObjects
+                        
+                        /* Save the Product Images in an Array */
+                        for product in productObjects {
+                        
+                        }
+                        
+                        //Product.sharedInstance.productImages
+                        
+                        
                         /* Do whatever you want here - use a notification to update a specific object */
                         NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
                         

@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         api.initParse()
         var user : User = User()
         var payments: Payments = Payments()
+        /* Request Photos Now to decrease latency */
+        var products: Product = Product(params: [:])
         
         /* Init Stripe */
         Stripe.setDefaultPublishableKey(stripeKey)

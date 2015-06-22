@@ -25,7 +25,10 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     
     func specialFunction(){
         var products = Product.sharedInstance.products
-        println("\(products)")
+        for product in products! {
+            var name = product.valueForKey("productName") as! String
+            println("\(name)")
+        }
         
     }
     
