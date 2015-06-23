@@ -17,6 +17,8 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     @IBOutlet weak var billingStateTextfield: UITextField!
     @IBOutlet weak var billingZipcodeTextfield: UITextField!
     @IBOutlet weak var shippingAddressSwitch: UISwitch!
+    @IBOutlet weak var expirationTextfield: UITextField!
+    @IBOutlet weak var cvvTextfield: UITextField!
 
     var userShippingInformation: [String : String]?
     
@@ -63,11 +65,13 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         if let info = cardInfo {
             let str = NSString(format: "Received card info.\n Number: %@\n expiry: %02lu/%lu\n cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv)
             creditCardNumber = info.cardNumber
-            creditCardTextfield.text = info.redactedCardNumber
             creditCardExpirationMonth = info.expiryMonth
             creditCardExpirationYear = info.expiryYear
             creditCardCVV = info.cvv
-            println(str)            
+            println(str)
+            creditCardTextfield.text = info.redactedCardNumber
+            expirationTextfield.text = "\(creditCardExpirationMonth)/\(creditCardExpirationYear)"
+            cvvTextfield.text = creditCardCVV
         }
         paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
     }

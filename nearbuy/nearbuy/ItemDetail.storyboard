@@ -477,6 +477,8 @@
                         <outlet property="billingStreetAddressTextfield" destination="36r-Nc-XAI" id="6Yv-b1-trb"/>
                         <outlet property="billingZipcodeTextfield" destination="QVf-Vx-qf0" id="Hci-m3-gb4"/>
                         <outlet property="creditCardTextfield" destination="ba0-gX-jlC" id="acZ-67-sOb"/>
+                        <outlet property="cvvTextfield" destination="FM4-3S-EVs" id="jgV-8I-7QE"/>
+                        <outlet property="expirationTextfield" destination="ylh-oB-peK" id="NAy-l9-v1N"/>
                         <outlet property="itemImageView" destination="aFY-Wb-wyZ" id="B5u-na-EWT"/>
                         <outlet property="shippingAddressSwitch" destination="7Wx-Bi-5lw" id="J9O-Y6-5Il"/>
                     </connections>
