@@ -86,9 +86,10 @@ public class PlaceDetails: Printable {
         self.addressComponents = result["address_components"] as! [NSDictionary]
         self.streetNumber = self.addressComponents[0]["long_name"] as! String
         self.streetName = self.addressComponents[1]["long_name"] as! String
-        self.cityName = self.addressComponents[2]["long_name"] as! String
-        self.stateName = self.addressComponents[3]["long_name"] as! String
-        self.zip = self.addressComponents[5]["long_name"] as! String
+        self.cityName = self.addressComponents[3]["long_name"] as! String
+        self.stateName = self.addressComponents[5]["short_name"] as! String
+        self.zip = self.addressComponents[7
+            ]["long_name"] as! String
     }
     
     public var description: String {

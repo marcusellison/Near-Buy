@@ -78,6 +78,8 @@ class User: NSObject {
             user[key] = params[key]
         }
         
+        println("about to save user model")
+        
         user.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
             if success {
                 self.currentUser = user

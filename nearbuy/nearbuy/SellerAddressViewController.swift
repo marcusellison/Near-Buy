@@ -10,7 +10,15 @@ import UIKit
 
 class SellerAddressViewController: UIViewController {
     
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var streetField: UITextField!
+    @IBOutlet weak var apartmentField: UITextField!
+    @IBOutlet weak var cityField: UITextField!
+    @IBOutlet weak var stateField: UITextField!
+    @IBOutlet weak var zipField: UITextField!
+    @IBOutlet weak var phoneField: UITextField!
+    
+    var user: User = User()
     
     
     let gpaViewController = GooglePlacesAutocomplete(
@@ -24,6 +32,14 @@ class SellerAddressViewController: UIViewController {
         gpaViewController.placeDelegate = self // Conforms to GooglePlacesAutocompleteDelegate
         
         presentViewController(gpaViewController, animated: true, completion: nil)
+        
+        //dismiss keyboard on tap
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+    }
+    
+    func DismissKeyboard(){
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +61,7 @@ class SellerAddressViewController: UIViewController {
     
     @IBAction func onConfirmAddress(sender: AnyObject) {
         
-        //save to parse here
+        saveContact(sender)
         
         returnToBrowse(sender)
     }
@@ -62,21 +78,20 @@ extension SellerAddressViewController: GooglePlacesAutocompleteDelegate {
 
     func placeSelected(place: Place) {
         
-        //update address
-        addressLabel.text = place.description
-        
-        // break out address into street, streetName, city, state, zip
-//        place.getDetails { details in
+        // break out address into street, city, state, etc
+        place.getDetails { details in
 //            println("StreetNumber: \(details.streetNumber)")
 //            println("StreetName: \(details.streetName)")
 //            println("City: \(details.cityName)")
 //            println("State: \(details.stateName)")
 //            println("Zip: \(details.zip)")
-//            
-//        }
-        
+            
+            self.streetField.text = details.streetNumber + " " + details.streetName
+            self.cityField.text = details.cityName
+            self.stateField.text = details.stateName
+            self.zipField.text = details.zip
+        }
         self.closeSearchView()
-        
     }
     
     func closeSearchView() {
@@ -93,5 +108,48 @@ extension SellerAddressViewController: GooglePlacesAutocompleteDelegate {
     
     func loadSearchView() {
         presentViewController(gpaViewController, animated: true, completion: nil)
+    }
+    
+    func saveContact(sender: AnyObject) {
+        
+         var userShippingInformation =
+            ["name": self.nameField.text,
+            "streetAddress": self.streetField.text,
+            "apartmentNumber": apartmentField.text,
+            "city": self.cityField.text,
+            "state": self.stateField.text,
+            "zip": self.zipField.text,
+            "phone": self.phoneField.text]
+        
+        var name = nameField.text
+        
+        validateInputDictionary(userShippingInformation)
+        
+        validateName(name)
+        
+        var params = ["address": userShippingInformation, "name": name]
+        
+        self.user.save(params as! [String : AnyObject])
+    }
+    
+    func validateInputDictionary(userShippingInformation: NSDictionary) {
+
+        for (title, fieldValue) in userShippingInformation {
+            if "\(fieldValue)" == "" {
+                triggerAlert()
+            }
+        }
+    }
+    
+    func validateName(name: String) {
+        if name == "" {
+            triggerAlert()
+        }
+    }
+    
+    func triggerAlert() {
+        var alert = UIAlertController(title: "Oops!", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

@@ -29,9 +29,7 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
         view.addGestureRecognizer(tap)
     }
     
-    //Calls this function when the tap is recognized.
     func DismissKeyboard(){
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
 
@@ -66,16 +64,16 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
             "image":image!]
         
         // probably not the best way to test. Generate alert if field is empty
-//        for (title, fieldValue) in params {
-//            if "\(fieldValue)" == "" {
-//                var alert = UIAlertController(title: "Oops!", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.Alert)
-//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-//                self.presentViewController(alert, animated: true, completion: nil)
-//            }
-//        }
+        for (title, fieldValue) in params {
+            if "\(fieldValue)" == "" {
+                var alert = UIAlertController(title: "Oops!", message: "Please fill out all fields", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
         
         // Let's create a product!
-//        product.create(params)
+        product.create(params as! [String:AnyObject])
         
     }
     
