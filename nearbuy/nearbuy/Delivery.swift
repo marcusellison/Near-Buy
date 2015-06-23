@@ -32,11 +32,13 @@ class Delivery: NSObject {
     
     func getDeliveryQuote(buyer: [String: String], seller: [String: String]){
         
-        
     }
     
     func makeDelivery(buyerAddress: [String: String], buyerName: String, buyerPhone: String, sellerAddress: [String: String], sellerName: String?, sellerPhone: String?){
         
+    }
+    
+    func getDeliveryUpdate(){
         
     }
     
