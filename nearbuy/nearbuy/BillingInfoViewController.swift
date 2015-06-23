@@ -64,16 +64,6 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     func userDidProvideCreditCardInfo(cardInfo: CardIOCreditCardInfo!, inPaymentViewController paymentViewController: CardIOPaymentViewController!) {
         if let info = cardInfo {
             let str = NSString(format: "Received card info.\n Number: %@\n expiry: %02lu/%lu\n cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv)
-<<<<<<< HEAD
-            creditCardNumber = info.cardNumber
-            creditCardExpirationMonth = info.expiryMonth
-            creditCardExpirationYear = info.expiryYear
-            creditCardCVV = info.cvv
-            println(str)
-            creditCardTextfield.text = info.redactedCardNumber
-            expirationTextfield.text = "\(creditCardExpirationMonth)/\(creditCardExpirationYear)"
-            cvvTextfield.text = creditCardCVV
-=======
             
             var creditCard = [String: AnyObject]()
             creditCard["number"] = info.cardNumber
@@ -83,7 +73,6 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
             
             /* Add to User Object */
             User.sharedInstance.creditCard = creditCard as? [String: String]
->>>>>>> 7fabd3c5e5a337ec52c8ebda8ce2ec09025e5dfe
         }
         paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
