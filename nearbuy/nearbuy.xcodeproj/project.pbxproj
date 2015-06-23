@@ -15,6 +15,9 @@
 		3D2526AB1B365FAA00DA8F43 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2526AA1B365FAA00DA8F43 /* ProfileViewController.swift */; };
 		3D3B2C8B1B280F4C00BA59C8 /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */; };
 		3D3B2C8D1B28112400BA59C8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */; };
+		3D984B961B39D0BB00824090 /* WelcomeBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D984B951B39D0BB00824090 /* WelcomeBuyViewController.swift */; };
+		3D984B981B39D0C900824090 /* WelcomeSellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D984B971B39D0C900824090 /* WelcomeSellViewController.swift */; };
+		3D984B9A1B39D19900824090 /* WelcomeGetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D984B991B39D19900824090 /* WelcomeGetStartedViewController.swift */; };
 		3D98DCE01B366C3600EF2BC6 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DCDF1B366C3600EF2BC6 /* ProfileDetailViewController.swift */; };
 		3D98DCE21B366CFB00EF2BC6 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DCE11B366CFB00EF2BC6 /* HistoryDetailViewController.swift */; };
 		3D98DCE41B366DA800EF2BC6 /* PaymentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D98DCE31B366DA800EF2BC6 /* PaymentDetailViewController.swift */; };
@@ -94,6 +97,9 @@
 		3D2526AA1B365FAA00DA8F43 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3D3B2C8A1B280F4C00BA59C8 /* ItemDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
 		3D3B2C8C1B28112400BA59C8 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		3D984B951B39D0BB00824090 /* WelcomeBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeBuyViewController.swift; sourceTree = "<group>"; };
+		3D984B971B39D0C900824090 /* WelcomeSellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeSellViewController.swift; sourceTree = "<group>"; };
+		3D984B991B39D19900824090 /* WelcomeGetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeGetStartedViewController.swift; sourceTree = "<group>"; };
 		3D98DCDF1B366C3600EF2BC6 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		3D98DCE11B366CFB00EF2BC6 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
 		3D98DCE31B366DA800EF2BC6 /* PaymentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +228,17 @@
 				D254DC2A1B33C5CC00FB976F /* SettingsViewController.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		3D984B8C1B39C09C00824090 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				3DA8CD301B338B5900BAE6E8 /* WelcomeViewController.swift */,
+				3D984B971B39D0C900824090 /* WelcomeSellViewController.swift */,
+				3D984B991B39D19900824090 /* WelcomeGetStartedViewController.swift */,
+				3D984B951B39D0BB00824090 /* WelcomeBuyViewController.swift */,
+			);
+			name = Welcome;
 			sourceTree = "<group>";
 		};
 		3DD616E31B277B83001FEB6F = {
@@ -383,7 +400,6 @@
 				3DFFC78C1B34B03D00CC7BA7 /* BrowseViewController.swift */,
 				D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */,
 				3DD616F31B277B83001FEB6F /* ViewController.swift */,
-				3DA8CD301B338B5900BAE6E8 /* WelcomeViewController.swift */,
 				D2E1287B1B27DB2700221321 /* ChatViewController.swift */,
 				3D98DCE31B366DA800EF2BC6 /* PaymentDetailViewController.swift */,
 				3D4FC1171B379189009CDD11 /* Sell */,
@@ -391,6 +407,7 @@
 				D277971A1B35470800D6FA2A /* CompletedPurchaseViewController.swift */,
 				D2395E981B362CFA00C1E7C2 /* ShippingInfoViewController.swift */,
 				D252ABA01B353A2D006DFE3E /* BillingInfoViewController.swift */,
+				3D984B8C1B39C09C00824090 /* Welcome */,
 				D2FC4B701B379D0700555B76 /* ProfileTableViewController.swift */,
 			);
 			name = "View Controllers";
@@ -560,6 +577,7 @@
 				3DA8CD2D1B33828C00BAE6E8 /* CategoryCell.swift in Sources */,
 				D2FC4B711B379D0700555B76 /* ProfileTableViewController.swift in Sources */,
 				D22F35671B38FF280003CE15 /* PaymentInfoTableViewCell.swift in Sources */,
+				3D984B981B39D0C900824090 /* WelcomeSellViewController.swift in Sources */,
 				D252ABA11B353A2D006DFE3E /* BillingInfoViewController.swift in Sources */,
 				D277971B1B35470800D6FA2A /* CompletedPurchaseViewController.swift in Sources */,
 				D22F35651B38FF160003CE15 /* HistoryTableViewCell.swift in Sources */,
@@ -567,10 +585,12 @@
 				3D2526AB1B365FAA00DA8F43 /* ProfileViewController.swift in Sources */,
 				D25368F81B2E38E400DAA78A /* ItemDetailTableViewCell.swift in Sources */,
 				3D98DCE21B366CFB00EF2BC6 /* HistoryDetailViewController.swift in Sources */,
+				3D984B961B39D0BB00824090 /* WelcomeBuyViewController.swift in Sources */,
 				D25368F61B2E38D500DAA78A /* ItemDetailViewController.swift in Sources */,
 				3DF79DC81B280C4B00395B0A /* RestfulAPI.swift in Sources */,
 				3DA8CD2B1B337E6200BAE6E8 /* SellerAddressViewController.swift in Sources */,
 				3DD616F41B277B83001FEB6F /* ViewController.swift in Sources */,
+				3D984B9A1B39D19900824090 /* WelcomeGetStartedViewController.swift in Sources */,
 				D2E1287C1B27DB2700221321 /* ChatViewController.swift in Sources */,
 				A347FD7E1B282134002548F8 /* Product.swift in Sources */,
 				D2395E991B362CFA00C1E7C2 /* ShippingInfoViewController.swift in Sources */,

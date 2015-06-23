@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Welcome View Controller-->
+        <!--Near Buy-->
         <scene sceneID="eoC-Qb-sJk">
             <objects>
                 <viewController id="eEL-cB-kg7" customClass="WelcomeViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,18 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy and sell items near you." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mif-70-DT1">
-                                <rect key="frame" x="52" y="273" width="217" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sao-nT-KVo">
                                 <rect key="frame" x="144" y="343" width="32" height="30"/>
                                 <state key="normal" title="Next">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="JXk-2c-rfG" kind="push" id="yFT-uI-ETS"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easily buy and sell from your local community." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mif-70-DT1">
+                                <rect key="frame" x="64" y="250" width="193" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="LtR-UB-tv9"/>
+                                    <constraint firstAttribute="height" constant="67" id="nh5-WE-AVg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -35,14 +42,182 @@
                             <constraint firstAttribute="trailing" secondItem="Sao-nT-KVo" secondAttribute="trailing" constant="144" id="615-fd-bb3"/>
                             <constraint firstItem="Sao-nT-KVo" firstAttribute="leading" secondItem="BME-aG-adQ" secondAttribute="leading" constant="144" id="H0b-6U-6jl"/>
                             <constraint firstAttribute="centerX" secondItem="mif-70-DT1" secondAttribute="centerX" id="Yvn-h4-IP3"/>
-                            <constraint firstItem="Sao-nT-KVo" firstAttribute="top" secondItem="mif-70-DT1" secondAttribute="bottom" constant="49" id="rH4-eI-tbm"/>
+                            <constraint firstItem="Sao-nT-KVo" firstAttribute="top" secondItem="mif-70-DT1" secondAttribute="bottom" constant="26" id="rH4-eI-tbm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1bu-Ix-2J7"/>
+                    <navigationItem key="navigationItem" title="Near Buy" id="1bu-Ix-2J7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bK-fe-gdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="683" y="291"/>
+        </scene>
+        <!--Buy-->
+        <scene sceneID="4bi-ZU-pac">
+            <objects>
+                <viewController id="JXk-2c-rfG" customClass="WelcomeSellViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1iR-D1-dZa"/>
+                        <viewControllerLayoutGuide type="bottom" id="4FC-z0-uVc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ALF-c6-cVk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Browse products from people you trust" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi9-1h-dx0">
+                                <rect key="frame" x="64" y="127" width="193" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="oE6-go-Ely"/>
+                                    <constraint firstAttribute="width" constant="193" id="ta9-b5-rWI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Purchase instantly." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLY-5g-552">
+                                <rect key="frame" x="64" y="202" width="193" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="0I9-br-Zey"/>
+                                    <constraint firstAttribute="height" constant="67" id="Esp-y6-3RQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Select a time for your product to be delivered" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZq-ua-scr">
+                                <rect key="frame" x="64" y="283" width="193" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="o6m-44-izY"/>
+                                    <constraint firstAttribute="width" constant="193" id="tqo-Ww-Xlc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SF-z6-Hgg">
+                                <rect key="frame" x="144" y="358" width="32" height="30"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Tkw-Ok-nC6" kind="push" id="s75-gp-eFk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eLY-5g-552" firstAttribute="top" secondItem="yi9-1h-dx0" secondAttribute="bottom" constant="8" id="7kT-r5-k9U"/>
+                            <constraint firstAttribute="centerX" secondItem="2SF-z6-Hgg" secondAttribute="centerX" id="ANW-2S-k3K"/>
+                            <constraint firstItem="2SF-z6-Hgg" firstAttribute="top" secondItem="yi9-1h-dx0" secondAttribute="bottom" constant="164" id="BKM-Y7-voY"/>
+                            <constraint firstAttribute="centerX" secondItem="DZq-ua-scr" secondAttribute="centerX" id="FZp-cx-D1y"/>
+                            <constraint firstItem="DZq-ua-scr" firstAttribute="top" secondItem="eLY-5g-552" secondAttribute="bottom" constant="14" id="b5b-82-yaC"/>
+                            <constraint firstItem="yi9-1h-dx0" firstAttribute="top" secondItem="1iR-D1-dZa" secondAttribute="bottom" constant="63" id="cac-1N-vRr"/>
+                            <constraint firstAttribute="centerX" secondItem="yi9-1h-dx0" secondAttribute="centerX" id="shr-44-lyp"/>
+                            <constraint firstAttribute="centerX" secondItem="eLY-5g-552" secondAttribute="centerX" id="x6B-cA-Bv5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Buy" id="ogh-UW-uH8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHr-jq-IDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043" y="289"/>
+        </scene>
+        <!--Sell-->
+        <scene sceneID="uMX-fV-etf">
+            <objects>
+                <viewController id="Tkw-Ok-nC6" customClass="WelcomeSellViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yWS-xr-cMC"/>
+                        <viewControllerLayoutGuide type="bottom" id="B7a-E7-Y6n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t7a-jX-TVX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Take a photo of what you want to sell." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-dA-sVL">
+                                <rect key="frame" x="60" y="149" width="200" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Vii-Hb-DSr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Set a price and description." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ab-Ao-XoY">
+                                <rect key="frame" x="60" y="218" width="200" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="VlN-gP-HoC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Set a pickup date and get paid." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ1-Hb-v1y">
+                                <rect key="frame" x="60" y="300" width="200" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="TEe-RS-Olw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7C-lR-bqW">
+                                <rect key="frame" x="116" y="362" width="89" height="30"/>
+                                <state key="normal" title="Let's do this!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LWQ-2k-xOG" kind="push" id="hsa-po-mQd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="jJ1-Hb-v1y" secondAttribute="centerX" id="29L-aZ-JOk"/>
+                            <constraint firstItem="tyn-dA-sVL" firstAttribute="top" secondItem="yWS-xr-cMC" secondAttribute="bottom" constant="85" id="f3t-bv-hym"/>
+                            <constraint firstItem="jJ1-Hb-v1y" firstAttribute="top" secondItem="3ab-Ao-XoY" secondAttribute="bottom" constant="41" id="lv3-O5-ioB"/>
+                            <constraint firstAttribute="centerX" secondItem="n7C-lR-bqW" secondAttribute="centerX" id="mJH-nf-GtH"/>
+                            <constraint firstItem="n7C-lR-bqW" firstAttribute="top" secondItem="jJ1-Hb-v1y" secondAttribute="bottom" constant="21" id="pE5-5G-HGx"/>
+                            <constraint firstAttribute="centerX" secondItem="tyn-dA-sVL" secondAttribute="centerX" id="vaa-5f-DIk"/>
+                            <constraint firstItem="3ab-Ao-XoY" firstAttribute="top" secondItem="tyn-dA-sVL" secondAttribute="bottom" constant="28" id="wFF-bB-n3p"/>
+                            <constraint firstAttribute="centerX" secondItem="3ab-Ao-XoY" secondAttribute="centerX" id="y8I-Le-Kyr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sell" id="qdx-2V-4Pe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UbP-Sq-2ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="288"/>
+        </scene>
+        <!--Welcome Get Started View Controller-->
+        <scene sceneID="aoc-Be-ldJ">
+            <objects>
+                <viewController id="LWQ-2k-xOG" customClass="WelcomeGetStartedViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="csN-b9-2rB"/>
+                        <viewControllerLayoutGuide type="bottom" id="WDK-9n-Uw1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wfE-6V-2J3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuH-J2-qHv">
+                                <rect key="frame" x="120" y="358" width="80" height="30"/>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="JuH-J2-qHv" secondAttribute="centerX" id="kNk-41-EeJ"/>
+                            <constraint firstItem="JuH-J2-qHv" firstAttribute="top" secondItem="csN-b9-2rB" secondAttribute="bottom" constant="294" id="s2X-Pb-3ok"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zvM-QJ-wdO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXL-bq-4XN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="289"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pmy-04-Mwm">
