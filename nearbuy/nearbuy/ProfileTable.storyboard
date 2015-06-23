@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Jon Profile" translatesAutoresizingMaskIntoConstraints="NO" id="ZBb-hq-mwm">
-                                                    <rect key="frame" x="19" y="8" width="86" height="79.5"/>
+                                                    <rect key="frame" x="19" y="8" width="86" height="80"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jon Choi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZX-cd-GLM">
                                                     <rect key="frame" x="118" y="8" width="70" height="21"/>
