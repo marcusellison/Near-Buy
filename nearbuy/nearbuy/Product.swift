@@ -23,7 +23,7 @@ class Product: NSObject {
     
     */
     
-    init(params: NSDictionary){
+    init(params: [String: AnyObject]){
         /* fetch all products */
         api.queryProducts(params)
     }
@@ -42,7 +42,7 @@ class Product: NSObject {
     
     */
     
-    func get(params: NSDictionary){
+    func get(params: [String: AnyObject]){
         api.queryProducts(params)
     }
     
@@ -60,11 +60,25 @@ class Product: NSObject {
 
     */
     
-    func create(params: NSDictionary) -> PFObject? {
-        /* Add Product */
+    /* 
+        Add Product 
+    */
+    func create(params: [String: AnyObject]) -> PFObject? {
         var product = api.addProduct(params)
         
         return product
+    }
+    
+    /*
+        Update a Product
+        This requires an PFObject of the specific product you want to update.  Use this to add a seller/buyer field to the product
+    
+        select specific object and 
+        object["seller"] = User.sharedInstance.name;
+    */
+    
+    func update(object: PFObject) {
+        api.updateProduct(object)
     }
     
     /*
@@ -72,17 +86,17 @@ class Product: NSObject {
     
     */
     
-    func search(searchString: String, params: NSDictionary) -> [PFObject]? {
-        var matchedProducts: [PFObject]?
-        /* if let products = products {
+    func search(searchString: String, params: NSDictionary) -> [NSObject]? {
+        var matchedProducts: [NSObject]?
+        if let products = products {
             for product in products {
-                if let productName: String = product["productName"] as? String {
+                if let productName: String = product.valueForKey("productName") as? String {
                     if productName.rangeOfString(searchString, options: .CaseInsensitiveSearch) != nil {
                         matchedProducts!.append(product);
                     }
                 }
             }
-        }*/
+        }
         
         return matchedProducts
     

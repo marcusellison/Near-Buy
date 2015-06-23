@@ -49,15 +49,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         /* User Authentication Flow */
-        /*
         if (PFUser.currentUser() != nil) {
             /* 
                 User is already Authed - Take them to root view controller 
-                Fetch Current User State
             */
             let userDict = PFUser.currentUser()!
             println("\(userDict)")
-            user.fetch(userDict["username"] as! String)
+            user.fetch()
+            println("\(user)")
             
         } else {
             /* Parse Facebook Authentication */
@@ -69,21 +68,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.navigationBarHidden = true
             navigationController.pushViewController(authViewController, animated: true)
         }
-        */
-        // instantiate storyboards
         
+        /* instantiate storyboards */
+        /*
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
         let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
       
-        // instantiate VCs within storyboards
+        /* instantiate VCs within storyboards */
         let buyViewController = buyStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
         let sellViewController = sellStoryboard.instantiateViewControllerWithIdentifier("takePhoto") as! TakePhotoViewController
         let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
         let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         
-        // instantiate tab bar and nav bar
+        /* instantiate tab bar and nav bar */
         let tabBarController = UITabBarController()
         let navigationController = UINavigationController()
         let buyViewNav = UINavigationController()
@@ -93,16 +92,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sellViewNav.pushViewController(sellViewController, animated: true)
         profileViewNav.pushViewController(profileViewController, animated: true)
         
-        // configure tab bar and embed in nav bar
+        /* configure tab bar and embed in nav bar */
         let tabBarConfig = [buyViewNav, sellViewNav, profileViewNav]
         tabBarController.viewControllers = tabBarConfig
         window?.rootViewController = tabBarController
         
-        // customize tab bar
+        /* customize tab bar */
         buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
-        
+        */
         return true
     }
 

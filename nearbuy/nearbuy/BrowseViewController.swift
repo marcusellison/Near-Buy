@@ -43,6 +43,7 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
             userImageFile!.getDataInBackgroundWithBlock {
                 (imageData: NSData?, error: NSError?) -> Void in
                 if error == nil {
+                    println("\(imageData!.length)")
                     cell.itemImageView.image = UIImage(data:imageData!)
                 }
             }

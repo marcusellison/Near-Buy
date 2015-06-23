@@ -55,7 +55,6 @@ class API: NSObject {
         
         product.saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
             if (success) {
-                // product saved
                 println("success")
             } else {
                 println(error!.description)
@@ -77,6 +76,15 @@ class API: NSObject {
         return true
     }
     
+    func updateProduct(object: PFObject) {
+        object.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if success {
+                /* We're going to need to update products real-time in the App */
+                println("success")
+            }
+        }
+    }
+    
     func downloadImage(file: PFFile) {
         file.getDataInBackgroundWithBlock {
             (imageData: NSData?, error: NSError?) -> Void in
@@ -95,28 +103,28 @@ class API: NSObject {
         
         /* Query for all products where username is not the seller */
         var query = PFQuery(className:"Product")
-        if params["username"] != nil {
-            let username = params["username"] as! String
-            query.whereKey("userName", notEqualTo: username)
-            query.findObjectsInBackgroundWithBlock {
-                (productObjects: [AnyObject]?, error: NSError?) -> Void in
-                if error == nil {
-                    if let productObjects = productObjects as? [PFObject] {
-                        /* Save this on the Parse Local Object */
-                        Product.sharedInstance.products = productObjects
+        // if params["username"] != nil {
+        // let username = params["username"] as! String
+        // query.whereKey("userName", notEqualTo: username)
+        query.findObjectsInBackgroundWithBlock {
+            (productObjects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let productObjects = productObjects as? [PFObject] {
+                    /* Save this on the Parse Local Object */
+                    Product.sharedInstance.products = productObjects
+                    
                         
-                        /* Do whatever you want here - use a notification to update a specific object */
-                        NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
-                        
+                    /* Do whatever you want here - use a notification to update a specific object */
+                    NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
                         
                     }
                 } else {
                     println(error?.description)
                 }
-            }
-        } else {
-            
         }
+        /*} else {
+            
+        }*/
     }
     
 }
