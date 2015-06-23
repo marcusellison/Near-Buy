@@ -19,6 +19,8 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
         collectionView.dataSource = self
         var params: NSDictionary = ["username":"kavodel@mixpanel.com"]
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadCollectionView", name: "ProductsDidReturn", object: nil)
+        println(products)
+        println("did it print?")
     }
     
     func reloadCollectionView(){
@@ -56,6 +58,7 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
         var count = 10
         if let products = products {
             var count = products.count
+            println("product are products!")
         }
         return count
     }
@@ -75,9 +78,10 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     }
     
     func segueToItemDetailViewController() {
-        println("got to the segue")        
+        println("got to the segue")
         var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
         var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+//        controller.product = products?[indexPath.row]
 //        var navController = UINavigationController(rootViewController: controller)
 //        navController.pushViewController(controller, animated: true)
 //        let button = UIBarButtonItem(

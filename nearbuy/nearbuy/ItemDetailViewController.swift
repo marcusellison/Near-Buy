@@ -10,6 +10,8 @@ import UIKit
 
 class ItemDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var product: Product?
+    
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {

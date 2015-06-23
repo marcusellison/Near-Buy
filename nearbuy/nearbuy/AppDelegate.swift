@@ -48,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /* Initialize Facebook */
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
+        /*
         /* User Authentication Flow */
         if (PFUser.currentUser() != nil) {
             /* 
@@ -68,18 +69,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.navigationBarHidden = true
             navigationController.pushViewController(authViewController, animated: true)
         }
-        
+        */
+
+
         /* instantiate storyboards */
-        /*
+        
         let buyStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let sellStoryboard = UIStoryboard(name: "TakePhoto", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
-        let profileStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let profileStoryboard = UIStoryboard(name: "ProfileTable", bundle: nil)
       
         /* instantiate VCs within storyboards */
         let buyViewController = buyStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
         let sellViewController = sellStoryboard.instantiateViewControllerWithIdentifier("takePhoto") as! TakePhotoViewController
-        let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+        let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileTableViewController") as! ProfileTableViewController
         let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         
         /* instantiate tab bar and nav bar */
@@ -101,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
         sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
         profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
-        */
+        
         return true
     }
 
