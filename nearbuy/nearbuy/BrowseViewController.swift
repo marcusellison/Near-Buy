@@ -51,7 +51,7 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
                 if error == nil {
                     println("\(imageData!.length)")
                     cell.itemImageView.image = UIImage(data: imageData!)
-                    cell.imageSavedToCell = UIImage(data: imageData!)
+//                    cell.imageSavedToCell = UIImage(data: imageData!)
 //                    self.imageArray.append(cell.itemImageView.image!)
 //                    self.appendCount += 1
 //                    println(self.appendCount)

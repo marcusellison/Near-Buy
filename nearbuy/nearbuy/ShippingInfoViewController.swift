@@ -9,7 +9,8 @@
 import UIKit
 
 class ShippingInfoViewController: UIViewController {
-
+    
+    lazy var user : User = User()
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var shippingNameTextfield: UITextField!
     @IBOutlet weak var shippingStreetAddressTextfield: UITextField!
@@ -37,7 +38,10 @@ class ShippingInfoViewController: UIViewController {
         shippingPhone = shippingPhoneTextfield.text
         
         userShippingInformation = ["name": shippingName!, "streetAddress": shippingStreetAddress!, "city": shippingCity!, "state": shippingState!, "zip": shippingZip!, "phone": shippingPhone!]
-        println(userShippingInformation!)
+        
+        /* Add to User Object */
+        User.sharedInstance.address = userShippingInformation
+        
     }
     
     override func viewDidLoad() {

@@ -22,14 +22,14 @@ class Payments: NSObject {
     lazy var user: User = User()
     
     
-    func chargeUser(params: NSDictionary, amount:String){
+    func chargeUser(params: [String:AnyObject], amount:String){
         /* Create a Stripe Card Object */
         let creditCard = STPCard()
         
         creditCard.number = params["number"] as? String
         creditCard.cvc = params["cvc"] as? String
-        creditCard.expMonth = params["expMonth"] as! UInt
-        creditCard.expYear = params["expYear"] as! UInt
+        creditCard.expMonth = (params["expMonth"] as? UInt)!
+        creditCard.expYear = (params["expYear"] as? UInt)!
         
             
         var error: NSError?

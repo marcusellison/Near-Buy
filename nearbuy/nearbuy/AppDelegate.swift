@@ -78,6 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
         /* instantiate VCs within storyboards */
         let buyViewController = buyStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
+        buyViewController.title = "Nearbuy"
         let sellViewController = sellStoryboard.instantiateViewControllerWithIdentifier("takePhoto") as! TakePhotoViewController
         let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileTableViewController") as! ProfileTableViewController
         let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
@@ -101,6 +102,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: UIImage(named: "postmates"), tag: 1)
         sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: UIImage(named: "Shape-1"), tag: 2)
         profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "user"), tag: 3)
+        
+        /* add search in nav bar*/
+        // marcus can you add searchbar here?
+        /*
+        var leftNavBarButton = UIBarButtonItem(customView: <#UIView#>)
+        buyViewNav.navigationItem.leftBarButtonItem = leftNavBarButton
+        */
         
         return true
     }
