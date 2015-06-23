@@ -35,7 +35,7 @@ class API: NSObject {
         
         /* add Properties */
         product["productName"] = productInfo["name"]
-        product["description"] = productInfo["description"]
+        product["summary"] = productInfo["summary"]
         product["price"] = productInfo["price"]
         product["shared"] = productInfo["shared"]
         product["category"] = productInfo["category"]
