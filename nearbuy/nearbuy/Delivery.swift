@@ -30,12 +30,13 @@ class Delivery: NSObject {
     
     var manifest: String?
     
-    func getDeliveryQuote(buyer: [String: String], sender: [String: String]){
+    func getDeliveryQuote(buyer: [String: String], seller: [String: String]){
         
         
     }
     
-    func makeDelivery(){
+    func makeDelivery(buyerAddress: [String: String], buyerName: String, buyerPhone: String, sellerAddress: [String: String], sellerName: String?, sellerPhone: String?){
+        
         
     }
     
