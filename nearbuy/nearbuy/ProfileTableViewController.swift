@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ProfileTableViewController: UIViewController {
+class ProfileTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +24,28 @@ class ProfileTableViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell: UITableViewCell!
+        
+        if indexPath.row == 0 {
+            cell = tableView.dequeueReusableCellWithIdentifier("ProfileTableViewCell", forIndexPath: indexPath) as! ProfileTableViewCell
+            return cell
+        } else if indexPath.row == 1 {
+            cell = tableView.dequeueReusableCellWithIdentifier("HistoryTableViewCell", forIndexPath: indexPath) as! HistoryTableViewCell
+            return cell
+        } else if indexPath.row == 2 {
+            cell = tableView.dequeueReusableCellWithIdentifier("PaymentInfoTableViewCell", forIndexPath: indexPath) as! PaymentInfoTableViewCell
+            return cell
+        } else {
+            println("anything here?")
+            return cell
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
 
     /*
     // MARK: - Navigation

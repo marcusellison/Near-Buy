@@ -11,22 +11,31 @@ import Parse
 
 class User: NSObject {
     
+    static let sharedInstance = User()
+    
     var name: String?
     var email: String?
     var address: Dictionary<String, String>?
     var creditCard: Dictionary<String, String>?
-    var purchases: [Product]?
+    var profilePicture: String?
+    var trustScore: String?
+    var history: [Product]?
     var currentUser: PFUser?
+    
+    // userShippingInformation = ["name": shippingName!, "streetAddress": shippingStreetAddress!, "city": shippingCity!, "state": shippingState!, "zip": shippingZip!, "phone": shippingPhone!]
+    
     
     override init(){
         super.init()
         
         /* Assign any of the optional values that exist in Parse on this User object */
         currentUser = PFUser.currentUser()
+        println("\(currentUser)")
+        
     }
     
-    func register(params: Dictionary<String, AnyObject>){
-        var user = PFUser()
+    func register(params: PFUser){
+        var user = params
         user.username = (params["username"] as! String)
         user.password = (params["username"] as! String)
         
@@ -36,7 +45,6 @@ class User: NSObject {
                 let errorString = error.userInfo?["error"] as? NSString
             } else {
                 println("success")
-                self.save(params)
             }
         }
         
@@ -64,32 +72,58 @@ class User: NSObject {
     
     /* Save attributes to a user */
     
-    func save(params:Dictionary<String, AnyObject>) {
+    func save(params: [String: AnyObject]){
         var user = PFUser()
-        var attributes = PFObject(className: "Attributes", dictionary: params)
-        user["attributes"] = attributes
+        for key in params.keys {
+            user[key] = params[key]
+        }
+        
         user.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
             if success {
                 self.currentUser = user
+                self.updateUser(user)
             } else {
                 /* Shit went wrong */
             }
             
         })
-        println("\(user)")
     }
     
-    func update(params:Dictionary<String, AnyObject>) {
+    func updateUser(userToUpdate: PFUser) {
+        if (userToUpdate.valueForKey("username") != nil){
+            var username = userToUpdate.valueForKey("username") as! String
+            User.sharedInstance.name = username
+        }
         
+        if (userToUpdate.valueForKey("creditCard") != nil){
+            var creditCard = userToUpdate.valueForKey("creditCard") as! [String: String]
+            User.sharedInstance.creditCard = creditCard
+        }
+        
+        if (userToUpdate.valueForKey("address") != nil){
+            var address = userToUpdate.valueForKey("address") as! [String: String]
+            User.sharedInstance.address = address
+        }
+        
+        if (userToUpdate.valueForKey("profilePicture") != nil){
+            var username = userToUpdate.valueForKey("profilePicture") as! String
+            User.sharedInstance.profilePicture = profilePicture
+        }
+        
+        if (userToUpdate.valueForKey("email") != nil){
+            var email = userToUpdate.valueForKey("email") as! String
+            User.sharedInstance.email = email
+        }
         
     }
     
     /* Fetch Current User State */
-    func fetch(username: String){
+    func fetch(){
         PFUser.currentUser()?.fetchInBackgroundWithBlock({ (user: PFObject?, error:NSError?) -> Void in
             if error == nil {
                 self.currentUser = (user as! PFUser)
-                println("\(user)")
+                self.updateUser(self.currentUser!)
+                println("\(self.currentUser)")
             }
         })
         

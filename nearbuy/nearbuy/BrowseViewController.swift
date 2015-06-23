@@ -12,13 +12,19 @@ import Parse
 class BrowseViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var products: [NSObject]?
+    var imageArray: [UIImage] = []
+    var appendCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
         var params: NSDictionary = ["username":"kavodel@mixpanel.com"]
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadCollectionView", name: "ProductsDidReturn", object: nil)
+        println(products)
+        println("did it print?")
     }
     
     func reloadCollectionView(){
@@ -43,7 +49,12 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
             userImageFile!.getDataInBackgroundWithBlock {
                 (imageData: NSData?, error: NSError?) -> Void in
                 if error == nil {
-                    cell.itemImageView.image = UIImage(data:imageData!)
+                    println("\(imageData!.length)")
+                    cell.itemImageView.image = UIImage(data: imageData!)
+//                    cell.imageSavedToCell = UIImage(data: imageData!)
+//                    self.imageArray.append(cell.itemImageView.image!)
+//                    self.appendCount += 1
+//                    println(self.appendCount)
                 }
             }
             
@@ -55,13 +66,20 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
         var count = 10
         if let products = products {
             var count = products.count
+            println("product are products!")
         }
         return count
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("tapped \(indexPath)")
-        segueToItemDetailViewController()
+        
+        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
+        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+        controller.product = products?[indexPath.row]
+        println(products?[indexPath.row])
+        self.navigationController!.pushViewController(controller, animated: true)
+//        segueToItemDetailViewController()
     }
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -74,17 +92,22 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     }
     
     func segueToItemDetailViewController() {
-        println("got to the segue")        
-        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
-        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+        println("got to the segue")
+//        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
+//        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+//        controller.product = products?[indexPath.row]
 //        var navController = UINavigationController(rootViewController: controller)
 //        navController.pushViewController(controller, animated: true)
 //        let button = UIBarButtonItem(
 //        navController.navigationItem.leftBarButtonItem = button
         println("is this working")
 //        self.presentViewController(navController, animated: true, completion: nil)
-        self.navigationController!.pushViewController(controller, animated: true)
+//        self.navigationController!.pushViewController(controller, animated: true)
         
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     /*

@@ -22,14 +22,14 @@ class Payments: NSObject {
     lazy var user: User = User()
     
     
-    func chargeUser(params: NSDictionary, amount:String){
+    func chargeUser(params: [String:AnyObject], amount:String){
         /* Create a Stripe Card Object */
         let creditCard = STPCard()
         
         creditCard.number = params["number"] as? String
         creditCard.cvc = params["cvc"] as? String
-        creditCard.expMonth = params["expMonth"] as! UInt
-        creditCard.expYear = params["expYear"] as! UInt
+        creditCard.expMonth = (params["expMonth"] as? UInt)!
+        creditCard.expYear = (params["expYear"] as? UInt)!
         
             
         var error: NSError?
@@ -39,9 +39,11 @@ class Payments: NSObject {
                 if let token = token {
                     /* Charge the User */
                     self.sendChargeToStripe("\(token)", amount: amount)
-                    self.user.currentUser?.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
+                    
+                    
+                    /*self.user.currentUser?.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
                         
-                    })
+                    })*/
                     /* Also increment the amount on the Parse Object */
                     
                 } else {

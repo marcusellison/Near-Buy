@@ -68,18 +68,21 @@ class AuthViewController: UIViewController, FBSDKLoginButtonDelegate {
                 println("Error: \(error)")
             }
             else {
-                
+                println("\(result)")
                 let userName : String = result.valueForKey("name") as! String
                 let userEmail : String = result.valueForKey("email") as! String
                 let gender : String = result.valueForKey("gender") as! String
+                let facebookID : String = result.valueForKey("id") as! String
                 /* User Attributes to Save after the Request Returns */
                 
-                var params: Dictionary<String, AnyObject> = [:];
+                var currentUser = PFUser()
+                currentUser["username"] = userName
+                currentUser["email"] = userEmail
+                currentUser["gender"] = gender
+                currentUser["profileURL"] = "http://graph.facebook.com/\(facebookID)/picture?type=large"
                 
-                params["username"] = userName
-                params["email"] = userEmail
-                params["gender"] = gender
-                self.user.register(params)
+                self.user.register(currentUser)
+                self.user.updateUser(currentUser)
                 
                 /* Segue into next view */
             }

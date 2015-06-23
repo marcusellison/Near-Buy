@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import Parse
 
 class ItemDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var product: NSObject?
+    var passedImage: UIImage?
+    
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.delegate = self
         tableView.dataSource = self
+        println("it passed here \(product)")
         // Do any additional setup after loading the view.
     }
 
@@ -27,6 +31,19 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemDetailTableViewCell", forIndexPath: indexPath) as! ItemDetailTableViewCell
+        cell.itemTitleLabel.text = product?.valueForKey("productName") as? String
+        cell.itemPriceLabel.text = product?.valueForKey("price") as? String
+        cell.itemDescriptionLabel.text = product?.valueForKey("summary") as? String
+        var optionalImage = product?.valueForKey("image") as? PFFile
+        optionalImage!.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+            if error == nil {
+                println("\(imageData!.length)")
+                cell.itemDetailImageView.image = UIImage(data: imageData!)
+            }
+        })
+        println(optionalImage)
+        //        cell.itemDetailImageView.image = optionalImage!
+        println(product?.valueForKey("image"))
         return cell
     }
     
