@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ItemDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -32,9 +33,17 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemDetailTableViewCell", forIndexPath: indexPath) as! ItemDetailTableViewCell
         cell.itemTitleLabel.text = product?.valueForKey("productName") as? String
         cell.itemPriceLabel.text = product?.valueForKey("price") as? String
-        // valueForKey "description" doesn't work?!
-        cell.itemDescriptionLabel.text = product?.valueForKey("category") as? String
-//        cell.itemDetailImageView.image = product?.valueForKey("image") as?
+        cell.itemDescriptionLabel.text = product?.valueForKey("summary") as? String
+        var optionalImage = product?.valueForKey("image") as? PFFile
+        optionalImage!.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+            if error == nil {
+                println("\(imageData!.length)")
+                cell.itemDetailImageView.image = UIImage(data: imageData!)
+            }
+        })
+        println(optionalImage)
+        //        cell.itemDetailImageView.image = optionalImage!
+        println(product?.valueForKey("image"))
         return cell
     }
     
