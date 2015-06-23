@@ -39,9 +39,11 @@ class Payments: NSObject {
                 if let token = token {
                     /* Charge the User */
                     self.sendChargeToStripe("\(token)", amount: amount)
-                    self.user.currentUser?.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
+                    
+                    
+                    /*self.user.currentUser?.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
                         
-                    })
+                    })*/
                     /* Also increment the amount on the Parse Object */
                     
                 } else {

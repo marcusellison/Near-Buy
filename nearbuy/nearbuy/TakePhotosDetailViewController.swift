@@ -59,7 +59,7 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
         
         var params: NSDictionary = ["username":"seller@awesome.com",
             "name":productNameField.text,
-            "description":productDescriptionField.text,
+            "summary":productDescriptionField.text,
             "price": productPriceField.text,
             "shared":"true",
             "category":categoryField.text,

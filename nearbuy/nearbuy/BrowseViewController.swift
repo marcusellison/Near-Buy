@@ -106,6 +106,10 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
         
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     /*
     // MARK: - Navigation
 
