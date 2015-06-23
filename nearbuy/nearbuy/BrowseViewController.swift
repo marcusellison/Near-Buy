@@ -12,7 +12,11 @@ import Parse
 class BrowseViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var products: [NSObject]?
+    var imageArray: [UIImage] = []
+    var appendCount: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -46,7 +50,11 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
                 (imageData: NSData?, error: NSError?) -> Void in
                 if error == nil {
                     println("\(imageData!.length)")
-                    cell.itemImageView.image = UIImage(data:imageData!)
+                    cell.itemImageView.image = UIImage(data: imageData!)
+                    cell.imageSavedToCell = UIImage(data: imageData!)
+//                    self.imageArray.append(cell.itemImageView.image!)
+//                    self.appendCount += 1
+//                    println(self.appendCount)
                 }
             }
             
@@ -65,7 +73,13 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         println("tapped \(indexPath)")
-        segueToItemDetailViewController()
+        
+        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
+        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+        controller.product = products?[indexPath.row]
+        println(products?[indexPath.row])
+        self.navigationController!.pushViewController(controller, animated: true)
+//        segueToItemDetailViewController()
     }
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -79,8 +93,8 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     
     func segueToItemDetailViewController() {
         println("got to the segue")
-        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
-        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+//        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
+//        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
 //        controller.product = products?[indexPath.row]
 //        var navController = UINavigationController(rootViewController: controller)
 //        navController.pushViewController(controller, animated: true)
@@ -88,7 +102,7 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
 //        navController.navigationItem.leftBarButtonItem = button
         println("is this working")
 //        self.presentViewController(navController, animated: true, completion: nil)
-        self.navigationController!.pushViewController(controller, animated: true)
+//        self.navigationController!.pushViewController(controller, animated: true)
         
     }
     

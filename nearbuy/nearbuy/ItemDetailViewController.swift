@@ -10,15 +10,16 @@ import UIKit
 
 class ItemDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var product: Product?
+    var product: NSObject?
+    var passedImage: UIImage?
     
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.delegate = self
         tableView.dataSource = self
+        println("it passed here \(product)")
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +30,11 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemDetailTableViewCell", forIndexPath: indexPath) as! ItemDetailTableViewCell
+        cell.itemTitleLabel.text = product?.valueForKey("productName") as? String
+        cell.itemPriceLabel.text = product?.valueForKey("price") as? String
+        // valueForKey "description" doesn't work?!
+        cell.itemDescriptionLabel.text = product?.valueForKey("category") as? String
+//        cell.itemDetailImageView.image = product?.valueForKey("image") as?
         return cell
     }
     

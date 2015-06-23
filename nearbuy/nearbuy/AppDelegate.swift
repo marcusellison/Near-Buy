@@ -101,9 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabBarController
         
         /* customize tab bar */
-        buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: nil, tag: 1)
-        sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: nil, tag: 2)
-        profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: nil, tag: 3)
+        buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: UIImage(named: "postmates"), tag: 1)
+        sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: UIImage(named: "Shape-1"), tag: 2)
+        profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "user"), tag: 3)
         
         return true
     }
