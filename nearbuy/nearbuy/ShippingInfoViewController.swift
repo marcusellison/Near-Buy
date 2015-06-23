@@ -47,5 +47,11 @@ class ShippingInfoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "shippingToBilling" {
+            let billingVC = segue.destinationViewController as! BillingInfoViewController
+            billingVC.userShippingInformation = self.userShippingInformation
+        }
+    }
 }

@@ -16,7 +16,10 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     @IBOutlet weak var billingCityTextfield: UITextField!
     @IBOutlet weak var billingStateTextfield: UITextField!
     @IBOutlet weak var billingZipcodeTextfield: UITextField!
+    @IBOutlet weak var shippingAddressSwitch: UISwitch!
 
+    var userShippingInformation: [String : String]?
+    
     var creditCardNumber: String?
     var creditCardExpirationMonth: UInt?
     var creditCardExpirationYear: UInt?
@@ -35,6 +38,10 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         CardIOUtilities.preload()
+        billingStreetAddressTextfield.text = userShippingInformation?["streetAddress"]
+        billingCityTextfield.text = userShippingInformation?["city"]
+        billingStateTextfield.text = userShippingInformation?["state"]
+        billingZipcodeTextfield.text = userShippingInformation?["zip"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +74,10 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
 
     @IBAction func nextButtonTapped(sender: AnyObject) {
         // do i need to set credit card number here or does it carry down?
+        
+        if creditCardNumber == nil {
+            creditCardNumber = creditCardTextfield.text
+        }
         billingStreetAddress = billingStreetAddressTextfield.text
         billingCity = billingCityTextfield.text
         billingState = billingStateTextfield.text
@@ -75,6 +86,23 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         userBillingInformation = ["creditCard": creditCardNumber!, "streetAddress": billingStreetAddress!, "city": billingCity!, "state": billingState!, "zip": billingZip!]
         println(userBillingInformation!)
     }
+    
+    @IBAction func switchValueChanged(sender: AnyObject) {
+        if shippingAddressSwitch.on {
+            billingStreetAddressTextfield.text = userShippingInformation?["streetAddress"]
+            billingCityTextfield.text = userShippingInformation?["city"]
+            billingStateTextfield.text = userShippingInformation?["state"]
+            billingZipcodeTextfield.text = userShippingInformation?["zip"]
+        } else {
+            billingStreetAddressTextfield.text = nil
+            billingCityTextfield.text = nil
+            billingStateTextfield.text = nil
+            billingZipcodeTextfield.text = nil
+        }
+    }
+
+
+    
     /*
     // MARK: - Navigation
 
