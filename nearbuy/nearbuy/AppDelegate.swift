@@ -42,9 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // payments.chargeUser(paymentsParams, amount: amount)
         
         
-        
-        
-        
         /* Initialize Facebook */
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         

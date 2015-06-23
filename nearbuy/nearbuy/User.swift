@@ -22,6 +22,8 @@ class User: NSObject {
     var history: [Product]?
     var currentUser: PFUser?
     
+    // userShippingInformation = ["name": shippingName!, "streetAddress": shippingStreetAddress!, "city": shippingCity!, "state": shippingState!, "zip": shippingZip!, "phone": shippingPhone!]
+    
     
     override init(){
         super.init()

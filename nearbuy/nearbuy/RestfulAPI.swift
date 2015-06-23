@@ -6,6 +6,12 @@
 //  Copyright (c) 2015 Marcus J. Ellison. All rights reserved.
 //
 
+/*
+    Delivery API
+    Photo Sizes
+    Cache Photos
+*/
+
 import UIKit
 import Parse
 
@@ -112,7 +118,6 @@ class API: NSObject {
                 if let productObjects = productObjects as? [PFObject] {
                     /* Save this on the Parse Local Object */
                     Product.sharedInstance.products = productObjects
-                    
                         
                     /* Do whatever you want here - use a notification to update a specific object */
                     NSNotificationCenter.defaultCenter().postNotificationName(ProductsDidReturn, object: self)
