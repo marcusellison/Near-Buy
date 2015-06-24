@@ -26,10 +26,10 @@ class Payments: NSObject {
         /* Create a Stripe Card Object */
         let creditCard = STPCard()
         
-        creditCard.number = params["number"] as? String
-        creditCard.cvc = params["cvc"] as? String
-        creditCard.expMonth = (params["expMonth"] as? UInt)!
-        creditCard.expYear = (params["expYear"] as? UInt)!
+        creditCard.number = User.sharedInstance.creditCard!
+        creditCard.cvc = User.sharedInstance.cvv!
+        creditCard.expMonth = User.sharedInstance.expMonth!
+        creditCard.expYear = User.sharedInstance.expYear!
         
             
         var error: NSError?
