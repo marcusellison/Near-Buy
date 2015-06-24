@@ -8,8 +8,9 @@
 
 import UIKit
 import AVFoundation
+import MobileCoreServices
 
-class TakePhotoViewController: UIViewController {
+class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var instructionLabel: UILabel!
@@ -18,6 +19,8 @@ class TakePhotoViewController: UIViewController {
     @IBOutlet weak var capturePhotoView: UIView!
     
     private var photoImage: UIImage?
+    
+    let picker = UIImagePickerController()
     
     private let captureSession = AVCaptureSession()
     private let sessionQueue = dispatch_queue_create("com.marcusellison.nearbuy.sessionqueue", nil)
@@ -39,6 +42,8 @@ class TakePhotoViewController: UIViewController {
         nextButton.hidden = true
         
         capturePhotoView.hidden = true
+        
+        picker.delegate = self
         
     }
     
@@ -144,6 +149,8 @@ class TakePhotoViewController: UIViewController {
                         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
                         UIGraphicsEndImageContext()
                         
+                        println(scaledImage)
+                        
                         // set image
                         self.photoImage = scaledImage
                         
@@ -151,7 +158,7 @@ class TakePhotoViewController: UIViewController {
                             self.capturedPhotos.append(image)
                             
                             for image in self.capturedPhotos {
-                                var imageView = UIImageView(frame: CGRectMake(self.capturedPhotoX, 0, 100, 100));
+                                var imageView = UIImageView(frame: CGRectMake(self.capturedPhotoX, 0, 54, 96));
                                     imageView.image = image;
                                     self.capturePhotoView.addSubview(imageView);
                             }
@@ -169,10 +176,6 @@ class TakePhotoViewController: UIViewController {
         
     }
     
-    @IBAction func uploadPhoto(sender: AnyObject) {
-        
-
-    }
     
     
 
