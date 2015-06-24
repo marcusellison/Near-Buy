@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShippingInfoViewController: UIViewController {
+class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
     
     lazy var user : User = User()
     @IBOutlet weak var itemImageView: UIImageView!
@@ -44,10 +44,35 @@ class ShippingInfoViewController: UIViewController {
         
     }
     
+    func connectTextFieldDelegates() {
+        self.shippingNameTextfield.delegate = self
+        self.shippingStreetAddressTextfield.delegate = self
+        self.shippingCityTextfield.delegate = self
+        self.shippingStateTextfield.delegate = self
+        self.shippingZipcodeTextfield.delegate = self
+        self.shippingPhoneTextfield.delegate = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        connectTextFieldDelegates()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y -= 170
     }
 
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y += 170
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDelegate {
+class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var creditCardTextfield: UITextField!
@@ -36,6 +36,20 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     
     // let's integrate google address search here
     
+    func keyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func connectTextFieldDelegates() {
+        self.creditCardTextfield.delegate = self
+        self.billingStreetAddressTextfield.delegate = self
+        self.billingCityTextfield.delegate = self
+        self.billingStateTextfield.delegate = self
+        self.billingZipcodeTextfield.delegate = self
+        self.expirationTextfield.delegate = self
+        self.cvvTextfield.delegate = self
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +58,23 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         billingCityTextfield.text = userShippingInformation?["city"]
         billingStateTextfield.text = userShippingInformation?["state"]
         billingZipcodeTextfield.text = userShippingInformation?["zip"]
+        connectTextFieldDelegates()
+        keyboardNotifications()
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y -= 170
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y += 170
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
