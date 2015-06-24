@@ -7,8 +7,12 @@
 //
 
 /*
-    Delivery API
-    Photo Sizes
+    Delivery API (PostMates)
+    Complete Sell Flow ==> Add Seller Address
+    Complete Buy Flow ==> Add Credit Card info to Product + Buyer Info
+    Complete Delivery Flow 
+    Notifications
+
     Cache Photos
 */
 
@@ -66,8 +70,6 @@ class API: NSObject {
                 println(error!.description)
             }
         }
-        
-        
         return product
     }
     
@@ -105,13 +107,14 @@ class API: NSObject {
         var products: [PFObject]?
         var images: [UIImage]?
         
-        /* If Cache - set those images on the Product.sharedInstance */
-        
-        /* Query for all products where username is not the seller */
         var query = PFQuery(className:"Product")
-        // if params["username"] != nil {
-        // let username = params["username"] as! String
-        // query.whereKey("userName", notEqualTo: username)
+        /* Check if there's an update -- if not, use the cached photos 
+            var cachedPhotos:  [PFObject]?
+            Product.sharedInstance.products = cachedPhotos
+        */
+        
+        
+        
         query.findObjectsInBackgroundWithBlock {
             (productObjects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil {

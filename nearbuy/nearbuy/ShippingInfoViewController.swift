@@ -40,10 +40,12 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
         shippingZip = shippingZipcodeTextfield.text
         shippingPhone = shippingPhoneTextfield.text
         
-        userShippingInformation = ["name": shippingName!, "streetAddress": shippingStreetAddress!, "city": shippingCity!, "state": shippingState!, "zip": shippingZip!, "phone": shippingPhone!]
+        userShippingInformation = ["name": shippingName!, "streetAddress": shippingStreetAddress! + shippingCity! + shippingState! +  shippingZip!, "phone": shippingPhone!]
         
         /* Add to User Object */
-        User.sharedInstance.address = userShippingInformation
+        User.sharedInstance.address = userShippingInformation!["streetAddress"]
+        User.sharedInstance.phone = userShippingInformation!["phone"]
+        user.save(userShippingInformation!)
         
     }
     

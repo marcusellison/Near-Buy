@@ -15,8 +15,9 @@ class User: NSObject {
     
     var name: String?
     var email: String?
-    var address: Dictionary<String, String>?
+    var address:  String?
     var creditCard: Dictionary<String, String>?
+    var phone: String?
     var profilePicture: String?
     var trustScore: String?
     var history: [Product]?

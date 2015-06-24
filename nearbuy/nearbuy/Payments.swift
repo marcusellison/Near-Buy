@@ -40,7 +40,6 @@ class Payments: NSObject {
                     /* Charge the User */
                     self.sendChargeToStripe("\(token)", amount: amount)
                     
-                    
                     /*self.user.currentUser?.saveInBackgroundWithBlock({ (success:Bool, error: NSError?) -> Void in
                         
                     })*/

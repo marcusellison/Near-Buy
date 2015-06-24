@@ -130,6 +130,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         billingZip = billingZipcodeTextfield.text
         
         userBillingInformation = ["creditCard": creditCardNumber!, "streetAddress": billingStreetAddress!, "city": billingCity!, "state": billingState!, "zip": billingZip!]
+        
         println(userBillingInformation!)
     }
     
