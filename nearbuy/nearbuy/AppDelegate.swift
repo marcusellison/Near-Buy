@@ -19,7 +19,7 @@ let stripeKey = "pk_test_9wwe6T1laHfjJWiiquq04p5b"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var pushNotificationController: PushNotificationController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
        
@@ -115,7 +115,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*
         var leftNavBarButton = UIBarButtonItem(customView: <#UIView#>)
         buyViewNav.navigationItem.leftBarButtonItem = leftNavBarButton
+        
         */
+        
+        /* Attempting Push Notifications */
+        self.pushNotificationController = PushNotificationController()
+
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            
+            let types:UIUserNotificationType = (.Alert | .Badge | .Sound)
+            let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+            
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+            
+        }
         
         return true
     }
@@ -140,6 +154,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        println("didRegisterForRemoteNotificationsWithDeviceToken")
+        
+        let currentInstallation = PFInstallation.currentInstallation()
+        
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.saveInBackgroundWithBlock { (succeeded, e) -> Void in
+            //code
+        }
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println("failed to register for remote notifications:  (error)")
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        println("didReceiveRemoteNotification")
+        PFPush.handlePush(userInfo)
     }
     
     /* Return Facebook Singleton   */

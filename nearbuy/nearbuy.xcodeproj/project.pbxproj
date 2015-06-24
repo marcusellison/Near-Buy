@@ -57,6 +57,7 @@
 		A3B862841B37512B009DEC46 /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B862831B37512B009DEC46 /* Delivery.swift */; };
 		A3B862871B3769A8009DEC46 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B862851B3769A8009DEC46 /* FBSDKCoreKit.framework */; };
 		A3B862881B3769A8009DEC46 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B862861B3769A8009DEC46 /* FBSDKLoginKit.framework */; };
+		A3D56E841B3A985A0099DDCC /* PushNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D56E831B3A985A0099DDCC /* PushNotificationController.swift */; };
 		A3E959F51B2E82BC0080AC64 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E959F41B2E82BC0080AC64 /* Auth.storyboard */; };
 		A3E959F71B2E83A80080AC64 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E959F61B2E83A80080AC64 /* AuthViewController.swift */; };
 		D22F35631B38FF0B0003CE15 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22F35621B38FF0B0003CE15 /* ProfileTableViewCell.swift */; };
@@ -144,6 +145,7 @@
 		A3B862831B37512B009DEC46 /* Delivery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
 		A3B862851B3769A8009DEC46 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A3B862861B3769A8009DEC46 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A3D56E831B3A985A0099DDCC /* PushNotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationController.swift; sourceTree = "<group>"; };
 		A3E959F41B2E82BC0080AC64 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		A3E959F61B2E83A80080AC64 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		D22F35621B38FF0B0003CE15 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -328,6 +330,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		A3D56E821B3A98460099DDCC /* Push Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A3D56E831B3A985A0099DDCC /* PushNotificationController.swift */,
+			);
+			name = "Push Notifications";
+			sourceTree = "<group>";
+		};
 		A3DB5CFF1B35F10D001D54C3 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +408,7 @@
 		D2E128771B27DA9B00221321 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A3D56E821B3A98460099DDCC /* Push Notifications */,
 				A3DB5CFF1B35F10D001D54C3 /* Auth */,
 				3DFFC78C1B34B03D00CC7BA7 /* BrowseViewController.swift */,
 				D25368F51B2E38D500DAA78A /* ItemDetailViewController.swift */,
@@ -479,9 +490,11 @@
 				TargetAttributes = {
 					3DD616EB1B277B83001FEB6F = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = N7S4HUUEJF;
 					};
 					3DD617001B277B83001FEB6F = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = N7S4HUUEJF;
 						TestTargetID = 3DD616EB1B277B83001FEB6F;
 					};
 				};
@@ -597,6 +610,7 @@
 				3D984B9A1B39D19900824090 /* WelcomeGetStartedViewController.swift in Sources */,
 				D2E1287C1B27DB2700221321 /* ChatViewController.swift in Sources */,
 				A347FD7E1B282134002548F8 /* Product.swift in Sources */,
+				A3D56E841B3A985A0099DDCC /* PushNotificationController.swift in Sources */,
 				D2395E991B362CFA00C1E7C2 /* ShippingInfoViewController.swift in Sources */,
 				3D98DCE01B366C3600EF2BC6 /* ProfileDetailViewController.swift in Sources */,
 				3DD616F21B277B83001FEB6F /* AppDelegate.swift in Sources */,
@@ -666,7 +680,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kavodel Ohiomoba (62TS5BUD9M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kavodel Ohiomoba (62TS5BUD9M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -710,7 +725,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kavodel Ohiomoba (62TS5BUD9M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kavodel Ohiomoba (62TS5BUD9M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -735,8 +751,8 @@
 			baseConfigurationReference = 6D855F95CCA25A3CCF17D6BB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kavodel Ohiomoba (62TS5BUD9M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kavodel Ohiomoba (62TS5BUD9M)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -748,7 +764,7 @@
 				INFOPLIST_FILE = nearbuy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c6240f4f-ed93-4c3a-99b3-9f010ee8fb88";
 				SWIFT_OBJC_BRIDGING_HEADER = "nearbuy/Bridging-Header.h";
 			};
 			name = Debug;
@@ -758,8 +774,8 @@
 			baseConfigurationReference = F1750D62D0B7DA535551B809 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kavodel Ohiomoba (62TS5BUD9M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kavodel Ohiomoba (62TS5BUD9M)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -780,6 +796,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -791,6 +809,7 @@
 				INFOPLIST_FILE = nearbuyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nearbuy.app/nearbuy";
 			};
 			name = Debug;
@@ -799,6 +818,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -806,6 +827,7 @@
 				INFOPLIST_FILE = nearbuyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nearbuy.app/nearbuy";
 			};
 			name = Release;

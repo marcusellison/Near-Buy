@@ -55,7 +55,7 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
         
         var image = self.productImage
         
-        var params: NSDictionary = ["username":"seller@awesome.com",
+        var params: NSDictionary = ["username":"jon@dropbox.com",
             "name":productNameField.text,
             "summary":productDescriptionField.text,
             "price": productPriceField.text,
