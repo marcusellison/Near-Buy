@@ -9,9 +9,10 @@
 import UIKit
 import Parse
 
-class BrowseViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
+    var refreshControl: UIRefreshControl!
     
     var products: [NSObject]?
     var imageArray: [UIImage] = []
@@ -19,50 +20,43 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         var params: NSDictionary = ["username":"kavodel@mixpanel.com"]
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadCollectionView", name: "ProductsDidReturn", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableView", name: "ProductsDidReturn", object: nil)
         println(products)
         println("did it print?")
-    }
-    
-    func reloadCollectionView(){
-        self.products = Product.sharedInstance.products
-        collectionView.reloadData()
-    }
-    
 
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 230
+
+        addRefreshControl()
+    }
+    
+    func reloadTableView(){
+        self.products = Product.sharedInstance.products
+        tableView.reloadData()
+    }
+
+    func addRefreshControl() {
+        self.refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex:0)
+
+    }
+    
+    func onRefresh() {
+        reloadTableView()
+        self.refreshControl.endRefreshing()
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ItemCollectionViewCell", forIndexPath: indexPath) as! ItemCollectionViewCell
-        cell.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
-        /* Iterate through Prods and load images async */
-        
-        if let products = products {
-            var product = products[indexPath.row]
-            let userImageFile = product.valueForKey("image") as? PFFile
-            userImageFile!.getDataInBackgroundWithBlock {
-                (imageData: NSData?, error: NSError?) -> Void in
-                if error == nil {
-                    println("\(imageData!.length)")
-                    cell.itemImageView.image = UIImage(data: imageData!)
-//                    cell.imageSavedToCell = UIImage(data: imageData!)
-//                    self.imageArray.append(cell.itemImageView.image!)
-//                    self.appendCount += 1
-//                    println(self.appendCount)
-                }
-            }
-            
-        }
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count = 10
         if let products = products {
             var count = products.count
@@ -71,53 +65,44 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
         return count
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        println("tapped \(indexPath)")
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ItemTableViewCell", forIndexPath: indexPath) as! ItemTableViewCell
+        cell.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
+        /* Iterate through Prods and load images async */
         
-        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
-        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
-        controller.product = products?[indexPath.row]
-        println(products?[indexPath.row])
-        self.navigationController!.pushViewController(controller, animated: true)
-//        segueToItemDetailViewController()
-    }
-
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.size.width/2.1, height: collectionView.frame.size.width/2.1)
-    }
-
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        let sectionInsets =  UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-        return sectionInsets
+        if let products = products {
+            var product = products[indexPath.row]
+            cell.productNameLabel.text = product.valueForKey("productName") as? String
+            var price = product.valueForKey("price") as? String
+            println(price!)
+            cell.priceLabel.text = "$\(price!)"
+            cell.productDescriptionLabel.text = product.valueForKey("summary") as? String
+            let userImageFile = product.valueForKey("image") as? PFFile
+            userImageFile!.getDataInBackgroundWithBlock {
+                (imageData: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    println("\(imageData!.length)")
+                    cell.itemImageView.image = UIImage(data: imageData!)
+                }
+            }
+            
+        }
+        return cell
     }
     
-    func segueToItemDetailViewController() {
-        println("got to the segue")
-//        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
-//        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
-//        controller.product = products?[indexPath.row]
-//        var navController = UINavigationController(rootViewController: controller)
-//        navController.pushViewController(controller, animated: true)
-//        let button = UIBarButtonItem(
-//        navController.navigationItem.leftBarButtonItem = button
-        println("is this working")
-//        self.presentViewController(navController, animated: true, completion: nil)
-//        self.navigationController!.pushViewController(controller, animated: true)
-        
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("tapped \(indexPath)")
+        var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
+        var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
+        controller.passedProduct = products?[indexPath.row]
+        println(products?[indexPath.row])
+        self.navigationController!.pushViewController(controller, animated: true)
     }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

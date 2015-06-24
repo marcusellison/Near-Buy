@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDelegate {
+class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var creditCardTextfield: UITextField!
@@ -19,6 +19,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     @IBOutlet weak var shippingAddressSwitch: UISwitch!
     @IBOutlet weak var expirationTextfield: UITextField!
     @IBOutlet weak var cvvTextfield: UITextField!
+    var user: User = User()
 
     var userShippingInformation: [String : String]?
     
@@ -26,16 +27,18 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     var creditCardExpirationMonth: UInt?
     var creditCardExpirationYear: UInt?
     var creditCardCVV: String?
+    var creditCardRedacted: String?
     var billingStreetAddress: String?
     var billingCity: String?
     var billingState: String?
     var billingZip: String?
     
-    var userBillingInformation: [String : String]?
-    
+    var userBillingInformation: [String : AnyObject]?
+
+    var passedProduct: NSObject?
+    var passedImage: UIImage?
     
     // let's integrate google address search here
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +47,47 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         billingCityTextfield.text = userShippingInformation?["city"]
         billingStateTextfield.text = userShippingInformation?["state"]
         billingZipcodeTextfield.text = userShippingInformation?["zip"]
+        connectTextFieldDelegates()
+        keyboardNotifications()
+        itemImageView.image = passedImage
     }
 
+    // keyboard settings
+    func keyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func connectTextFieldDelegates() {
+        self.creditCardTextfield.delegate = self
+        self.billingStreetAddressTextfield.delegate = self
+        self.billingCityTextfield.delegate = self
+        self.billingStateTextfield.delegate = self
+        self.billingZipcodeTextfield.delegate = self
+        self.expirationTextfield.delegate = self
+        self.cvvTextfield.delegate = self
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y -= 170
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y += 170
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // card info 
     @IBAction func cardIOTapped(sender: AnyObject) {
         var cardIOVC = CardIOPaymentViewController(paymentDelegate: self)
         cardIOVC.modalPresentationStyle = .FormSheet
@@ -62,33 +99,61 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     }
     
     func userDidProvideCreditCardInfo(cardInfo: CardIOCreditCardInfo!, inPaymentViewController paymentViewController: CardIOPaymentViewController!) {
+        var creditCard = [String: AnyObject]()
+
         if let info = cardInfo {
             let str = NSString(format: "Received card info.\n Number: %@\n expiry: %02lu/%lu\n cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv)
-            
-            var creditCard = [String: AnyObject]()
-            creditCard["number"] = info.cardNumber
-            creditCard["expMonth"] = info.expiryMonth
-            creditCard["expYear"] = info.expiryYear
-            creditCard["cvv"] = info.cvv
+            User.sharedInstance.creditCard = info.cardNumber
+            User.sharedInstance.expMonth = info.expiryMonth
+            User.sharedInstance.expYear = info.expiryYear
+            User.sharedInstance.cvv = info.cvv
+            creditCard["redacted"] = info.redactedCardNumber
+            creditCardRedacted = info.redactedCardNumber
             
             /* Add to User Object */
-            User.sharedInstance.creditCard = creditCard as? [String: String]
+            
         }
+        creditCardTextfield.text = creditCard["redacted"] as? String
+        var monthInt = creditCard["expMonth"] as? Int
+        var yearInt = creditCard["expYear"] as? Int
+        var monthString = String(stringInterpolationSegment: monthInt!)
+        var yearString = String(stringInterpolationSegment: yearInt!)
+        expirationTextfield.text = "\(monthString) / \(yearString)"
+        cvvTextfield.text = creditCard["cvv"] as? String
+        println(monthString)
+        println(yearString)
+        println(creditCard)
         paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    //buttons and switches
     @IBAction func nextButtonTapped(sender: AnyObject) {
         // do i need to set credit card number here or does it carry down?
         
         if creditCardNumber == nil {
             creditCardNumber = creditCardTextfield.text
+            var expiration: String = expirationTextfield.text
+            var splitExpiration: Array = expiration.componentsSeparatedByString(" ")
+            creditCardExpirationMonth = splitExpiration[0].toUInt()
+            creditCardExpirationYear = splitExpiration[1].toUInt()
+            creditCardCVV = cvvTextfield.text
+            
+            User.sharedInstance.creditCard = creditCardNumber
+            User.sharedInstance.expMonth = creditCardExpirationMonth!
+            User.sharedInstance.expYear = creditCardExpirationYear!
+            User.sharedInstance.cvv = creditCardCVV
+            
+            userBillingInformation = ["creditCard":creditCardNumber!,"cvv":creditCardCVV!, "expMonth":creditCardExpirationMonth!, "expYear":creditCardExpirationYear!]
+            
+            user.save(userBillingInformation!)
         }
         billingStreetAddress = billingStreetAddressTextfield.text
         billingCity = billingCityTextfield.text
         billingState = billingStateTextfield.text
         billingZip = billingZipcodeTextfield.text
         
-        userBillingInformation = ["creditCard": creditCardNumber!, "streetAddress": billingStreetAddress!, "city": billingCity!, "state": billingState!, "zip": billingZip!]
+        
+        
         println(userBillingInformation!)
     }
     
@@ -107,15 +172,29 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     }
 
 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let confirmVC = segue.destinationViewController as! PurchaseConfirmationViewController
+        confirmVC.passedImage = self.passedImage
+        confirmVC.passedProduct = self.passedProduct
+        confirmVC.passedRedactedCC = self.creditCardTextfield.text
     }
-    */
 
+}
+
+extension String {
+    func toUInt() -> UInt? {
+        if contains(self, "-") {
+            return nil
+        }
+        return self.withCString { cptr -> UInt? in
+            var endPtr : UnsafeMutablePointer<Int8> = nil
+            errno = 0
+            let result = strtoul(cptr, &endPtr, 10)
+            if errno != 0 || endPtr.memory != 0 {
+                return nil
+            } else {
+                return result
+            }
+        }
+    }
 }
