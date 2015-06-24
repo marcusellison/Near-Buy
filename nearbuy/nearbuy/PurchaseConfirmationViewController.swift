@@ -23,8 +23,9 @@ class PurchaseConfirmationViewController: UIViewController {
         super.viewDidLoad()
         itemImage.image = passedImage
         itemTitle.text = passedProduct?.valueForKey("productName") as? String
-        itemPrice.text = passedProduct?.valueForKey("price") as? String
-//        redactedCCLabel.text =
+        var itemPriceVar = passedProduct?.valueForKey("price") as? String
+        itemPrice.text = "$\(itemPriceVar!)"
+        redactedCCLabel.text = passedRedactedCC
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +34,8 @@ class PurchaseConfirmationViewController: UIViewController {
     }
     
     @IBAction func completePurchase(sender: AnyObject) {
-        
+        // sendPurchaseToParse()
+        println("purchased \(itemTitle.text)")
     }
 
 }

@@ -98,19 +98,30 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     }
     
     func userDidProvideCreditCardInfo(cardInfo: CardIOCreditCardInfo!, inPaymentViewController paymentViewController: CardIOPaymentViewController!) {
+        var creditCard = [String: AnyObject]()
+
         if let info = cardInfo {
             let str = NSString(format: "Received card info.\n Number: %@\n expiry: %02lu/%lu\n cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv)
-            
-            var creditCard = [String: AnyObject]()
             creditCard["number"] = info.cardNumber
             creditCard["expMonth"] = info.expiryMonth
             creditCard["expYear"] = info.expiryYear
             creditCard["cvv"] = info.cvv
+            creditCard["redacted"] = info.redactedCardNumber
             creditCardRedacted = info.redactedCardNumber
             
             /* Add to User Object */
             User.sharedInstance.creditCard = creditCard as? [String: String]
         }
+        creditCardTextfield.text = creditCard["redacted"] as? String
+        var monthInt = creditCard["expMonth"] as? Int
+        var yearInt = creditCard["expYear"] as? Int
+        var monthString = String(stringInterpolationSegment: monthInt!)
+        var yearString = String(stringInterpolationSegment: yearInt!)
+        expirationTextfield.text = "\(monthString) / \(yearString)"
+        cvvTextfield.text = creditCard["cvv"] as? String
+        println(monthString)
+        println(yearString)
+        println(creditCard)
         paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -152,7 +163,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         let confirmVC = segue.destinationViewController as! PurchaseConfirmationViewController
         confirmVC.passedImage = self.passedImage
         confirmVC.passedProduct = self.passedProduct
-//        confirmVC.redactedCCLabel = self.creditCardRedacted? as? String
+        confirmVC.passedRedactedCC = self.creditCardTextfield.text
     }
 
 }
