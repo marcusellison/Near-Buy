@@ -97,6 +97,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
         controller.passedProduct = products?[indexPath.row]
         println(products?[indexPath.row])
+        tableView.deselectRowAtIndexPath(indexPath, animated:true)
         self.navigationController!.pushViewController(controller, animated: true)
     }
     

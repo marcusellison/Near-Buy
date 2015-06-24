@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 // let's decide on this later
-let themeColor = UIColor(red: 0.5, green: 0.41, blue: 0.22, alpha: 1.0)
+let themeColor = UIColor(red: 122/255, green: 220/255, blue: 179/255, alpha: 1.0)
 
 /* Stripe Key */
 let stripeKey = "pk_test_9wwe6T1laHfjJWiiquq04p5b"
@@ -19,7 +19,7 @@ let stripeKey = "pk_test_9wwe6T1laHfjJWiiquq04p5b"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var pushNotificationController: PushNotificationController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
        
@@ -106,16 +106,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabBarController
         
         /* customize tab bar */
-        buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: UIImage(named: "postmates"), tag: 1)
-        sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: UIImage(named: "Shape-1"), tag: 2)
-        profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "user"), tag: 3)
+//        buyViewNav.tabBarItem = UITabBarItem(title: "Buy", image: UIImage(named: "postmates"), tag: 1)
+//        sellViewNav.tabBarItem = UITabBarItem(title: "Sell", image: UIImage(named: "Shape-1"), tag: 2)
+//        profileViewNav.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "user"), tag: 3)
+        buyViewNav.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "postmates"), tag: 1)
+        buyViewNav.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right:0)
+        sellViewNav.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "Shape-1"), tag: 2)
+        sellViewNav.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right:0)
+        profileViewNav.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "user"), tag: 3)
+        profileViewNav.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right:0)
+        
+        UITabBar.appearance().tintColor = UIColor(red: 20/255, green: 197/255, blue: 163/255, alpha: 1)
+        UITabBar.appearance().barTintColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 20/255, green: 197/255, blue: 163/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        if let font = UIFont(name: "HelveticaNeue-Thin", size: 26) {
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        }
+        //        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: "Helvetica Neue"]
+        // go to plist and add boolean for "view controller based status bar appearance
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         
         /* add search in nav bar*/
         // marcus can you add searchbar here?
         /*
         var leftNavBarButton = UIBarButtonItem(customView: <#UIView#>)
         buyViewNav.navigationItem.leftBarButtonItem = leftNavBarButton
+        
         */
+        
+        /* Attempting Push Notifications */
+        self.pushNotificationController = PushNotificationController()
+
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            
+            let types:UIUserNotificationType = (.Alert | .Badge | .Sound)
+            let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+            
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+            
+        }
         
         return true
     }
@@ -140,6 +172,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        println("didRegisterForRemoteNotificationsWithDeviceToken")
+        
+        let currentInstallation = PFInstallation.currentInstallation()
+        
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.saveInBackgroundWithBlock { (succeeded, e) -> Void in
+            //code
+        }
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println("failed to register for remote notifications:  (error)")
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        println("didReceiveRemoteNotification")
+        PFPush.handlePush(userInfo)
     }
     
     /* Return Facebook Singleton   */

@@ -10,6 +10,9 @@ import UIKit
 
 class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDelegate, UITextFieldDelegate {
 
+    var user: User = User()
+    
+    // link up labels
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var creditCardTextfield: UITextField!
     @IBOutlet weak var billingStreetAddressTextfield: UITextField!
@@ -19,10 +22,12 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     @IBOutlet weak var shippingAddressSwitch: UISwitch!
     @IBOutlet weak var expirationTextfield: UITextField!
     @IBOutlet weak var cvvTextfield: UITextField!
-    var user: User = User()
 
+    // pass this in
     var userShippingInformation: [String : String]?
     
+    // set up variables to load into billing info dict
+    var userBillingInformation: [String : AnyObject]?
     var creditCardNumber: String?
     var creditCardExpirationMonth: UInt?
     var creditCardExpirationYear: UInt?
@@ -32,8 +37,6 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     var billingCity: String?
     var billingState: String?
     var billingZip: String?
-    
-    var userBillingInformation: [String : AnyObject]?
 
     var passedProduct: NSObject?
     var passedImage: UIImage?
@@ -42,50 +45,21 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set up
         CardIOUtilities.preload()
+        connectTextFieldDelegates()
+        keyboardNotifications()
+        
+        // from previous VC
+        itemImageView.image = passedImage
+        
+        // set up the same address
         billingStreetAddressTextfield.text = userShippingInformation?["streetAddress"]
         billingCityTextfield.text = userShippingInformation?["city"]
         billingStateTextfield.text = userShippingInformation?["state"]
         billingZipcodeTextfield.text = userShippingInformation?["zip"]
-        connectTextFieldDelegates()
-        keyboardNotifications()
-        itemImageView.image = passedImage
+        
     }
-
-    // keyboard settings
-    func keyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
-    func connectTextFieldDelegates() {
-        self.creditCardTextfield.delegate = self
-        self.billingStreetAddressTextfield.delegate = self
-        self.billingCityTextfield.delegate = self
-        self.billingStateTextfield.delegate = self
-        self.billingZipcodeTextfield.delegate = self
-        self.expirationTextfield.delegate = self
-        self.cvvTextfield.delegate = self
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func keyboardWillShow(sender: NSNotification) {
-        self.view.frame.origin.y -= 170
-    }
-    
-    func keyboardWillHide(sender: NSNotification) {
-        self.view.frame.origin.y += 170
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     // card info 
     @IBAction func cardIOTapped(sender: AnyObject) {
@@ -133,19 +107,21 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         if creditCardNumber == nil {
             creditCardNumber = creditCardTextfield.text
             var expiration: String = expirationTextfield.text
-            var splitExpiration: Array = expiration.componentsSeparatedByString(" ")
-            creditCardExpirationMonth = splitExpiration[0].toUInt()
-            creditCardExpirationYear = splitExpiration[1].toUInt()
+//            var splitExpiration: Array = expiration.componentsSeparatedByString(" ")
+//
+//            // hard fail...Not gonna be great for demo
+//            creditCardExpirationMonth = splitExpiration[0].toUInt()
+//            creditCardExpirationYear = splitExpiration[1].toUInt()
             creditCardCVV = cvvTextfield.text
             
             User.sharedInstance.creditCard = creditCardNumber
-            User.sharedInstance.expMonth = creditCardExpirationMonth!
-            User.sharedInstance.expYear = creditCardExpirationYear!
+//            User.sharedInstance.expMonth = creditCardExpirationMonth!
+//            User.sharedInstance.expYear = creditCardExpirationYear!
             User.sharedInstance.cvv = creditCardCVV
             
-            userBillingInformation = ["creditCard":creditCardNumber!,"cvv":creditCardCVV!, "expMonth":creditCardExpirationMonth!, "expYear":creditCardExpirationYear!]
+//            userBillingInformation = ["creditCard":creditCardNumber!,"cvv":creditCardCVV!, "expMonth":creditCardExpirationMonth!, "expYear":creditCardExpirationYear!]
             
-            user.save(userBillingInformation!)
+//            user.save(userBillingInformation!)
         }
         billingStreetAddress = billingStreetAddressTextfield.text
         billingCity = billingCityTextfield.text
@@ -154,7 +130,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         
         
         
-        println(userBillingInformation!)
+//        println(userBillingInformation!)
     }
     
     @IBAction func switchValueChanged(sender: AnyObject) {
@@ -179,6 +155,40 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         confirmVC.passedRedactedCC = self.creditCardTextfield.text
     }
 
+    // keyboard settings
+    func keyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func connectTextFieldDelegates() {
+        self.creditCardTextfield.delegate = self
+        self.billingStreetAddressTextfield.delegate = self
+        self.billingCityTextfield.delegate = self
+        self.billingStateTextfield.delegate = self
+        self.billingZipcodeTextfield.delegate = self
+        self.expirationTextfield.delegate = self
+        self.cvvTextfield.delegate = self
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y -= 170
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y += 170
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 }
 
 extension String {
