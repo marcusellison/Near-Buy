@@ -19,6 +19,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     @IBOutlet weak var shippingAddressSwitch: UISwitch!
     @IBOutlet weak var expirationTextfield: UITextField!
     @IBOutlet weak var cvvTextfield: UITextField!
+    var user: User = User()
 
     var userShippingInformation: [String : String]?
     
@@ -32,7 +33,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     var billingState: String?
     var billingZip: String?
     
-    var userBillingInformation: [String : String]?
+    var userBillingInformation: [String : AnyObject]?
 
     var passedProduct: NSObject?
     var passedImage: UIImage?
@@ -102,15 +103,15 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
 
         if let info = cardInfo {
             let str = NSString(format: "Received card info.\n Number: %@\n expiry: %02lu/%lu\n cvv: %@.", info.redactedCardNumber, info.expiryMonth, info.expiryYear, info.cvv)
-            creditCard["number"] = info.cardNumber
-            creditCard["expMonth"] = info.expiryMonth
-            creditCard["expYear"] = info.expiryYear
-            creditCard["cvv"] = info.cvv
+            User.sharedInstance.creditCard = info.cardNumber
+            User.sharedInstance.expMonth = info.expiryMonth
+            User.sharedInstance.expYear = info.expiryYear
+            User.sharedInstance.cvv = info.cvv
             creditCard["redacted"] = info.redactedCardNumber
             creditCardRedacted = info.redactedCardNumber
             
             /* Add to User Object */
-            User.sharedInstance.creditCard = creditCard as? [String: String]
+            
         }
         creditCardTextfield.text = creditCard["redacted"] as? String
         var monthInt = creditCard["expMonth"] as? Int
@@ -131,16 +132,28 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         
         if creditCardNumber == nil {
             creditCardNumber = creditCardTextfield.text
-//            creditCardExpirationMonth = expirationTextfield.text
-//            creditCardExpirationYear =
+            var expiration: String = expirationTextfield.text
+            var splitExpiration: Array = expiration.componentsSeparatedByString(" ")
+            creditCardExpirationMonth = splitExpiration[0].toUInt()
+            creditCardExpirationYear = splitExpiration[1].toUInt()
             creditCardCVV = cvvTextfield.text
+            
+            User.sharedInstance.creditCard = creditCardNumber
+            User.sharedInstance.expMonth = creditCardExpirationMonth!
+            User.sharedInstance.expYear = creditCardExpirationYear!
+            User.sharedInstance.cvv = creditCardCVV
+            
+            userBillingInformation = ["creditCard":creditCardNumber!,"cvv":creditCardCVV!, "expMonth":creditCardExpirationMonth!, "expYear":creditCardExpirationYear!]
+            
+            user.save(userBillingInformation!)
         }
         billingStreetAddress = billingStreetAddressTextfield.text
         billingCity = billingCityTextfield.text
         billingState = billingStateTextfield.text
         billingZip = billingZipcodeTextfield.text
         
-        userBillingInformation = ["creditCard": creditCardNumber!, "streetAddress": billingStreetAddress!, "city": billingCity!, "state": billingState!, "zip": billingZip!]
+        
+        
         println(userBillingInformation!)
     }
     
@@ -166,4 +179,22 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         confirmVC.passedRedactedCC = self.creditCardTextfield.text
     }
 
+}
+
+extension String {
+    func toUInt() -> UInt? {
+        if contains(self, "-") {
+            return nil
+        }
+        return self.withCString { cptr -> UInt? in
+            var endPtr : UnsafeMutablePointer<Int8> = nil
+            errno = 0
+            let result = strtoul(cptr, &endPtr, 10)
+            if errno != 0 || endPtr.memory != 0 {
+                return nil
+            } else {
+                return result
+            }
+        }
+    }
 }

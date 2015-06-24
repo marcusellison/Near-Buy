@@ -9,7 +9,8 @@
 import UIKit
 
 class PurchaseConfirmationViewController: UIViewController {
-
+    
+    lazy var product: Product = Product(params: [:])
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemTitle: UILabel!
     @IBOutlet weak var itemPrice: UILabel!
@@ -36,6 +37,8 @@ class PurchaseConfirmationViewController: UIViewController {
     @IBAction func completePurchase(sender: AnyObject) {
         // sendPurchaseToParse()
         println("purchased \(itemTitle.text)")
+        // product.save(["buyer": "kavodel@mixpanel.com", "price": 100])
+        
     }
 
 }

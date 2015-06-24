@@ -15,8 +15,12 @@ class User: NSObject {
     
     var name: String?
     var email: String?
-    var address: Dictionary<String, String>?
-    var creditCard: Dictionary<String, String>?
+    var address:  String?
+    var creditCard: String?
+    var cvv: String?
+    var expMonth: UInt?
+    var expYear: UInt?
+    var phone: String?
     var profilePicture: String?
     var trustScore: String?
     var history: [Product]?
@@ -98,12 +102,19 @@ class User: NSObject {
         }
         
         if (userToUpdate.valueForKey("creditCard") != nil){
-            var creditCard = userToUpdate.valueForKey("creditCard") as! [String: String]
+            var creditCard = userToUpdate.valueForKey("creditCard") as! String
+            var cvv = userToUpdate.valueForKey("cvv") as! String
+            var expMonth = userToUpdate.valueForKey("expMonth") as! UInt
+            var expYear = userToUpdate.valueForKey("expYear") as! UInt
+            
             User.sharedInstance.creditCard = creditCard
+            User.sharedInstance.cvv = cvv
+            User.sharedInstance.expMonth = expMonth
+            User.sharedInstance.expYear = expYear
         }
         
         if (userToUpdate.valueForKey("address") != nil){
-            var address = userToUpdate.valueForKey("address") as! [String: String]
+            var address = userToUpdate.valueForKey("address") as! String
             User.sharedInstance.address = address
         }
         
