@@ -87,7 +87,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let buyViewController = buyStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
         buyViewController.title = "Nearbuy"
         let sellViewController = sellStoryboard.instantiateViewControllerWithIdentifier("takePhoto") as! TakePhotoViewController
-        let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileTableViewController") as! ProfileTableViewController
+        sellViewController.title = "Nearbuy"
+        let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileTableViewController") as! ProfileDemoViewController
         let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         
         /* instantiate tab bar and nav bar */

@@ -57,7 +57,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 10
+        var count = 1
         if let products = products {
             var count = products.count
             println("product are products!")
