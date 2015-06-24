@@ -120,8 +120,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
         UINavigationBar.appearance().barTintColor = UIColor(red: 20/255, green: 197/255, blue: 163/255, alpha: 1)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
-//        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: "Helvetica Neue"]
+        if let font = UIFont(name: "HelveticaNeue-Thin", size: 26) {
+            UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: font, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        }
+        //        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: "Helvetica Neue"]
         // go to plist and add boolean for "view controller based status bar appearance
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         

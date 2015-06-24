@@ -31,6 +31,9 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemDetailTableViewCell", forIndexPath: indexPath) as! ItemDetailTableViewCell
+        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         cell.itemTitleLabel.text = passedProduct?.valueForKey("productName") as? String
         cell.itemPriceLabel.text = passedProduct?.valueForKey("price") as? String
         cell.itemDescriptionLabel.text = passedProduct?.valueForKey("summary") as? String

@@ -107,21 +107,21 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         if creditCardNumber == nil {
             creditCardNumber = creditCardTextfield.text
             var expiration: String = expirationTextfield.text
-            var splitExpiration: Array = expiration.componentsSeparatedByString(" ")
-
-            // hard fail...Not gonna be great for demo
-            creditCardExpirationMonth = splitExpiration[0].toUInt()
-            creditCardExpirationYear = splitExpiration[1].toUInt()
+//            var splitExpiration: Array = expiration.componentsSeparatedByString(" ")
+//
+//            // hard fail...Not gonna be great for demo
+//            creditCardExpirationMonth = splitExpiration[0].toUInt()
+//            creditCardExpirationYear = splitExpiration[1].toUInt()
             creditCardCVV = cvvTextfield.text
             
             User.sharedInstance.creditCard = creditCardNumber
-            User.sharedInstance.expMonth = creditCardExpirationMonth!
-            User.sharedInstance.expYear = creditCardExpirationYear!
+//            User.sharedInstance.expMonth = creditCardExpirationMonth!
+//            User.sharedInstance.expYear = creditCardExpirationYear!
             User.sharedInstance.cvv = creditCardCVV
             
-            userBillingInformation = ["creditCard":creditCardNumber!,"cvv":creditCardCVV!, "expMonth":creditCardExpirationMonth!, "expYear":creditCardExpirationYear!]
+//            userBillingInformation = ["creditCard":creditCardNumber!,"cvv":creditCardCVV!, "expMonth":creditCardExpirationMonth!, "expYear":creditCardExpirationYear!]
             
-            user.save(userBillingInformation!)
+//            user.save(userBillingInformation!)
         }
         billingStreetAddress = billingStreetAddressTextfield.text
         billingCity = billingCityTextfield.text
@@ -130,7 +130,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         
         
         
-        println(userBillingInformation!)
+//        println(userBillingInformation!)
     }
     
     @IBAction func switchValueChanged(sender: AnyObject) {

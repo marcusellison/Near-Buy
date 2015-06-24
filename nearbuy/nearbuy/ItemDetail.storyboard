@@ -165,7 +165,7 @@
                                     <constraint firstAttribute="width" secondItem="VhX-ev-txa" secondAttribute="height" multiplier="1:1" id="e9N-8b-1xp"/>
                                 </constraints>
                             </imageView>
-                            <view alpha="0.89999999999999991" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Us2-dn-lHx">
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Us2-dn-lHx">
                                 <rect key="frame" x="0.0" y="168" width="320" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Shipping Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8u-LD-lwJ">
@@ -325,7 +325,7 @@
                                     <constraint firstAttribute="width" secondItem="aFY-Wb-wyZ" secondAttribute="height" multiplier="1:1" id="dS3-lJ-Kj3"/>
                                 </constraints>
                             </imageView>
-                            <view alpha="0.89999997615814209" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Uf-Dk-tQh">
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Uf-Dk-tQh">
                                 <rect key="frame" x="0.0" y="168" width="320" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Billing Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLn-Mj-InE">
