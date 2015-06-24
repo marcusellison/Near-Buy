@@ -2,7 +2,7 @@
 //  TakePhotoViewController.swift
 //  nearbuy
 //
-//  Created by Jon Choi on 6/9/15.
+//  Created by Marcus J. Ellison on 6/9/15.
 //  Copyright (c) 2015 Marcus J. Ellison. All rights reserved.
 //
 
