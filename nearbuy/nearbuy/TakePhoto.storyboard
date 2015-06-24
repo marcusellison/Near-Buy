@@ -147,16 +147,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Describe it ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TyZ-7e-qgm">
-                                <rect key="frame" x="16" y="92" width="288" height="170"/>
-                                <color key="backgroundColor" red="0.82919034089999999" green="0.82919034089999999" blue="0.82919034089999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="iUL-cZ-8sZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUi-fL-2pP">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUi-fL-2pP">
                                 <rect key="frame" x="16" y="403" width="288" height="43"/>
                                 <color key="backgroundColor" red="0.2041430971" green="0.76246397919999997" blue="0.98851799240000005" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -172,7 +163,7 @@
                                     <segue destination="Fdy-6O-y7b" kind="push" id="neE-jZ-Wj6"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wz1-Cb-UIm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wz1-Cb-UIm">
                                 <rect key="frame" x="16" y="344" width="288" height="43"/>
                                 <color key="backgroundColor" red="0.82919034089999999" green="0.82919034089999999" blue="0.82919034089999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -181,7 +172,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-oT-XZt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-oT-XZt">
                                 <rect key="frame" x="16" y="286" width="288" height="43"/>
                                 <color key="backgroundColor" red="0.82919034089999999" green="0.82919034089999999" blue="0.82919034089999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -202,33 +193,41 @@
                                     <segue destination="aco-KX-Acq" kind="push" identifier="PickCategories" id="c7K-iY-r79"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" text="I am selling a ..." translatesAutoresizingMaskIntoConstraints="NO" id="cJv-LE-gGc">
+                                <rect key="frame" x="16" y="97" width="288" height="174"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="L7w-1C-VUw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LUi-fL-2pP" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="5yl-m6-Gm1"/>
-                            <constraint firstItem="TyZ-7e-qgm" firstAttribute="top" secondItem="PiP-AE-KOE" secondAttribute="bottom" constant="12" id="6og-Mq-R3q"/>
                             <constraint firstAttribute="trailing" secondItem="LUi-fL-2pP" secondAttribute="trailing" constant="16" id="6qD-iQ-EtZ"/>
-                            <constraint firstItem="TkH-oT-XZt" firstAttribute="top" secondItem="TyZ-7e-qgm" secondAttribute="bottom" constant="24" id="6xx-gW-lla"/>
+                            <constraint firstItem="zTI-q9-K6h" firstAttribute="top" secondItem="cJv-LE-gGc" secondAttribute="bottom" constant="15" id="A4H-tH-nw3"/>
+                            <constraint firstAttribute="trailing" secondItem="cJv-LE-gGc" secondAttribute="trailing" constant="16" id="AGq-Qn-MfU"/>
+                            <constraint firstItem="cJv-LE-gGc" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="Duj-19-SO6"/>
                             <constraint firstAttribute="trailing" secondItem="TkH-oT-XZt" secondAttribute="trailing" constant="16" id="E2s-l9-eoY"/>
                             <constraint firstItem="zTI-q9-K6h" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="ELZ-Uy-2PQ"/>
                             <constraint firstAttribute="trailing" secondItem="wz1-Cb-UIm" secondAttribute="trailing" constant="16" id="FQU-az-XTu"/>
-                            <constraint firstItem="TyZ-7e-qgm" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="GrW-1w-Z9V"/>
                             <constraint firstAttribute="trailing" secondItem="PiP-AE-KOE" secondAttribute="trailing" constant="16" id="P4Z-7I-k6N"/>
                             <constraint firstItem="LUi-fL-2pP" firstAttribute="top" secondItem="wz1-Cb-UIm" secondAttribute="bottom" constant="16" id="QzO-mg-WW1"/>
                             <constraint firstItem="PiP-AE-KOE" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="RZ2-ii-eMh"/>
                             <constraint firstItem="wz1-Cb-UIm" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="ZV7-3r-fVl"/>
-                            <constraint firstItem="zTI-q9-K6h" firstAttribute="top" secondItem="TyZ-7e-qgm" secondAttribute="bottom" constant="24" id="fPJ-PY-WGW"/>
+                            <constraint firstItem="cJv-LE-gGc" firstAttribute="top" secondItem="PiP-AE-KOE" secondAttribute="bottom" constant="17" id="fcG-bB-Xhq"/>
                             <constraint firstItem="PiP-AE-KOE" firstAttribute="top" secondItem="NJl-rO-0vi" secondAttribute="bottom" constant="17" id="ksE-xz-tPV"/>
                             <constraint firstItem="wz1-Cb-UIm" firstAttribute="top" secondItem="TkH-oT-XZt" secondAttribute="bottom" constant="15" id="lWI-b7-mv8"/>
                             <constraint firstAttribute="trailing" secondItem="zTI-q9-K6h" secondAttribute="trailing" constant="16" id="vx1-Pq-3Sd"/>
-                            <constraint firstAttribute="trailing" secondItem="TyZ-7e-qgm" secondAttribute="trailing" constant="16" id="xiN-VC-kz3"/>
                             <constraint firstItem="TkH-oT-XZt" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="zcw-hr-Ede"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Product Detail" id="pgj-4f-Qcc"/>
                     <connections>
                         <outlet property="categoryField" destination="TkH-oT-XZt" id="OP3-Mx-Mdk"/>
-                        <outlet property="productDescriptionField" destination="TyZ-7e-qgm" id="2MF-MJ-SZZ"/>
+                        <outlet property="productDescriptionView" destination="cJv-LE-gGc" id="lNd-IP-m8d"/>
                         <outlet property="productNameField" destination="PiP-AE-KOE" id="2IX-74-4kw"/>
                         <outlet property="productPriceField" destination="wz1-Cb-UIm" id="krM-3d-Dgg"/>
                     </connections>

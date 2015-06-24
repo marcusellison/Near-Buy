@@ -136,6 +136,8 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
                     // the sample buffer also contains the metadata, in case we want to modify it
                     let metadata:NSDictionary = CMCopyDictionaryOfAttachments(nil, imageDataSampleBuffer, CMAttachmentMode(kCMAttachmentMode_ShouldPropagate)).takeUnretainedValue()
                     
+                    println(metadata)
+                    
                     if let image = UIImage(data: imageData) {
                         
                         //after image resizing:

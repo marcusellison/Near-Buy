@@ -11,9 +11,10 @@ import UIKit
 class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
     
     @IBOutlet weak var productNameField: UITextField!
-    @IBOutlet weak var productDescriptionField: UITextField!
     @IBOutlet weak var productPriceField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
+    @IBOutlet weak var productDescriptionView: UITextView!
+    
     
     var productImage : UIImage?
     
@@ -57,7 +58,7 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
         
         var params: NSDictionary = ["username":"seller@awesome.com",
             "name":productNameField.text,
-            "summary":productDescriptionField.text,
+            "summary":productDescriptionView.text,
             "price": productPriceField.text,
             "shared":"true",
             "category":categoryField.text,
