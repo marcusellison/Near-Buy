@@ -33,6 +33,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     
     var userBillingInformation: [String : String]?
     
+    var passedImage: UIImage?
     
     // let's integrate google address search here
     
@@ -60,6 +61,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         billingZipcodeTextfield.text = userShippingInformation?["zip"]
         connectTextFieldDelegates()
         keyboardNotifications()
+        itemImageView.image = passedImage
     }
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {

@@ -26,6 +26,8 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
     var shippingZip: String?
     var shippingPhone: String?
 
+    var passedImage: UIImage?
+    
     // array
     var userShippingInformation: [String : String]?
     
@@ -58,6 +60,7 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         connectTextFieldDelegates()
+        itemImageView.image = passedImage
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -81,6 +84,7 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "shippingToBilling" {
             let billingVC = segue.destinationViewController as! BillingInfoViewController
             billingVC.userShippingInformation = self.userShippingInformation
+            billingVC.passedImage = self.passedImage
         }
     }
 }

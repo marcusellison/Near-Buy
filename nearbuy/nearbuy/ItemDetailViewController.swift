@@ -39,6 +39,7 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
             if error == nil {
                 println("\(imageData!.length)")
                 cell.itemDetailImageView.image = UIImage(data: imageData!)
+                self.passedImage = UIImage(data: imageData!)
             }
         })
         println(optionalImage)
@@ -51,14 +52,15 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
         return 1
     }
 
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailToShipping" {
+            var shippingVC = segue.destinationViewController as! ShippingInfoViewController
+            shippingVC.passedImage = self.passedImage
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
