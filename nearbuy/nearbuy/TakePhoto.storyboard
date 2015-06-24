@@ -46,7 +46,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQS-sd-nOc">
-                                <rect key="frame" x="122" y="505" width="107" height="43"/>
+                                <rect key="frame" x="69" y="505" width="107" height="43"/>
                                 <color key="backgroundColor" red="0.2041430971" green="0.76246397919999997" blue="0.98851799240000005" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Ovl-do-taP"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyK-y2-LK2">
-                                <rect key="frame" x="250" y="505" width="54" height="43"/>
+                                <rect key="frame" x="197" y="505" width="54" height="43"/>
                                 <color key="backgroundColor" red="0.2041430971" green="0.76246397919999997" blue="0.98851799240000005" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="FG7-IU-h95"/>
@@ -75,21 +75,6 @@
                                     <segue destination="AQa-1U-RhL" kind="push" id="DfY-m8-weS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaI-Yo-v2K">
-                                <rect key="frame" x="17" y="505" width="82" height="43"/>
-                                <color key="backgroundColor" red="0.2041430971" green="0.76246397919999997" blue="0.98851799240000005" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="78H-xk-uvw"/>
-                                    <constraint firstAttribute="width" constant="82" id="tr0-WN-h5c"/>
-                                </constraints>
-                                <state key="normal" title="Upload">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="uploadPhoto:" destination="aRu-j7-hhv" eventType="touchUpInside" id="KVm-zO-OCa"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -97,16 +82,13 @@
                             <constraint firstItem="ahv-IW-Rsq" firstAttribute="top" secondItem="dc5-Cz-Fe8" secondAttribute="bottom" constant="8" id="4ar-6z-CMn"/>
                             <constraint firstItem="vyK-y2-LK2" firstAttribute="top" secondItem="ahv-IW-Rsq" secondAttribute="bottom" constant="75" id="5wb-Ir-QjO"/>
                             <constraint firstItem="vyK-y2-LK2" firstAttribute="leading" secondItem="yQS-sd-nOc" secondAttribute="trailing" constant="21" id="BKf-0e-liz"/>
-                            <constraint firstAttribute="trailing" secondItem="vyK-y2-LK2" secondAttribute="trailing" constant="16" id="ENe-JC-ELT"/>
-                            <constraint firstItem="yQS-sd-nOc" firstAttribute="leading" secondItem="JaI-Yo-v2K" secondAttribute="trailing" constant="23" id="NBz-kJ-E5Z"/>
+                            <constraint firstAttribute="trailing" secondItem="vyK-y2-LK2" secondAttribute="trailing" constant="69" id="ENe-JC-ELT"/>
                             <constraint firstAttribute="trailing" secondItem="dc5-Cz-Fe8" secondAttribute="trailing" id="OTI-gB-FPq"/>
-                            <constraint firstItem="JaI-Yo-v2K" firstAttribute="leading" secondItem="GGT-3v-7r6" secondAttribute="leading" constant="17" id="Vea-fc-RKk"/>
                             <constraint firstAttribute="centerX" secondItem="ahv-IW-Rsq" secondAttribute="centerX" id="Zkm-Ag-tGc"/>
                             <constraint firstItem="yQS-sd-nOc" firstAttribute="top" secondItem="ahv-IW-Rsq" secondAttribute="bottom" constant="75" id="dMd-ZF-g4y"/>
                             <constraint firstItem="eCe-Zl-Lqc" firstAttribute="top" secondItem="dc5-Cz-Fe8" secondAttribute="bottom" constant="8" id="ezM-hg-R4m"/>
                             <constraint firstItem="dc5-Cz-Fe8" firstAttribute="top" secondItem="GGT-3v-7r6" secondAttribute="top" id="miD-27-hJC"/>
                             <constraint firstItem="dc5-Cz-Fe8" firstAttribute="leading" secondItem="GGT-3v-7r6" secondAttribute="leading" id="w4o-23-98X"/>
-                            <constraint firstItem="JaI-Yo-v2K" firstAttribute="top" secondItem="eCe-Zl-Lqc" secondAttribute="bottom" constant="42" id="zIL-to-LXP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Take Photos" id="0aM-1t-17V"/>

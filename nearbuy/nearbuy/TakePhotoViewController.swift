@@ -8,9 +8,8 @@
 
 import UIKit
 import AVFoundation
-import MobileCoreServices
 
-class TakePhotoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class TakePhotoViewController: UIViewController{
 
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var instructionLabel: UILabel!
@@ -19,8 +18,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet weak var capturePhotoView: UIView!
     
     private var photoImage: UIImage?
-    
-    let picker = UIImagePickerController()
     
     private let captureSession = AVCaptureSession()
     private let sessionQueue = dispatch_queue_create("com.marcusellison.nearbuy.sessionqueue", nil)
@@ -42,8 +39,6 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
         nextButton.hidden = true
         
         capturePhotoView.hidden = true
-        
-        picker.delegate = self
         
     }
     
@@ -160,7 +155,7 @@ class TakePhotoViewController: UIViewController, UINavigationControllerDelegate,
                             self.capturedPhotos.append(image)
                             
                             for image in self.capturedPhotos {
-                                var imageView = UIImageView(frame: CGRectMake(self.capturedPhotoX, 0, 54, 96));
+                                var imageView = UIImageView(frame: CGRectMake(self.capturedPhotoX, 0, 81, 144));
                                     imageView.image = image;
                                     self.capturePhotoView.addSubview(imageView);
                             }
