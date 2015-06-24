@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var delivery : Delivery = Delivery()
         
         // delivery.getDeliveryQuote(["hi":"bar"], seller: ["holla":"back"])
-        delivery.makeDelivery("3260 17th St. San Francisco,CA 94105", buyerName: "Kavodel", buyerPhone: "832-659-7622", sellerAddress:"405 Howard St. San Francisco, CA 94105", sellerName:"Marcus", sellerPhone:"917-972-3943", manifest:"A couch")
+        // delivery.makeDelivery("3260 17th St. San Francisco,CA 94105", buyerName: "Kavodel", buyerPhone: "832-659-7622", sellerAddress:"405 Howard St. San Francisco, CA 94105", sellerName:"Marcus", sellerPhone:"917-972-3943", manifest:"A couch")
         
         
         /* Initialize Facebook */

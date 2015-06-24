@@ -35,7 +35,8 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         cell.itemTitleLabel.text = passedProduct?.valueForKey("productName") as? String
-        cell.itemPriceLabel.text = passedProduct?.valueForKey("price") as? String
+        var priceString = passedProduct?.valueForKey("price") as? String
+        cell.itemPriceLabel.text = "$\(priceString!)"
         cell.itemDescriptionLabel.text = passedProduct?.valueForKey("summary") as? String
         var optionalImage = passedProduct?.valueForKey("image") as? PFFile
         optionalImage!.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
