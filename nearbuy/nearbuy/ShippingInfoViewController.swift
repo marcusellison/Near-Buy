@@ -11,6 +11,7 @@ import UIKit
 class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
     
     lazy var user : User = User()
+    
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var shippingNameTextfield: UITextField!
     @IBOutlet weak var shippingStreetAddressTextfield: UITextField!
@@ -19,6 +20,9 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var shippingZipcodeTextfield: UITextField!
     @IBOutlet weak var shippingPhoneTextfield: UITextField!
 
+    var userShippingInformation: [String : String]?
+    var userShippingInformationForBillingVC: [String: String]?
+    
     var shippingName: String?
     var shippingStreetAddress: String?
     var shippingCity: String?
@@ -26,11 +30,9 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
     var shippingZip: String?
     var shippingPhone: String?
 
+    // for passing across VCs
     var passedProduct: NSObject?
     var passedImage: UIImage?
-    
-    // array
-    var userShippingInformation: [String : String]?
     
     @IBAction func nextButtonTapped(sender: AnyObject) {
         shippingName = shippingNameTextfield.text
@@ -39,6 +41,8 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
         shippingState = shippingStateTextfield.text
         shippingZip = shippingZipcodeTextfield.text
         shippingPhone = shippingPhoneTextfield.text
+        
+        userShippingInformationForBillingVC = ["name": shippingName!, "streetAddress": shippingStreetAddress!, "city": shippingCity!, "state": shippingState!, "zip": shippingZip!, "phone": shippingPhone!]
         
         userShippingInformation = ["name": shippingName!, "streetAddress": shippingStreetAddress! + shippingCity! + shippingState! +  shippingZip!, "phone": shippingPhone!]
         
@@ -60,15 +64,21 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        addKeyboardDelegates()
         connectTextFieldDelegates()
+        
+        // pass in image from previous VC
         itemImageView.image = passedImage
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func addKeyboardDelegates() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func keyboardWillShow(sender: NSNotification) {
@@ -86,7 +96,7 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "shippingToBilling" {
             let billingVC = segue.destinationViewController as! BillingInfoViewController
-            billingVC.userShippingInformation = self.userShippingInformation
+            billingVC.userShippingInformation = self.userShippingInformationForBillingVC
             billingVC.passedImage = self.passedImage
             billingVC.passedProduct = self.passedProduct
         }
