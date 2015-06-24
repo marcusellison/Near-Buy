@@ -26,6 +26,7 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
     var shippingZip: String?
     var shippingPhone: String?
 
+    var passedProduct: NSObject?
     var passedImage: UIImage?
     
     // array
@@ -85,6 +86,7 @@ class ShippingInfoViewController: UIViewController, UITextFieldDelegate {
             let billingVC = segue.destinationViewController as! BillingInfoViewController
             billingVC.userShippingInformation = self.userShippingInformation
             billingVC.passedImage = self.passedImage
+            billingVC.passedProduct = self.passedProduct
         }
     }
 }

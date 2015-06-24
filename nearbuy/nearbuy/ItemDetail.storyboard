@@ -487,10 +487,10 @@
             </objects>
             <point key="canvasLocation" x="1903" y="274"/>
         </scene>
-        <!--View Controller-->
+        <!--Purchase Confirmation View Controller-->
         <scene sceneID="r3o-yZ-dWO">
             <objects>
-                <viewController id="eIn-oe-PSn" sceneMemberID="viewController">
+                <viewController id="eIn-oe-PSn" customClass="PurchaseConfirmationViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X1h-eu-Uh1"/>
                         <viewControllerLayoutGuide type="bottom" id="KaX-VZ-UrY"/>
@@ -516,6 +516,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="completePurchase:" destination="eIn-oe-PSn" eventType="touchUpInside" id="ak6-ZW-WiB"/>
                                             <segue destination="7dw-b8-OYs" kind="push" id="o0y-ai-jLd"/>
                                         </connections>
                                     </button>
@@ -581,6 +582,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qYq-Ig-Zp0"/>
+                    <connections>
+                        <outlet property="itemImage" destination="jT2-IC-pAF" id="g5t-Fy-LMt"/>
+                        <outlet property="itemPrice" destination="45o-zc-Ek5" id="hnV-lc-t1U"/>
+                        <outlet property="itemTitle" destination="5fq-JB-ruO" id="a8J-5o-9TP"/>
+                        <outlet property="redactedCCLabel" destination="CRC-xs-67z" id="q1c-GY-iPe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Un-xl-YWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

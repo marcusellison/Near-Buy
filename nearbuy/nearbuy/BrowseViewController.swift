@@ -76,7 +76,7 @@ class BrowseViewController: UIViewController,UICollectionViewDataSource, UIColle
         
         var storyboard = UIStoryboard(name: "ItemDetail", bundle: nil)
         var controller = storyboard.instantiateViewControllerWithIdentifier("ItemDetailViewController") as! ItemDetailViewController
-        controller.product = products?[indexPath.row]
+        controller.passedProduct = products?[indexPath.row]
         println(products?[indexPath.row])
         self.navigationController!.pushViewController(controller, animated: true)
 //        segueToItemDetailViewController()

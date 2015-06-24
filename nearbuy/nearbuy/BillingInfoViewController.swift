@@ -26,17 +26,32 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     var creditCardExpirationMonth: UInt?
     var creditCardExpirationYear: UInt?
     var creditCardCVV: String?
+    var creditCardRedacted: String?
     var billingStreetAddress: String?
     var billingCity: String?
     var billingState: String?
     var billingZip: String?
     
     var userBillingInformation: [String : String]?
-    
+
+    var passedProduct: NSObject?
     var passedImage: UIImage?
     
     // let's integrate google address search here
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        CardIOUtilities.preload()
+        billingStreetAddressTextfield.text = userShippingInformation?["streetAddress"]
+        billingCityTextfield.text = userShippingInformation?["city"]
+        billingStateTextfield.text = userShippingInformation?["state"]
+        billingZipcodeTextfield.text = userShippingInformation?["zip"]
+        connectTextFieldDelegates()
+        keyboardNotifications()
+        itemImageView.image = passedImage
+    }
+
+    // keyboard settings
     func keyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
@@ -52,18 +67,6 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         self.cvvTextfield.delegate = self
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        CardIOUtilities.preload()
-        billingStreetAddressTextfield.text = userShippingInformation?["streetAddress"]
-        billingCityTextfield.text = userShippingInformation?["city"]
-        billingStateTextfield.text = userShippingInformation?["state"]
-        billingZipcodeTextfield.text = userShippingInformation?["zip"]
-        connectTextFieldDelegates()
-        keyboardNotifications()
-        itemImageView.image = passedImage
-    }
-
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -82,6 +85,8 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // card info 
     @IBAction func cardIOTapped(sender: AnyObject) {
         var cardIOVC = CardIOPaymentViewController(paymentDelegate: self)
         cardIOVC.modalPresentationStyle = .FormSheet
@@ -101,6 +106,7 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
             creditCard["expMonth"] = info.expiryMonth
             creditCard["expYear"] = info.expiryYear
             creditCard["cvv"] = info.cvv
+            creditCardRedacted = info.redactedCardNumber
             
             /* Add to User Object */
             User.sharedInstance.creditCard = creditCard as? [String: String]
@@ -108,11 +114,15 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
         paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    //buttons and switches
     @IBAction func nextButtonTapped(sender: AnyObject) {
         // do i need to set credit card number here or does it carry down?
         
         if creditCardNumber == nil {
             creditCardNumber = creditCardTextfield.text
+//            creditCardExpirationMonth = expirationTextfield.text
+//            creditCardExpirationYear =
+            creditCardCVV = cvvTextfield.text
         }
         billingStreetAddress = billingStreetAddressTextfield.text
         billingCity = billingCityTextfield.text
@@ -138,15 +148,11 @@ class BillingInfoViewController: UIViewController, CardIOPaymentViewControllerDe
     }
 
 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let confirmVC = segue.destinationViewController as! PurchaseConfirmationViewController
+        confirmVC.passedImage = self.passedImage
+        confirmVC.passedProduct = self.passedProduct
+//        confirmVC.redactedCCLabel = self.creditCardRedacted? as? String
     }
-    */
 
 }

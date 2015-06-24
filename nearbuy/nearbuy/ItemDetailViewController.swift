@@ -11,7 +11,7 @@ import Parse
 
 class ItemDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var product: NSObject?
+    var passedProduct: NSObject?
     var passedImage: UIImage?
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,7 +20,7 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        println("it passed here \(product)")
+        println("it passed here \(passedProduct)")
         // Do any additional setup after loading the view.
     }
 
@@ -31,10 +31,10 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ItemDetailTableViewCell", forIndexPath: indexPath) as! ItemDetailTableViewCell
-        cell.itemTitleLabel.text = product?.valueForKey("productName") as? String
-        cell.itemPriceLabel.text = product?.valueForKey("price") as? String
-        cell.itemDescriptionLabel.text = product?.valueForKey("summary") as? String
-        var optionalImage = product?.valueForKey("image") as? PFFile
+        cell.itemTitleLabel.text = passedProduct?.valueForKey("productName") as? String
+        cell.itemPriceLabel.text = passedProduct?.valueForKey("price") as? String
+        cell.itemDescriptionLabel.text = passedProduct?.valueForKey("summary") as? String
+        var optionalImage = passedProduct?.valueForKey("image") as? PFFile
         optionalImage!.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
             if error == nil {
                 println("\(imageData!.length)")
@@ -44,7 +44,7 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
         })
         println(optionalImage)
         //        cell.itemDetailImageView.image = optionalImage!
-        println(product?.valueForKey("image"))
+        println(passedProduct?.valueForKey("image"))
         return cell
     }
     
@@ -57,6 +57,7 @@ class ItemDetailViewController: UIViewController, UITableViewDataSource, UITable
         if segue.identifier == "detailToShipping" {
             var shippingVC = segue.destinationViewController as! ShippingInfoViewController
             shippingVC.passedImage = self.passedImage
+            shippingVC.passedProduct = self.passedProduct
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
