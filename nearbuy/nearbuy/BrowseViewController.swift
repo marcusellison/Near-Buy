@@ -17,6 +17,8 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var products: [NSObject]?
     var imageArray: [UIImage] = []
     var appendCount: Int = 0
+    var productCount: Int?
+    // var product: Product = Product(params: ["user":"test"])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,29 +28,40 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableView", name: "ProductsDidReturn", object: nil)
         println(products)
         println("did it print?")
-
+        
+        // janky HUD
+        let progressHUD = JGProgressHUD(style: JGProgressHUDStyle.Dark)
+        progressHUD.showInView(view, animated: true)
+        progressHUD.dismissAfterDelay(2.0)
+        println("HUD")
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 230
 
         addRefreshControl()
     }
     
-    func reloadTableView(){
-        self.products = Product.sharedInstance.products
-        tableView.reloadData()
-    }
-
     func addRefreshControl() {
         self.refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl, atIndex:0)
-
     }
     
     func onRefresh() {
-        reloadTableView()
-        self.refreshControl.endRefreshing()
+        // reloadTableView()
+        // self.refreshControl.endRefreshing()
+        //product.get(["test":"test"])
     }
+    
+    func reloadTableView(){
+        /* adding refresh */
+        self.refreshControl.endRefreshing()
+        self.products = Product.sharedInstance.products
+        productCount = self.products?.count
+        println(products!)
+        tableView.reloadData()
+    }
+
 
     
     override func didReceiveMemoryWarning() {
@@ -57,12 +70,10 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 1
-        if let products = products {
-            var count = products.count
-            println("product are products!")
+        if productCount == nil {
+            productCount = 10
         }
-        return count
+        return productCount!
     }
     
     

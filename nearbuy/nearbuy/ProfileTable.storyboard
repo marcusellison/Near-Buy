@@ -154,37 +154,37 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="marcus.ellison@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjD-yk-Zty">
-                                        <rect key="frame" x="76" y="15" width="155" height="17"/>
+                                        <rect key="frame" x="91" y="15" width="140" height="17"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="917-456-9463" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-Wi-ia1">
-                                        <rect key="frame" x="76" y="38" width="88" height="17"/>
+                                        <rect key="frame" x="91" y="38" width="88" height="17"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="**** 0181" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAl-3k-Cpc">
-                                        <rect key="frame" x="76" y="61" width="55" height="17"/>
+                                        <rect key="frame" x="91" y="61" width="55" height="17"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="583 Alabama St" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggb-Du-5x4">
-                                        <rect key="frame" x="76" y="84" width="95" height="17"/>
+                                        <rect key="frame" x="91" y="84" width="95" height="17"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="San Francisco" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TE-Ya-9O3">
-                                        <rect key="frame" x="76" y="104" width="83" height="17"/>
+                                        <rect key="frame" x="91" y="104" width="83" height="17"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="CA 94107" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfA-x9-FuN">
-                                        <rect key="frame" x="76" y="129" width="61" height="17"/>
+                                        <rect key="frame" x="91" y="129" width="61" height="17"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -208,7 +208,7 @@
                                     <constraint firstItem="OOd-Qp-7eh" firstAttribute="top" secondItem="bRD-yy-ghS" secondAttribute="bottom" constant="5" id="TOn-Lf-91O"/>
                                     <constraint firstItem="25v-O1-KaC" firstAttribute="top" secondItem="UtG-Jm-Ge3" secondAttribute="top" constant="15" id="b7r-HL-Go8"/>
                                     <constraint firstItem="TJp-Xn-dpX" firstAttribute="leading" secondItem="25v-O1-KaC" secondAttribute="leading" id="fmg-OO-8L1"/>
-                                    <constraint firstItem="VjD-yk-Zty" firstAttribute="leading" secondItem="25v-O1-KaC" secondAttribute="trailing" constant="25" id="gC1-Uq-VHT"/>
+                                    <constraint firstItem="VjD-yk-Zty" firstAttribute="leading" secondItem="25v-O1-KaC" secondAttribute="trailing" constant="40" id="gC1-Uq-VHT"/>
                                     <constraint firstAttribute="trailing" secondItem="VjD-yk-Zty" secondAttribute="trailing" constant="17" id="gSG-iH-JDF"/>
                                     <constraint firstItem="TJp-Xn-dpX" firstAttribute="leading" secondItem="bRD-yy-ghS" secondAttribute="leading" id="hBh-oc-0Oh"/>
                                     <constraint firstItem="8TE-Ya-9O3" firstAttribute="top" secondItem="ggb-Du-5x4" secondAttribute="bottom" constant="3" id="lOx-Na-rxP"/>

@@ -75,6 +75,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         */
 
+//        var image : UIImage = UIImage(named:"snowboard")!
+//        println("\(image)")
+//        var params: [String: AnyObject] = [
+//            "username":"kavodel@mixpanel.com",
+//            "name":"Burton Clash Snowboard",
+//            "summary":"Two seasons at Tahoe and switching to skiing",
+//            "price":"80",
+//            "shared":"true",
+//            "category":"other",
+//            "image":image,
+//            "buyer":"jon@dropbox.com"]
+//        
+//        products.create(params)
+        
 
         /* instantiate storyboards */
         
@@ -152,6 +166,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

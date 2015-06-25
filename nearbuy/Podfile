@@ -1,2 +1,3 @@
 pod 'Stripe'
 pod 'CardIO'
+pod 'JGProgressHUD'
