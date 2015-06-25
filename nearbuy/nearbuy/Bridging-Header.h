@@ -14,6 +14,7 @@
 
 #import "Stripe.h"
 #import "CardIO.h"
+#import "JGProgressHUD/JGProgressHUD.h"
 @import Foundation;
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>

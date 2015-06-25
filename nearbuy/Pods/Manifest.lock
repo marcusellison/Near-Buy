@@ -1,5 +1,6 @@
 PODS:
   - CardIO (5.0.6)
+  - JGProgressHUD (1.2.7)
   - Stripe (4.0.3):
     - Stripe/Checkout (= 4.0.3)
     - Stripe/Core (= 4.0.3)
@@ -9,10 +10,12 @@ PODS:
 
 DEPENDENCIES:
   - CardIO
+  - JGProgressHUD
   - Stripe
 
 SPEC CHECKSUMS:
   CardIO: 3fb62d56651d80e8f98e9572bfbe589ebf13d706
+  JGProgressHUD: a45c1d16adddf7e38092ce3f0d71d3955d2de2ec
   Stripe: 43a4307dc789483a61668d187c4a917d1348b0b6
 
 COCOAPODS: 0.37.1

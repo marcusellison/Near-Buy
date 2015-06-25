@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--TakePhotoViewController-->
+        <!--Nearbuy-->
         <scene sceneID="AIB-lJ-u2I">
             <objects>
-                <viewController storyboardIdentifier="takePhoto" title="TakePhotoViewController" id="aRu-j7-hhv" customClass="TakePhotoViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="takePhoto" title="Nearbuy" id="aRu-j7-hhv" customClass="TakePhotoViewController" customModule="nearbuy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oge-yS-Ave"/>
                         <viewControllerLayoutGuide type="bottom" id="Nus-Rs-RUf"/>

@@ -91,6 +91,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        products.create(params)
         
 
+//        var image : UIImage = UIImage(named:"snowboard")!
+//        println("\(image)")
+//        var params: [String: AnyObject] = [
+//            "username":"kavodel@mixpanel.com",
+//            "name":"Burton Clash Snowboard",
+//            "summary":"Two seasons at Tahoe and switching to skiing",
+//            "price":"80",
+//            "shared":"true",
+//            "category":"other",
+//            "image":image,
+//            "buyer":"jon@dropbox.com"]
+//        
+//        products.create(params)
+        
 
         /* instantiate storyboards */
         
@@ -103,7 +117,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let buyViewController = buyStoryboard.instantiateViewControllerWithIdentifier("BrowseViewController") as! BrowseViewController
         buyViewController.title = "Nearbuy"
         let sellViewController = sellStoryboard.instantiateViewControllerWithIdentifier("takePhoto") as! TakePhotoViewController
-        let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileTableViewController") as! ProfileTableViewController
+        sellViewController.title = "Nearbuy"
+        let profileViewController = profileStoryboard.instantiateViewControllerWithIdentifier("ProfileTableViewController") as! ProfileDemoViewController
         let settingsViewController = settingsStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         
         /* instantiate tab bar and nav bar */
@@ -167,6 +182,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

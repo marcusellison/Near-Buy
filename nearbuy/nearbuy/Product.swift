@@ -14,7 +14,7 @@ class Product: NSObject {
     var products: [NSObject]?
     var productImages: [UIImage]?
     
-    static let sharedInstance = Product(params: [:]);
+    static let sharedInstance = Product(params: [:])
     
     var api: API = API()
     

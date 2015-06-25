@@ -12,7 +12,8 @@ class ItemDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var itemDetailImageView: UIImageView!
     @IBOutlet weak var buyButton: UIButton!
-    @IBOutlet weak var sellerProfileImageButton: UIButton!
+
+    @IBOutlet weak var sellerProfileImageView: UIImageView!
     @IBOutlet weak var itemTitleLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
     @IBOutlet weak var itemDescriptionLabel: UILabel!
@@ -20,13 +21,14 @@ class ItemDetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.sellerProfileImageView.layer.cornerRadius = self.sellerProfileImageView.layer.frame.size.width / 2
+        self.sellerProfileImageView.clipsToBounds = true
+        self.sellerProfileImageView.layer.borderWidth = 1.0
+        self.sellerProfileImageView.layer.borderColor = UIColor.whiteColor().CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

@@ -27,26 +27,27 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eHf-La-2M2" id="fOc-yj-dgF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bicycle" translatesAutoresizingMaskIntoConstraints="NO" id="LVd-mq-WsG">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LVd-mq-WsG">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                                                    <color key="backgroundColor" red="0.9655342487373737" green="0.9655342487373737" blue="0.9655342487373737" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="220" id="y7z-RD-toT"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Mint Brilliant Bicycle!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fX-ic-cYC">
-                                                    <rect key="frame" x="18" y="226" width="149.5" height="19"/>
+                                                    <rect key="frame" x="13" y="226" width="150" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Potrero Hill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrd-wP-bXY">
-                                                    <rect key="frame" x="18" y="249" width="70.5" height="13.5"/>
+                                                    <rect key="frame" x="13" y="249" width="294" height="14"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3PW-IK-4IP">
-                                                    <rect key="frame" x="0.0" y="181" width="53" height="29.5"/>
+                                                    <rect key="frame" x="0.0" y="181" width="53" height="30"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$150" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYC-Iw-Ker">
                                                             <rect key="frame" x="6" y="4" width="41" height="20"/>
@@ -79,12 +80,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="LVd-mq-WsG" firstAttribute="top" secondItem="fOc-yj-dgF" secondAttribute="top" id="1Z0-Sw-SDK"/>
-                                                <constraint firstItem="2fX-ic-cYC" firstAttribute="leading" secondItem="fOc-yj-dgF" secondAttribute="leadingMargin" constant="10" id="JRn-rC-yjw"/>
+                                                <constraint firstItem="2fX-ic-cYC" firstAttribute="leading" secondItem="fOc-yj-dgF" secondAttribute="leadingMargin" constant="5" id="JRn-rC-yjw"/>
                                                 <constraint firstItem="3PW-IK-4IP" firstAttribute="leading" secondItem="fOc-yj-dgF" secondAttribute="leading" id="Lku-UO-Cim"/>
-                                                <constraint firstItem="Zrd-wP-bXY" firstAttribute="leading" secondItem="fOc-yj-dgF" secondAttribute="leadingMargin" constant="10" id="Nvk-LC-ZPE"/>
+                                                <constraint firstItem="Zrd-wP-bXY" firstAttribute="leading" secondItem="fOc-yj-dgF" secondAttribute="leadingMargin" constant="5" id="Nvk-LC-ZPE"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Zrd-wP-bXY" secondAttribute="bottom" constant="3" id="PHp-pU-dAv"/>
                                                 <constraint firstItem="CHg-RR-t54" firstAttribute="top" secondItem="fOc-yj-dgF" secondAttribute="top" constant="10" id="RZ2-nI-aQH"/>
                                                 <constraint firstItem="2fX-ic-cYC" firstAttribute="top" secondItem="3PW-IK-4IP" secondAttribute="bottom" constant="15" id="Tjh-7B-rSM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zrd-wP-bXY" secondAttribute="trailing" constant="5" id="U6f-c0-hU4"/>
                                                 <constraint firstItem="LVd-mq-WsG" firstAttribute="leading" secondItem="fOc-yj-dgF" secondAttribute="leading" id="Un3-Qi-18G"/>
                                                 <constraint firstAttribute="trailing" secondItem="LVd-mq-WsG" secondAttribute="trailing" id="g2S-aA-7kI"/>
                                                 <constraint firstItem="2fX-ic-cYC" firstAttribute="top" secondItem="LVd-mq-WsG" secondAttribute="bottom" constant="6" id="oN2-ad-GMa"/>
@@ -121,7 +123,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bicycle" width="325" height="216"/>
         <image name="heart" width="98" height="81"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

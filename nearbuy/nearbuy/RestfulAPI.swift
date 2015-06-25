@@ -114,12 +114,14 @@ class API: NSObject {
         */
         
         
+        print("here")
         
         query.findObjectsInBackgroundWithBlock {
             (productObjects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil {
                 if let productObjects = productObjects as? [PFObject] {
                     /* Save this on the Parse Local Object */
+                    println("\(productObjects)")
                     Product.sharedInstance.products = productObjects
                         
                     /* Do whatever you want here - use a notification to update a specific object */
