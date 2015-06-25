@@ -129,7 +129,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUi-fL-2pP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUi-fL-2pP">
                                 <rect key="frame" x="16" y="403" width="288" height="43"/>
                                 <color key="backgroundColor" red="0.2041430971" green="0.76246397919999997" blue="0.98851799240000005" alpha="0.56000000000000005" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -145,7 +145,7 @@
                                     <segue destination="Fdy-6O-y7b" kind="push" id="neE-jZ-Wj6"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wz1-Cb-UIm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ Price" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wz1-Cb-UIm">
                                 <rect key="frame" x="16" y="344" width="288" height="43"/>
                                 <color key="backgroundColor" red="0.82919034089999999" green="0.82919034089999999" blue="0.82919034089999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -154,7 +154,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-oT-XZt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-oT-XZt">
                                 <rect key="frame" x="16" y="286" width="288" height="43"/>
                                 <color key="backgroundColor" red="0.82919034089999999" green="0.82919034089999999" blue="0.82919034089999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -163,6 +163,15 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" text="I am selling a ..." translatesAutoresizingMaskIntoConstraints="NO" id="cJv-LE-gGc">
+                                <rect key="frame" x="16" y="97" width="288" height="174"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="L7w-1C-VUw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTI-q9-K6h">
                                 <rect key="frame" x="16" y="286" width="288" height="43"/>
                                 <constraints>
@@ -175,15 +184,6 @@
                                     <segue destination="aco-KX-Acq" kind="push" identifier="PickCategories" id="c7K-iY-r79"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" text="I am selling a ..." translatesAutoresizingMaskIntoConstraints="NO" id="cJv-LE-gGc">
-                                <rect key="frame" x="16" y="97" width="288" height="174"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="174" id="L7w-1C-VUw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -195,11 +195,12 @@
                             <constraint firstAttribute="trailing" secondItem="TkH-oT-XZt" secondAttribute="trailing" constant="16" id="E2s-l9-eoY"/>
                             <constraint firstItem="zTI-q9-K6h" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="ELZ-Uy-2PQ"/>
                             <constraint firstAttribute="trailing" secondItem="wz1-Cb-UIm" secondAttribute="trailing" constant="16" id="FQU-az-XTu"/>
+                            <constraint firstItem="LUi-fL-2pP" firstAttribute="top" secondItem="wz1-Cb-UIm" secondAttribute="bottom" constant="16" id="Now-EP-3F8"/>
                             <constraint firstAttribute="trailing" secondItem="PiP-AE-KOE" secondAttribute="trailing" constant="16" id="P4Z-7I-k6N"/>
-                            <constraint firstItem="LUi-fL-2pP" firstAttribute="top" secondItem="wz1-Cb-UIm" secondAttribute="bottom" constant="16" id="QzO-mg-WW1"/>
                             <constraint firstItem="PiP-AE-KOE" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="RZ2-ii-eMh"/>
                             <constraint firstItem="wz1-Cb-UIm" firstAttribute="leading" secondItem="pw6-Bp-gOa" secondAttribute="leading" constant="16" id="ZV7-3r-fVl"/>
                             <constraint firstItem="cJv-LE-gGc" firstAttribute="top" secondItem="PiP-AE-KOE" secondAttribute="bottom" constant="17" id="fcG-bB-Xhq"/>
+                            <constraint firstItem="wz1-Cb-UIm" firstAttribute="top" secondItem="zTI-q9-K6h" secondAttribute="bottom" constant="15" id="j9V-3q-9fR"/>
                             <constraint firstItem="PiP-AE-KOE" firstAttribute="top" secondItem="NJl-rO-0vi" secondAttribute="bottom" constant="17" id="ksE-xz-tPV"/>
                             <constraint firstItem="wz1-Cb-UIm" firstAttribute="top" secondItem="TkH-oT-XZt" secondAttribute="bottom" constant="15" id="lWI-b7-mv8"/>
                             <constraint firstAttribute="trailing" secondItem="zTI-q9-K6h" secondAttribute="trailing" constant="16" id="vx1-Pq-3Sd"/>
@@ -310,7 +311,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn0-r9-P63">
                                 <rect key="frame" x="152" y="430" width="16" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcA-RG-Z29">

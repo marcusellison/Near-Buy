@@ -17,6 +17,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var products: [NSObject]?
     var imageArray: [UIImage] = []
     var appendCount: Int = 0
+    var product: Product = Product(params: [:])
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 10
+        var count = 8
         if let products = products {
             var count = products.count
             println("product are products!")

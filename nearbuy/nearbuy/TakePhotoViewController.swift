@@ -99,7 +99,7 @@ class TakePhotoViewController: UIViewController{
         
         if segue.identifier == "ProductDetail" {
             let takePhotosDetailViewController = segue.destinationViewController as! TakePhotosDetailViewController
-            
+            println("\(self.photoImage)")
             takePhotosDetailViewController.productImage = self.photoImage
         }
     }

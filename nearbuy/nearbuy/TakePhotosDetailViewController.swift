@@ -54,16 +54,19 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
     
     @IBAction func onSell(sender: AnyObject) {
         
-        var image = self.productImage
+        var image = productImage
         
-        var params: NSDictionary = ["username":"jon@dropbox.com",
+        var params: [String: AnyObject] = [
+            "username":"jon@dropbox.com",
             "name":productNameField.text,
             "summary":productDescriptionView.text,
             "price": productPriceField.text,
             "shared":"true",
             "category":categoryField.text,
-            "image":image!]
+            "image":image!
+        ]
         
+            println("\(params)")
         // probably not the best way to test. Generate alert if field is empty
         for (title, fieldValue) in params {
             if "\(fieldValue)" == "" {
@@ -74,7 +77,7 @@ class TakePhotosDetailViewController: UIViewController, CategoryPickedDelegate {
         }
         
         // Let's create a product!
-        product.create(params as! [String:AnyObject])
+        product.create(params)
         
     }
     

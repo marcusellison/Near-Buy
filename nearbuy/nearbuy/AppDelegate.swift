@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var delivery : Delivery = Delivery()
         
         // delivery.getDeliveryQuote(["hi":"bar"], seller: ["holla":"back"])
-        delivery.makeDelivery("3260 17th St. San Francisco,CA 94105", buyerName: "Kavodel", buyerPhone: "832-659-7622", sellerAddress:"405 Howard St. San Francisco, CA 94105", sellerName:"Marcus", sellerPhone:"917-972-3943", manifest:"A couch")
+        // delivery.makeDelivery("3260 17th St. San Francisco,CA 94105", buyerName: "Kavodel", buyerPhone: "832-659-7622", sellerAddress:"405 Howard St. San Francisco, CA 94105", sellerName:"Marcus", sellerPhone:"917-972-3943", manifest:"A couch")
         
         
         /* Initialize Facebook */
@@ -74,6 +74,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.pushViewController(authViewController, animated: true)
         }
         */
+        
+        /* Upload Image to Parse */
+        
+//        var image : UIImage = UIImage(named:"typewriter")!
+//        println("\(image)")
+//        var params: [String: AnyObject] = [
+//            "username":"kavodel@mixpanel.com",
+//            "name":"Vintage Typewriter",
+//            "summary":"Typewriter Royal in great working order touch control kmm full size model black industrial age office equipment has magic rand touch control has a spare reel ink tape the left hand side wheel for turning the paper has a peice missing does not affect the performance of the typewriter it is very heave piece",
+//            "price":"150", "shared":"true",
+//            "category":"home",
+//            "image":image,
+//            "buyer":"jon@dropbox.com"]
+//        
+//        products.create(params)
+        
 
 
         /* instantiate storyboards */
